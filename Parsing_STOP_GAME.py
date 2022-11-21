@@ -1,9 +1,11 @@
 import requests
 from bs4 import BeautifulSoup
 
+# Программа по парсингу!
 
-# css-qfzx1y
-# 3.25
+def save():
+    with open('parse_info.txt', 'a') as file:  #Создает новый файл, куда буду записываться данные
+        file.write(f'{comp["title"]} -> Price: {comp["price"]}\n')  # Выводит название и цену товара
 
 def parse():
     URL = 'https://www.olx.kz/d/elektronika/noutbuki-i-aksesuary/?utm_source=olx&utm_medium=vc'
@@ -18,10 +20,13 @@ def parse():
 
     for item in items:
         comps.append({
-            'title': item.find('h6', class_='css-1pvd0aj-Text eu5v0x0').get_text(strip=True)
+            'title': item.find('h6', class_='css-1pvd0aj-Text eu5v0x0').get_text(strip=True),
+            'price': item.find('p', class_='css-1q7gvpp-Text eu5v0x0').get_text(strip=True),
         })
 
+        global comp
         for comp in comps:
-            print(comp['title'])
+            print(f'{comp["title"]} -> Price: {comp["price"]}')
+            save()
 
 parse()
