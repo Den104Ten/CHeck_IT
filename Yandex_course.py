@@ -507,13 +507,15 @@ while i != b + 1:
 print(*lst)"""
 
 
-a = list(map(float, input().split()))
+"""a = list(map(float, input().split()))
 b = list(map(str, input().split()))
 lst = [*a, *b]
-print(*lst)
-# Just check how it work
-# and it really work)
+print(*lst)"""
 
+# Just check how it work
+# and it really work why i cant
+
+print("I really dont now how it work")
 
 
 
