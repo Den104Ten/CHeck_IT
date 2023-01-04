@@ -448,7 +448,6 @@ weight()"""
 
 list_size()"""
 
-
 """def perimeter(width, height):
     print(f'Периметр прямоугольника, равен {2 * (width + height)}')
 
@@ -468,8 +467,6 @@ perimeter(width=a, height=b)"""
 mail_correct()
 print()"""
 
-
-
 """a = {0: 'А', 1: 'Г', 2: 'И', 3: 'Л', 4: 'М', 5: 'О', 6: 'Р', 7: 'Т'}
 z = 1
 for i in range(0, len(a)):
@@ -479,7 +476,6 @@ for i in range(0, len(a)):
                 z += 1
                 if a[i] == 'Г' and a[j] == 'О':
                     print(z)"""
-
 
 """def str_min(*args):
     return min(args)
@@ -492,11 +488,9 @@ def str_min3(*args):
 def str_min4(*args):
     return min(args)"""
 
-
 """a = input().split()
 lst_c = tuple(a)
 print(lst_c)"""
-
 
 """a, b = list(map(int, input().split()))
 i = a
@@ -506,7 +500,6 @@ while i != b + 1:
     i += 1
 print(*lst)"""
 
-
 """a = list(map(float, input().split()))
 b = list(map(str, input().split()))
 lst = [*a, *b]
@@ -515,8 +508,61 @@ print(*lst)"""
 # Just check how it work
 # and it really work why i cant
 
-print("I really dont now how it work")
 
+# - - - - - - - - - - - - - - - - - - -  - - - - - - - - - -  - - - - -  - - - - -  -- - - - -
+# Введение в словари
+
+"""d = {"house": 'дом', "car": 'машина',
+     "tree": 'дерево', "road": 'дорога',
+     "river": 'река'}
+
+print(d["car"])"""
+
+
+"""lst = input().split()
+lst1 = [lst[i].split('=') for i in range(len(lst))]
+d = dict(lst1)
+for key in d:
+    d[key] = int(d[key])
+print(*sorted(d.items()))"""
+
+
+"""slovar = dict({1: 'one', 2: 'two'})
+slovar.clear()
+print(slovar)"""
+
+
+# myDict = {myList[i]: myList[i + 1] for i in range(0, len(myList), 2)}
+# print(myDict)
+
+
+"""def perimeter(width, height):
+    print(f'Периметр прямоугольника, равен {2 * (width + height)}')
+
+
+a, b = map(int, input().split())
+perimeter(width=a, height=b)"""
+
+
+"""def convert_minutes_2_seconds(minutes):
+    print(f"Это: {minutes * 60} секунд")
+
+
+time = int(input("Введите кол-во минут: "))  # Ввод минут
+convert_minutes_2_seconds(minutes=time)"""
+
+
+# ---- Программа для вывода словаря через список, где каждый ключ одноименен с значением словаря-----
+"""def to_dict(list):
+    j = 0
+    for i in a:
+        slovar[i] = a[j]
+        j += 1
+    print(slovar)
+
+a = input().split()
+slovar = {}
+to_dict(list=slovar)"""
 
 
 
