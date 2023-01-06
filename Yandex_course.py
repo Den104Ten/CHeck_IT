@@ -518,7 +518,6 @@ print(*lst)"""
 
 print(d["car"])"""
 
-
 """lst = input().split()
 lst1 = [lst[i].split('=') for i in range(len(lst))]
 d = dict(lst1)
@@ -526,11 +525,9 @@ for key in d:
     d[key] = int(d[key])
 print(*sorted(d.items()))"""
 
-
 """slovar = dict({1: 'one', 2: 'two'})
 slovar.clear()
 print(slovar)"""
-
 
 # myDict = {myList[i]: myList[i + 1] for i in range(0, len(myList), 2)}
 # print(myDict)
@@ -543,14 +540,12 @@ print(slovar)"""
 a, b = map(int, input().split())
 perimeter(width=a, height=b)"""
 
-
 """def convert_minutes_2_seconds(minutes):
     print(f"Это: {minutes * 60} секунд")
 
 
 time = int(input("Введите кол-во минут: "))  # Ввод минут
 convert_minutes_2_seconds(minutes=time)"""
-
 
 # ---- Программа для вывода словаря через список, где каждый ключ одноименен с значением словаря-----
 """def to_dict(list):
@@ -564,7 +559,41 @@ a = input().split()
 slovar = {}
 to_dict(list=slovar)"""
 
+"""dict_1 = {"a": '300', "b": '400'}
+dict_2 = {"c": '500', "d": '600'}
+dict_1.update(dict_2)
+print(dict_1)"""
+
+"""dict_1 = {1: 10, 2: 20, 3: 30}
+for i in dict_1:
+    dict_1[i] = i*i
+print(dict_1)"""
+
+"""dict_1 = dict.fromkeys(['name', 'age', 'job'], 'Missed')
+print(dict_1)"""
+
+"""info = dict(name='Alex', age='23')
+print(info)"""
+
+"""name = str(input('Введите ваше имя: '))
+age = int(input('Введите ваш возраст: '))
+city = str(input('Введите ваш город: '))
+info_1 = dict(name=name,
+              age=age,
+              city=city)
+print(info_1)"""
+
+
+"""keys = ['name', 'age']
+values = ['Alex', '17']
+
+info = dict(zip(keys, values))
+print(info)"""
 
 
 
+my_dict = {1: [0, 1], 2: [2, 3], 3: [4, 5]}
 
+print(my_dict[2][1])
+# В этом случае первый аргумент это ключ словаря,
+# а второй аргумент это индекс значения списка
