@@ -776,11 +776,46 @@ print(*z, sep=' ')"""
 
 
 
-numbers = [9, 8, 32, 1, 10, 1, 10, 23, 1, 4, 10, 4, 2, 2, 2, 2, 1, 10, 1, 2, 2, 32, 23, 23]
+"""numbers = [9, 8, 32, 1, 10, 1, 10, 23, 1, 4, 10, 4, 2, 2, 2, 2, 1, 10, 1, 2, 2, 32, 23, 23]
 result = {}
 for num in numbers:
     if num not in result:
         result[num] = 1
     else:
         result[num] += 1
+print(result)"""
+
+
+"""result = {}
+for num in range(1, 16):
+    result[num] = result.get(num, num) ** 2
+print(result)"""
+
+
+dict1 = {'a': 100, 'z': 333, 'b': 200, 'c': 300, 'd': 45, 'e': 98, 't': 76, 'q': 34, 'f': 90, 'm': 230}
+dict2 = {'a': 300, 'b': 200, 'd': 400, 't': 777, 'c': 12, 'p': 123, 'w': 111, 'z': 666}
+
+result = dict2.copy()
+
+sert = {}
+for i in dict1:
+    print(dict1[i])
+    for j in dict2: #f"{i} - {dict1[i] + dict2[j]}"
+        if i == j:
+            sert.setdefault(i, dict1[i] + dict2[j])
+
+print(sert)
+result.update(sert)
 print(result)
+
+
+"""sert = []
+for i in dict1:
+    print(dict1[i])
+    for j in dict2:
+        if i == j:
+            sert.append(f"{i} - {dict1[i] + dict2[j]}")
+print(sert)"""
+
+
+
