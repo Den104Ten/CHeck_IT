@@ -573,7 +573,7 @@ print(dict_1)"""
 print(dict_1)"""
 
 """info = dict(name='Alex', age='23')
-print(info)"""
+print(info['name'])"""
 
 """name = str(input('Введите ваше имя: '))
 age = int(input('Введите ваш возраст: '))
@@ -583,17 +583,204 @@ info_1 = dict(name=name,
               city=city)
 print(info_1)"""
 
-
 """keys = ['name', 'age']
 values = ['Alex', '17']
 
 info = dict(zip(keys, values))
 print(info)"""
 
-
-
-my_dict = {1: [0, 1], 2: [2, 3], 3: [4, 5]}
+"""my_dict = {1: [0, 1], 2: [2, 3], 3: [4, 5]}
 
 print(my_dict[2][1])
 # В этом случае первый аргумент это ключ словаря,
-# а второй аргумент это индекс значения списка
+# а второй аргумент это индекс значения списка"""
+
+"""my_dict = {1.12: 'aa', 67.9: 45, 3.11: 'ccc', 7.9: 'dd', 9.2: 'ee', 7.1: 'ff', 0.12: 'qq', 1.91: 'aa', 10.12: [1, 2, 3], 99.0: {9, 0, 1}}
+
+print(min(my_dict) + max(my_dict))"""
+
+"""users = [{'name': 'Todd', 'phone': '551-1414', 'email': 'todd@gmail.com'},
+         {'name': 'Helga', 'phone': '555-1618', 'email': 'helga@mail.net'},
+         {'name': 'Olivia', 'phone': '449-3141', 'email': ''},
+         {'name': 'LJ', 'phone': '555-2718', 'email': 'lj@gmail.net'},
+         {'name': 'Ruslan', 'phone': '422-145-9098', 'email': 'rus-lan.cha@yandex.ru'},
+         {'name': 'John', 'phone': '233-421-32', 'email': ''},
+         {'name': 'Lara', 'phone': '+7998-676-2532', 'email': 'g.lara89@gmail.com'},
+         {'name': 'Alina', 'phone': '+7948-799-2434', 'email': 'ali.ch.b@gmail.com'},
+         {'name': 'Robert', 'phone': '420-2011', 'email': ''},
+         {'name': 'Riyad', 'phone': '128-8890-128', 'email': 'r.mahrez@mail.net'},
+         {'name': 'Khabib', 'phone': '+7995-600-9080', 'email': 'kh.nurmag@gmail.com'},
+         {'name': 'Olga', 'phone': '6449-314-1213', 'email': ''},
+         {'name': 'Roman', 'phone': '+7459-145-8059', 'email': 'roma988@mail.ru'},
+         {'name': 'Maria', 'phone': '12-129-3148', 'email': 'm.sharapova@gmail.com'},
+         {'name': 'Fedor', 'phone': '+7445-341-0545', 'email': ''},
+         {'name': 'Tim', 'phone': '242-449-3141', 'email': 'timm.ggg@yandex.ru'}]
+
+
+z = []
+for i in users:
+    if i['phone'][-1] == "8":
+        z.append(i["name"])
+f = (sorted(z))
+print(*f)"""
+
+"""
+users = [{'name': 'Todd', 'phone': '551-1414', 'email': 'todd@gmail.com'},
+         {'name': 'Helga', 'phone': '555-1618'},
+         {'name': 'Olivia', 'phone': '449-3141', 'email': ''},
+         {'name': 'LJ', 'phone': '555-2718', 'email': 'lj@gmail.net'},
+         {'name': 'Ruslan', 'phone': '422-145-9098', 'email': 'rus-lan.cha@yandex.ru'},
+         {'name': 'John', 'phone': '233-421-32', 'email': ''},
+         {'name': 'Lara', 'phone': '+7998-676-2532', 'email': 'g.lara89@gmail.com'},
+         {'name': 'Alina', 'phone': '+7948-799-2434'},
+         {'name': 'Robert', 'phone': '420-2011', 'email': ''},
+         {'name': 'Riyad', 'phone': '128-8890-128', 'email': 'r.mahrez@mail.net'},
+         {'name': 'Khabib', 'phone': '+7995-600-9080', 'email': 'kh.nurmag@gmail.com'},
+         {'name': 'Olga', 'phone': '6449-314-1213', 'email': ''},
+         {'name': 'Roman', 'phone': '+7459-145-8059'},
+         {'name': 'Maria', 'phone': '12-129-3148', 'email': 'm.sharapova@gmail.com'},
+         {'name': 'Fedor', 'phone': '+7445-341-0545', 'email': ''},
+         {'name': 'Tim', 'phone': '242-449-3141', 'email': 'timm.ggg@yandex.ru'}]
+
+z = []
+for i in users:
+    if not i.get('email'):
+        z.append(i['name'])
+
+f = sorted(z)
+print(*f)"""
+
+"""
+number = list(map(int, input()))
+d = {
+    0: "zero",
+    1: "one",
+    2: "two",
+    3: "three",
+    4: "four",
+    5: "five",
+    6: "six",
+    7: "seven",
+    8: "eight",
+    9: "nine"
+}
+
+z = []
+for i in number:
+    z.append(d[i])
+
+print(*z)"""
+
+"""info = {
+    "CS101": "CS101: 3004, Хайнс, 8:00",
+    "CS102": "CS102: 4501, Альварадо, 9:00",
+    "CS103": "CS103: 6755, Рич, 10:00",
+    "NT110": "NT110: 1244, Берк, 11:00",
+    "CM241": "CM241: 1411, Ли, 13:00"
+}
+
+a = str(input())
+print(info[a])"""
+
+"""words = {
+    # Если не получится решить, то поменять местами ключи и значения
+    "1": ".",
+    "11": ",",
+    "111": "?",
+    "1111": "!",
+    "11111": ":",
+    "2": "A",
+    "22": "B",
+    "222": "C",
+    "3": "D",
+    "33": "E",
+    "333": "F",
+    "4": "G",
+    "44": "H",
+    "444": "I",
+    "5": "J",
+    "55": "K",
+    "555": "L",
+    "6": "M",
+    "66": "N",
+    "666": "O",
+    "7": "P",
+    "77": "Q",
+    "777": "R",
+    "7777": "S",
+    "8": "T",
+    "88": "U",
+    "888": "V",
+    "9": "W",
+    "99": "X",
+    "999": "Y",
+    "9999": "Z",
+    "0": " "
+}
+
+z = []
+a = input().upper()
+for i in a:
+    for key, value in words.items():
+        if i in value:
+            z.append(key)
+print(*z, sep='')"""
+
+
+"""keys_mapping = {
+    'A': '.-',
+    'B': '-...',
+    'C': '-.-.',
+    'D': '-..',
+    'E': '.',
+    'F': '..-.',
+    'G': '--.',
+    'H': '....',
+    'I': '..',
+    'J': '.---',
+    'K': '-.-',
+    'L': '.-..',
+    'M': '--',
+    'N': '-.',
+    'O': '---',
+    'P': '.--.',
+    'Q': '--.-',
+    'R': '.-.',
+    'S': '...',
+    'T': '-',
+    'U': '..-',
+    'V': '...-',
+    'W': '.--',
+    'X': '-..-',
+    'Y': '-.--',
+    'Z': '--..',
+    '0': '-----',
+    '1': '.----',
+    '2': '..---',
+    '3': '...--',
+    '4': '....-',
+    '5': '.....',
+    '6': '-....',
+    '7': '--...',
+    '8': '---..',
+    '9': '----.',
+}
+
+z = []
+a = str(input().upper())
+for i in a:
+    for key, value in keys_mapping.items():
+        if i in key:
+            z.append(value)
+print(*z, sep=' ')"""
+
+
+
+numbers = [9, 8, 32, 1, 10, 1, 10, 23, 1, 4, 10, 4, 2, 2, 2, 2, 1, 10, 1, 2, 2, 32, 23, 23]
+result = {}
+for num in numbers:
+    if num not in result:
+        result[num] = 1
+    else:
+        result[num] += 1
+print(result)
