@@ -792,6 +792,8 @@ for num in range(1, 16):
 print(result)"""
 
 
+"""
+# Программа соединяющаяя два словаря в один
 dict1 = {'a': 100, 'z': 333, 'b': 200, 'c': 300, 'd': 45, 'e': 98, 't': 76, 'q': 34, 'f': 90, 'm': 230}
 dict2 = {'a': 300, 'b': 200, 'd': 400, 't': 777, 'c': 12, 'p': 123, 'w': 111, 'z': 666}
 
@@ -799,23 +801,84 @@ result = dict2.copy()
 
 sert = {}
 for i in dict1:
-    print(dict1[i])
-    for j in dict2: #f"{i} - {dict1[i] + dict2[j]}"
-        if i == j:
-            sert.setdefault(i, dict1[i] + dict2[j])
-
-print(sert)
-result.update(sert)
-print(result)
-
-
-"""sert = []
-for i in dict1:
-    print(dict1[i])
     for j in dict2:
         if i == j:
-            sert.append(f"{i} - {dict1[i] + dict2[j]}")
-print(sert)"""
+            sert.setdefault(i, dict1[i] + dict2[j])
+        else:
+            sert.setdefault(i, dict1[i])
+
+result.update(sert)
+print(result)"""
+
+"""numbers = [9, 8, 32, 1, 10, 1, 10, 23, 1, 4, 10, 4, 2, 2, 2, 2, 1, 10, 1, 2, 2, 32, 23, 23]
+result = {}
+for num in numbers:
+    if num not in result:
+        result[num] = 1
+    else:
+        result[num] += 1
+print(result)"""
 
 
+"""
+text = 'footballcyberpunkextraterritorialityconversationalistblockophthalmoscopicinterdependencemamauserfff'
 
+result = {}
+
+for i in text:
+    if i not in result:
+        result[i] = 1  # С помощью этой программы можно вычислить сколько раз было произведено вхождение всех символов
+    else:
+        result[i] += 1
+print(result)"""
+
+
+"""s = 'orange strawberry barley gooseberry apple apricot barley currant orange melon pomegranate banana ' \
+    'banana orange barley apricot plum grapefruit banana quince strawberry barley grapefruit banana grapes ' \
+    'melon strawberry apricot currant currant gooseberry raspberry apricot currant orange lime quince ' \
+    'grapefruit barley banana melon pomegranate barley banana orange barley apricot plum banana quince ' \
+    'lime grapefruit strawberry gooseberry apple barley apricot currant orange melon pomegranate banana ' \
+    'banana orange apricot barley plum banana grapefruit banana quince currant orange melon pomegranate ' \
+    'barley plum banana quince barley lime grapefruit pomegranate barley'
+
+number = [x for x in s.split()]
+result = {}
+for i in number:
+    if i not in result:
+        result[i] = 1
+    else:
+        result[i] += 1
+
+z = []
+maxt = max(result.values())
+for j in result:
+    if result[j] == maxt:
+        z.append(j)
+print(min(z))
+
+# Нужно вывести слово которое повторяется чаще всего, количество его повторений я уже вывел, но не знаю как вывести само слово
+# Сохранить наибольшее значение в переменной и с помощью цикла по словарю сравнивать его с значениями других ключей"""
+
+
+pets = [('Hatiko', 'Parker', 'Wilson', 50),
+        ('Rusty', 'Josh', 'King', 25),
+        ('Fido', 'John', 'Smith', 28),
+        ('Butch', 'Jake', 'Smirnoff', 18),
+        ('Odi', 'Emma', 'Wright', 18),
+        ('Balto', 'Josh', 'King', 25),
+        ('Barry', 'Josh', 'King', 25),
+        ('Snape', 'Hannah', 'Taylor', 40),
+        ('Horry', 'Martha', 'Robinson', 73),
+        ('Giro', 'Alex', 'Martinez', 65),
+        ('Zooma', 'Simon', 'Nevel', 32),
+        ('Lassie', 'Josh', 'King', 25),
+        ('Chase', 'Martha', 'Robinson', 73),
+        ('Ace', 'Martha', 'Williams', 38),
+        ('Rocky', 'Simon', 'Nevel', 32)]
+
+result = {}
+for i in pets:
+    result.setdefault((i[1], i[2], i[3]), []).append(i[0])
+print(result)
+
+# f"{i[1]}, {i[2]}, {i[3]}"
