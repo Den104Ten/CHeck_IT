@@ -726,7 +726,6 @@ for i in a:
             z.append(key)
 print(*z, sep='')"""
 
-
 """keys_mapping = {
     'A': '.-',
     'B': '-...',
@@ -774,8 +773,6 @@ for i in a:
             z.append(value)
 print(*z, sep=' ')"""
 
-
-
 """numbers = [9, 8, 32, 1, 10, 1, 10, 23, 1, 4, 10, 4, 2, 2, 2, 2, 1, 10, 1, 2, 2, 32, 23, 23]
 result = {}
 for num in numbers:
@@ -785,12 +782,10 @@ for num in numbers:
         result[num] += 1
 print(result)"""
 
-
 """result = {}
 for num in range(1, 16):
     result[num] = result.get(num, num) ** 2
 print(result)"""
-
 
 """
 # Программа соединяющаяя два словаря в один
@@ -819,7 +814,6 @@ for num in numbers:
         result[num] += 1
 print(result)"""
 
-
 """
 text = 'footballcyberpunkextraterritorialityconversationalistblockophthalmoscopicinterdependencemamauserfff'
 
@@ -831,7 +825,6 @@ for i in text:
     else:
         result[i] += 1
 print(result)"""
-
 
 """s = 'orange strawberry barley gooseberry apple apricot barley currant orange melon pomegranate banana ' \
     'banana orange barley apricot plum grapefruit banana quince strawberry barley grapefruit banana grapes ' \
@@ -859,8 +852,7 @@ print(min(z))
 # Нужно вывести слово которое повторяется чаще всего, количество его повторений я уже вывел, но не знаю как вывести само слово
 # Сохранить наибольшее значение в переменной и с помощью цикла по словарю сравнивать его с значениями других ключей"""
 
-
-pets = [('Hatiko', 'Parker', 'Wilson', 50),
+"""pets = [('Hatiko', 'Parker', 'Wilson', 50),
         ('Rusty', 'Josh', 'King', 25),
         ('Fido', 'John', 'Smith', 28),
         ('Butch', 'Jake', 'Smirnoff', 18),
@@ -879,6 +871,24 @@ pets = [('Hatiko', 'Parker', 'Wilson', 50),
 result = {}
 for i in pets:
     result.setdefault((i[1], i[2], i[3]), []).append(i[0])
-print(result)
+print(result)"""
 
 # f"{i[1]}, {i[2]}, {i[3]}"
+
+
+
+res = [a.strip('.,!?:;-') for a in input().lower().split()]
+
+result = {}
+for i in res:
+    if i not in result:
+        result[i] = 1
+    else:
+        result[i] += 1
+
+z = []
+mint = min(result.values())
+for j in result:
+    if result[j] == mint:
+        z.append(j)
+print(min(z))
