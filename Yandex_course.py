@@ -877,7 +877,7 @@ print(result)"""
 
 
 
-res = [a.strip('.,!?:;-') for a in input().lower().split()]
+"""res = [a.strip('.,!?:;-') for a in input().lower().split()]
 
 result = {}
 for i in res:
@@ -891,4 +891,32 @@ mint = min(result.values())
 for j in result:
     if result[j] == mint:
         z.append(j)
-print(min(z))
+print(min(z))"""
+
+
+a = int(input())
+result = {}
+i = 0
+z = []
+while i != a:   # Змея: язык программирования Python
+    words = str(input())
+    i += 1
+    print(words)
+    for j in words:
+        if j != ':':
+            z.append(j)
+        elif j == ':':
+            z.append(' ')
+            break
+
+j = 0
+if i == a:
+    b = int(input())
+    while j != b:
+        key = str(input())
+    # дальше выведутся значения словаря, который нужно создать
+    # Срез от начала до двоеточия - ключ
+    # Срез от двоеточия + 2 до конца - значение
+
+
+
