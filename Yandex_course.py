@@ -894,29 +894,42 @@ for j in result:
 print(min(z))"""
 
 
-a = int(input())
-result = {}
+"""
+index = int(input())
 i = 0
-z = []
-while i != a:   # Змея: язык программирования Python
-    words = str(input())
+info = {}
+while i != index:
+    key, value = input().split(': ')
+    val = info.setdefault(key.lower(), value)
     i += 1
-    print(words)
-    for j in words:
-        if j != ':':
-            z.append(j)
-        elif j == ':':
-            z.append(' ')
-            break
-
+index_2 = int(input())
 j = 0
-if i == a:
-    b = int(input())
-    while j != b:
-        key = str(input())
-    # дальше выведутся значения словаря, который нужно создать
-    # Срез от начала до двоеточия - ключ
-    # Срез от двоеточия + 2 до конца - значение
+z = []
+while j != index_2:
+    key_val = str(input().lower())
+    j += 1
+    if key_val in info:
+        # print(info[key_val])
+        z.append(info[key_val])
+    else:
+        z.append("Не найдено")
+print(*z, sep='\n')"""
+
+
+word_1 = str(input())
+word_2 = str(input())
+z = []
+x = []
+for i in word_1:
+    z.append(i)
+for j in word_2:
+    x.append(j)
+k = 0
+if z[k] in x:
+    print('YES')
+    k += 1
+else:
+    print('NO')
 
 
 
