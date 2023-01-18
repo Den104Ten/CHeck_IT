@@ -916,20 +916,49 @@ while j != index_2:
 print(*z, sep='\n')"""
 
 
+"""
 word_1 = str(input())
 word_2 = str(input())
-z = []
-x = []
+result = {}
+result_2 = {}
 for i in word_1:
-    z.append(i)
+    if i not in result:
+        result[i] = 1
+    else:
+        result[i] += 1
 for j in word_2:
-    x.append(j)
-k = 0
-if z[k] in x:
-    print('YES')
-    k += 1
+    if j not in result_2:
+        result_2[j] = 1
+    else:
+        result_2[j] += 1
+if result == result_2:
+    print('Yes')
 else:
-    print('NO')
+    print('NO')"""
 
 
+a = str(input().strip(".,!?:;-").replace(' ', '').lower())
+b = str(input().strip(".,!?:;-").replace(' ', '').lower())
+z = ['.', ',', '!', '?', ':', ';', '-']
+result_1 = {}
+result_2 = {}
+for i in a:
+    if i not in result_1 and i not in z:
+        result_1[i] = 1
+    elif i not in z:
+        result_1[i] += 1
+    else:
+        pass
 
+for j in b:
+    if j not in result_2 and j not in z:
+        result_2[j] = 1
+    elif j not in z:
+        result_2[j] += 1
+    else:
+        pass
+
+if result_1 == result_2:
+    print("YES")
+else:
+    print("NO")
