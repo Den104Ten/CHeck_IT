@@ -937,7 +937,7 @@ else:
     print('NO')"""
 
 
-a = str(input().strip(".,!?:;-").replace(' ', '').lower())
+"""a = str(input().strip(".,!?:;-").replace(' ', '').lower())
 b = str(input().strip(".,!?:;-").replace(' ', '').lower())
 z = ['.', ',', '!', '?', ':', ';', '-']
 result_1 = {}
@@ -961,4 +961,21 @@ for j in b:
 if result_1 == result_2:
     print("YES")
 else:
-    print("NO")
+    print("NO")"""
+
+
+index = int(input())
+i = 0
+info = {}
+while i != index:
+    key, value = input().split()
+
+    val = info.setdefault(key, value)
+    i += 1
+word = str(input())
+if word in info:
+    print(info[word])
+
+
+
+# Сделать второй словарь и проверять есть ли введенное значение в нем
