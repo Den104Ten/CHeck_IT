@@ -876,7 +876,6 @@ print(result)"""
 # f"{i[1]}, {i[2]}, {i[3]}"
 
 
-
 """res = [a.strip('.,!?:;-') for a in input().lower().split()]
 
 result = {}
@@ -892,7 +891,6 @@ for j in result:
     if result[j] == mint:
         z.append(j)
 print(min(z))"""
-
 
 """
 index = int(input())
@@ -915,7 +913,6 @@ while j != index_2:
         z.append("Не найдено")
 print(*z, sep='\n')"""
 
-
 """
 word_1 = str(input())
 word_2 = str(input())
@@ -935,7 +932,6 @@ if result == result_2:
     print('Yes')
 else:
     print('NO')"""
-
 
 """a = str(input().strip(".,!?:;-").replace(' ', '').lower())
 b = str(input().strip(".,!?:;-").replace(' ', '').lower())
@@ -963,19 +959,44 @@ if result_1 == result_2:
 else:
     print("NO")"""
 
-
-index = int(input())
+"""index = int(input())
 i = 0
 info = {}
 while i != index:
-    key, value = input().split()
+    key, value = input().lower().split()
 
     val = info.setdefault(key, value)
     i += 1
-word = str(input())
+word = str(input().lower())
 if word in info:
-    print(info[word])
+    print(info[word].title())
+elif word not in info:
+    for k, v in info.items():
+        if v == word:
+            print(k.title())"""
 
 
+index = int(input())
+i = 0
+result = {}
+while i != index:
+    key_val = input().split()
+    result.setdefault(key_val[0], key_val[1:])
+    i += 1
+print(result)
+#for k in result:
+#    print(k)  # Выводит ключи словаря
 
-# Сделать второй словарь и проверять есть ли введенное значение в нем
+city_num = int(input())
+j = 0
+while j != city_num:
+    city = str(input())
+    for k in result:
+        if city in k:
+            print(k)
+        else:
+            print('NO')
+    j += 1
+
+
+# Сделать переменную и ввести в нее и ключ и значения после разделить их срезом строк и добавить в словарь
