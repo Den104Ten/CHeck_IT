@@ -1,5 +1,4 @@
 
-
 """a = int(input())
 b = int(input())
 
@@ -564,27 +563,94 @@ elif word not in info:
             print(k.title())"""
 
 
-index = int(input())
+"""index = int(input())
 i = 0
 result = {}
 while i != index:
     key_val = input().split()
     result.setdefault(key_val[0], key_val[1:])
     i += 1
-print(result)
-#for k in result:
-#    print(k)  # Выводит ключи словаря
 
 city_num = int(input())
 j = 0
+z = []
 while j != city_num:
     city = str(input())
     for k in result:
-        if city in k:
-            print(k)
-        else:
-            print('NO')
+        if city in result[k]:
+            z.append(k)
     j += 1
+print(*z, sep='\n')"""
 
 
-# Сделать переменную и ввести в нее и ключ и значения после разделить их срезом строк и добавить в словарь
+"""index = int(input())
+i = 0
+info = {}
+while i != index:
+    key, val = input().split()
+    info.setdefault(key, val)
+    i += 1
+print(info)
+index_2 = int(input())
+j = 0
+z = []
+while j != index_2:
+    name = str(input())
+    for i in info:
+        if name in info[i]:
+            z.append(i)
+        else:
+            z.append('абонент не найден')
+    j += 1
+print(*z, sep='\n')"""
+
+
+"""squares = {i: i**2 for i in range(6)}
+print(squares)"""
+
+
+"""numbers = [34, 10, -4, 6, 10, 23, -90, 100, 21, -35, -95, 1, 36, -38, -19, 1, 6, 87]
+
+result = {i: numbers[i]**2 for i in range(len(numbers))}
+print(result)"""
+
+"""colors = {'c1': 'Red', 'c2': 'Grey', 'c3': None, 'c4': 'Green', 'c5': 'Yellow', 'c6': 'Pink', 'c7': 'Orange', 'c8': None, 'c9': 'White', 'c10': 'Black', 'c11': 'Violet', 'c12': 'Gold', 'c13': None, 'c14': 'Amber', 'c15': 'Azure', 'c16': 'Beige', 'c17': 'Bronze', 'c18': None, 'c19': 'Lilac', 'c20': 'Pearl', 'c21': None, 'c22': 'Sand', 'c23': None}
+
+result = {i: colors[i] for i in colors if colors[i] != None}
+print(result)"""
+
+
+"""favorite_numbers = {'timur': 17, 'ruslan': 7, 'larisa': 19, 'roman': 123, 'rebecca': 293, 'ronald': 76, 'dorothy': 62, 'harold': 36, 'matt': 314, 'kim': 451, 'rosaly': 18, 'rustam': 89, 'soltan': 111, 'amir': 654, 'dima': 390, 'amiran': 777, 'geor': 999, 'sveta': 75, 'rita': 909, 'kirill': 404, 'olga': 271, 'anna': 55, 'madlen': 876}
+
+result = {i: favorite_numbers[i] for i in favorite_numbers if 10 <= favorite_numbers[i] <= 99 }
+print(result)"""
+
+
+"""months = {1: 'January', 2: 'February', 3: 'March', 4: 'April', 5: 'May', 6: 'June', 7: 'July', 8: 'August', 9: 'September', 10: 'October', 11: 'November', 12: 'December'}
+
+result = {months[i]: i for i in months}
+print(result)"""
+
+
+"""s = '1:men 2:kind 90:number 0:sun 34:book 56:mountain 87:wood 54:car 3:island 88:power 7:box 17:star 101:ice'
+
+info = [x for x in s.split()]
+
+result = {}
+for i in info:
+    top = i.split(':')
+    result.setdefault(int(top[0]), top[1])
+print(result)"""
+
+
+numbers = [34, 10, 4, 6, 10, 23, 90, 100, 21, 35, 95, 1, 36, 38, 19, 1, 6, 87, 1000, 13456, 360]
+result = {}
+for i in numbers:
+    for j in range(i + 1):
+        #print(f'{i} % {j + 1} == {i / (j + 1)}')
+        if i % (j + 1) == 0:
+            result.setdefault(i, j)
+print(result)
+
+
+
