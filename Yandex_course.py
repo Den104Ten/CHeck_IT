@@ -898,7 +898,7 @@ b = int(input())
 print(p_pryamougol(width=a, height=b))"""
 
 
-def check_email(email):
+"""def check_email(email):
     z = []
     for i in range(65, 91):
         z.append(chr(i))
@@ -916,4 +916,81 @@ def check_email(email):
     return res
 
 e_email = input()
-print(check_email(email=e_email))
+print(check_email(email=e_email))"""
+
+
+"""def fancy(length, char1='-', char2='*'):
+    return (char1 + char2) * length + char1
+
+
+print(fancy(char2='$', length=3))"""
+
+
+"""def matrix(n=1, m=None, value=0):
+    if n == 1 and m == None:
+        m = 1
+    elif n != 1 and m == None:
+        m = n
+    return [[value] * m for _ in range(n)]
+
+print(matrix())                   # матрица 1 × 1 из 0
+print(matrix(3))                  # матрица 3 × 3 из 0
+print(matrix(2, 5))               # матрица 2 × 5 из 0
+print(matrix(3, 4, 9))            # матрица 3 × 4 из 9"""
+
+
+
+"""def my_func(*args):
+    print(type(args))
+    print(args)
+
+
+my_func()
+my_func(1, 2, 3)
+my_func('a', 'b')"""
+
+
+# Выводит сумму квадратов всех введенных чисел
+"""def sq_sum(*args):
+    z = []
+    for i in args:
+        sqr = i**2
+        z.append(sqr)
+    return sum(z)
+
+
+print(sq_sum(1, 2, 3))"""
+
+
+def mean(*args):
+    z = []
+    for i in args:
+        if len(args) <= 1:
+            return float(i)
+        elif len(args) >= 2:
+            if type(i) == int or type(i) == float:
+                z.append(i)
+    return float(sum(z) / len(z))
+
+
+print(mean())
+print(mean(7))
+print(mean(1.5, True, ['stepik'], 'beegeek', 2.5, (1, 2)))
+"""print(mean(True, ['stepik'], 'beegeek', (1, 2)))
+print(mean(-1, 2, 3, 10, ('5')))
+print(mean(1, 2, 3, 4, 5, 6, 7, 8, 9, 10))"""
+
+
+
+
+"""for i in args:
+        z = []
+        if len(args) >= 2:
+            if type(i) == int or type(i) == float:
+                z.append(i)
+            else:
+                pass
+        else:
+            return i
+        s = sum(z) / len(z)
+        return s"""
