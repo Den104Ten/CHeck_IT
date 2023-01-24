@@ -1,4 +1,3 @@
-
 """a = int(input())
 b = int(input())
 
@@ -562,7 +561,6 @@ elif word not in info:
         if v == word:
             print(k.title())"""
 
-
 """index = int(input())
 i = 0
 result = {}
@@ -581,7 +579,6 @@ while j != city_num:
             z.append(k)
     j += 1
 print(*z, sep='\n')"""
-
 
 """index = int(input())
 i = 0
@@ -604,10 +601,8 @@ while j != index_2:
     j += 1
 print(*z, sep='\n')"""
 
-
 """squares = {i: i**2 for i in range(6)}
 print(squares)"""
-
 
 """numbers = [34, 10, -4, 6, 10, 23, -90, 100, 21, -35, -95, 1, 36, -38, -19, 1, 6, 87]
 
@@ -619,18 +614,15 @@ print(result)"""
 result = {i: colors[i] for i in colors if colors[i] != None}
 print(result)"""
 
-
 """favorite_numbers = {'timur': 17, 'ruslan': 7, 'larisa': 19, 'roman': 123, 'rebecca': 293, 'ronald': 76, 'dorothy': 62, 'harold': 36, 'matt': 314, 'kim': 451, 'rosaly': 18, 'rustam': 89, 'soltan': 111, 'amir': 654, 'dima': 390, 'amiran': 777, 'geor': 999, 'sveta': 75, 'rita': 909, 'kirill': 404, 'olga': 271, 'anna': 55, 'madlen': 876}
 
 result = {i: favorite_numbers[i] for i in favorite_numbers if 10 <= favorite_numbers[i] <= 99 }
 print(result)"""
 
-
 """months = {1: 'January', 2: 'February', 3: 'March', 4: 'April', 5: 'May', 6: 'June', 7: 'July', 8: 'August', 9: 'September', 10: 'October', 11: 'November', 12: 'December'}
 
 result = {months[i]: i for i in months}
 print(result)"""
-
 
 """s = '1:men 2:kind 90:number 0:sun 34:book 56:mountain 87:wood 54:car 3:island 88:power 7:box 17:star 101:ice'
 
@@ -641,7 +633,6 @@ for i in info:
     top = i.split(':')
     result.setdefault(int(top[0]), top[1])
 print(result)"""
-
 
 """numbers = [34, 10, 4, 6, 10, 23, 90, 100, 21, 35, 95, 1, 36, 38, 19, 1, 6, 87, 1000, 13456, 360]
 result = {}
@@ -655,7 +646,6 @@ for i in numbers:
     result.setdefault(i, z)
 print(result)"""
 
-
 """words = ['hello', 'bye', 'yes', 'no', 'python', 'apple', 'maybe', 'stepik', 'beegeek']
 result = {}
 for i in words:
@@ -664,7 +654,6 @@ for i in words:
         z.append(ord(j))
     result.setdefault(i, z)
 print(result)"""
-
 
 """letters = {0: 'A', 1: 'B', 2: 'C', 3: 'D', 4: 'E', 5: 'F', 6: 'G', 7: 'H', 8: 'I', 9: 'J', 10: 'K', 11: 'L', 12: 'M', 13: 'N', 14: 'O', 15: 'P', 16: 'Q', 17: 'R', 18: 'S', 19: 'T', 20: 'U', 21: 'V', 22: 'W', 23: 'X', 24: 'Y', 26: 'Z'}
 
@@ -678,7 +667,6 @@ for i in letters:
         result.setdefault(i, letters[i])
 print(result)"""
 
-
 """students = {'Timur': (170, 75), 'Ruslan': (180, 105), 'Soltan': (192, 68), 'Roman': (175, 70), 'Madlen': (160, 50), 'Stefani': (165, 70), 'Tom': (190, 90), 'Jerry': (180, 87), 'Anna': (172, 67), 'Scott': (168, 78), 'John': (186, 79), 'Alex': (195, 120), 'Max': (200, 110), 'Barak': (180, 89), 'Donald': (170, 80), 'Rustam': (186, 100), 'Alice': (159, 59), 'Rita': (170, 80), 'Mary': (175, 69), 'Jane': (190, 80)}
 
 result = {}
@@ -687,14 +675,12 @@ for i in students:
         result.setdefault(i, students[i])
 print(result)"""
 
-
 """tuples = [(1, 2, 3), (4, 5, 6), (7, 8, 9), (10, 11, 12), (13, 14, 15), (16, 17, 18), (19, 20, 21), (22, 23, 24), (25, 26, 27), (28, 29, 30), (31, 32, 33), (34, 35, 36)]
 
 result = {}
 for i in tuples:
     result.setdefault(i[0], i[1:])
 print(result)"""
-
 
 """student_ids = ['S001', 'S002', 'S003', 'S004', 'S005', 'S006', 'S007', 'S008', 'S009', 'S010', 'S011', 'S012', 'S013']
 student_names = ['Camila Rodriguez', 'Juan Cruz', 'Dan Richards', 'Sam Boyle', 'Batista Cesare', 'Francesco Totti', 'Khalid Hussain', 'Ethan Hawke', 'David Bowman', 'James Milner', 'Michael Owen', 'Gary Oldman', 'Tom Hardy']
@@ -706,17 +692,12 @@ for key, key_1, value in zip(student_ids, student_names, student_grades):
     result.append({key: {key_1: value}})
 print(result)"""
 
-
-
 """import random
 
 num1 = random.randint(0, 17)
 num2 = random.randint(-5, 5)
 print(num1)
 print(num2)"""
-
-
-
 
 """import random
 
@@ -739,7 +720,6 @@ while i != n:
         print('Решка')
     i += 1"""
 
-
 """from random import *
 n = int(input())
 i = 0
@@ -747,7 +727,6 @@ while i != n:
     rand = randint(1, 6)
     print(rand)
     i += 1"""
-
 
 """from random import *
 n = int(input())
@@ -764,7 +743,6 @@ while i != n:
     i += 1
 print(*z, sep='')"""
 
-
 """from random import *
 i = 0
 z = []
@@ -779,7 +757,6 @@ while i != 7:
 a = sorted(z)
 print(*a)"""
 
-
 """from random import *
 def generate_index():
     up_d = randint(97, 122)
@@ -789,7 +766,6 @@ def generate_index():
     print(f'{chr(up_d).upper()}{chr(up_d2).upper()}{randint(0, 99)}_{randint(0, 99)}{chr(up_d3).upper()}{chr(up_d4).upper()}')
 
 generate_index()"""
-
 
 """from random import *
 matrix = [[1, 2, 3, 4],
@@ -809,7 +785,6 @@ for i in range(100):
         z.append(rand)
     print(*z, sep='')"""
 
-
 """from random import *
 a = str(input())
 z = []
@@ -817,7 +792,6 @@ for i in a:
     z.append(i)
 shuffle(z)
 print(*z, sep='')"""
-
 
 """from random import *
 for j in range(5):
@@ -836,7 +810,6 @@ for j in range(5):
     j += 1
     print(*z)"""
 
-
 """from random import *
 z = []
 for i in range(1, 76):
@@ -849,8 +822,7 @@ print(*lst[10:15])
 print(*lst[15:20])
 print(*lst[20:25])"""
 
-
-from random import *
+"""from random import *
 n = int(input())  # length
 m = int(input())  # count
 for i in range(n):
@@ -878,4 +850,70 @@ for i in range(n):
             else:
                 z.append(chr(low_d))
         j += 1
-    print(*z, sep='')
+    print(*z, sep='')"""
+
+"""def sum(x, y):
+    return x + y
+
+
+print(sum(1, 10))"""
+
+"""def sum_3(a, b, c=2): # c - именнованный параметр, он необязателен
+    return a + b + c
+
+
+print(sum_3(a=2, b=4, c=4))"""
+
+"""def hello_name():
+    name = str(input())
+    second_name = str(input())
+    return (f'Уважаемый, {name} {second_name}! Вы верно выролнили это задание!')
+
+
+print(hello_name())"""
+
+"""def print_weight(weight):
+    return (f'Предмет имеет вес: {x} кг.')
+
+x = float(input())
+print(print_weight(weight=x))"""
+
+
+
+
+"""def min_max_lst():
+    lst = list(map(int, input().split()))
+    return (f'Min = {min(lst)}, max = {max(lst)}, sum = {sum(lst)}')
+
+
+print(min_max_lst())"""
+
+
+"""def p_pryamougol(width, height):
+    return (f'Периметр прямоугольника, равен {width * height}')
+
+
+a = int(input())
+b = int(input())
+print(p_pryamougol(width=a, height=b))"""
+
+
+def check_email(email):
+    z = []
+    for i in range(65, 91):
+        z.append(chr(i))
+    for j in range(97, 123):
+        z.append(chr(j))
+    for k in range(0, 10):
+        z.append(k)
+    for l in '@._':
+        z.append(l)
+    for m in email:
+        if m in z:
+            res = 'ДА'
+        elif m not in z:
+            res = 'НЕТ'
+    return res
+
+e_email = input()
+print(check_email(email=e_email))
