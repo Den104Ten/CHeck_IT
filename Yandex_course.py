@@ -576,7 +576,7 @@ print(mean(-1, 2, 3, 10, ('5')))
 print(mean(1, 2, 3, 4, 5, 6, 7, 8, 9, 10))"""
 
 
-def greet(name, *args):
+"""def greet(name, *args):
     if name and not args:
         return f'Hello, {name}!'
     else:
@@ -586,7 +586,43 @@ def greet(name, *args):
 
 print(greet('Timur'))
 print(greet('Timur', 'Roman'))
-print(greet('Timur', 'Roman', 'Ruslan'))
+print(greet('Timur', 'Roman', 'Ruslan'))"""
+
+
+"""def print_products(*args):
+    z = []
+    for i in args:
+        if type(i) == str and i != '':
+            z.append(i)
+    i = 1
+    for j in z:
+        print(f"{i}) {j}")
+        i += 1
+    if z == []:
+        print('Нет продуктов')
+        
+        
+print_products('Бананы', [1, 2], ('Stepik',), 'Яблоки', '', 'Макароны', 5, True)"""
+
+
+
+def info_kwargs(**kwargs):
+    z = []
+    x = []
+    for i in kwargs:
+        z.append(i)
+        x.append(kwargs[i])
+    slovar = dict(zip(z, x))
+    for i in sorted(slovar):
+        print(f"{i}: {slovar[i]}")
+
+
+
+
+
+info_kwargs(first_name='Timur', last_name='Guev', age=28, job='teacher')
+
+
 
 
 
