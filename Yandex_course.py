@@ -1,5 +1,4 @@
 
-
 """from random import *
 a = str(input())
 z = []
@@ -628,7 +627,7 @@ print(reduce_result)"""
 
 from functools import reduce
 
-data = [['Tokyo', 35676000, 'primary'],
+"""data = [['Tokyo', 35676000, 'primary'],
         ['New York', 19354922, 'nan'],
         ['Mexico City', 19028000, 'primary'],
         ['Mumbai', 18978000, 'admin'],
@@ -649,16 +648,6 @@ data = [['Tokyo', 35676000, 'primary'],
         ['Istanbul', 10061000, 'admin'],
         ['Paris', 9904000, 'primary']]
 
-"""a = list(map(lambda x: x[1], data))
-print(a)"""
-
-
-"""check10mil = list(map(lambda x: x[0] if x[1] > 10000000 else None, data))
-z = []
-for i in check10mil:
-        z.append(i)
-
-print("Cities"", *z, sep=', ')"""
 
 
 from functools import reduce
@@ -670,7 +659,37 @@ def check10mil(x):
     print(*z, sep=', ')
 
 
-print("Cities: "), check10mil(data)
+print("Cities: "), check10mil(data)"""
+
+# func = lambda x: True if x % 19 == 0 or x % 13 == 0 else False
 
 
+"""func = lambda x: True if x[0].upper() == 'a'.upper() and x[-1].upper() == 'a'.upper() else False
+print(func("abcd"))
+print(func("abca"))"""
 
+
+"""is_non_negative_num = lambda x: True if x.replace('.', '').isdigit() and x.count('.') < 2 else False
+print(is_non_negative_num('10.34ab'))
+print(is_non_negative_num('10.34'))"""
+
+
+"""words = ['beverage', 'monday', 'abroad', 'bias', 'abuse', 'abolish', 'abuse', 'abuse', 'bid', 'wednesday', 'able',
+         'betray', 'accident', 'abduct', 'bigot', 'bet', 'abandon', 'besides', 'access', 'friday', 'bestow', 'abound',
+         'absent', 'beware', 'abundant', 'abnormal', 'aboard', 'about', 'accelerate', 'abort', 'thursday', 'tuesday',
+         'sunday', 'berth', 'beyond', 'benevolent', 'abate', 'abide', 'bicycle', 'beside', 'accept', 'berry',
+         'bewilder', 'abrupt', 'saturday', 'accessory', 'absorb']
+
+check_6 = list(filter(lambda x: x if len(x) == 6 else False, words))
+a = sorted(check_6)
+print(*a, sep=' ')"""
+
+
+numbers = [46, 61, 34, 17, 56, 26, 93, 1, 3, 82, 71, 37, 80, 27, 77, 94, 34, 100, 36, 81, 33, 81, 66, 83, 41, 80, 80,
+           93, 40, 34, 32, 16, 5, 16, 40, 93, 36, 65, 8, 19, 8, 75, 66, 21, 72, 32, 41, 59, 35, 64, 49, 78, 83, 27, 57,
+           53, 43, 35, 48, 17, 19, 40, 90, 57, 77, 56, 80, 95, 90, 27, 26, 6, 4, 23, 52, 39, 63, 74, 15, 66, 29, 88,
+           94, 37, 44, 2, 38, 36, 32, 49, 5, 33, 60, 94, 89, 8, 36, 94, 46, 33]
+
+a = list(filter(lambda x: x if x > 47 and x % 2 != 0 else False, numbers))
+b = list(map(lambda q: q // 2 if q % 2 == 0 else q, a))
+print(b)
