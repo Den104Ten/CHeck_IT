@@ -734,8 +734,17 @@ b = list(filter(lambda x: a1.append(x) if type(x) == str else False, z1))
 print(*a1, sep=' ')"""
 
 
-a = list(map(int, input().split()))
-print(255 - a[0], 255 - a[1], 255 - a[2])
+"""a = list(map(int, input().split()))
+print(255 - a[0], 255 - a[1], 255 - a[2])"""
+
+
+
+
+
+
+
+
+
 
 
 
