@@ -738,13 +738,66 @@ print(*a1, sep=' ')"""
 print(255 - a[0], 255 - a[1], 255 - a[2])"""
 
 
+"""def ignore_command(command):
+    ignore = ['alias', 'configuration', 'ip', 'sql', 'select', 'update', 'exec', 'del', 'truncate']
+    return any(map(lambda x: True if x in command else False, ignore))
+
+print(ignore_command('get ip'))
+print(ignore_command('w'))"""
+
+
+"""countries = ['Russia', 'USA', 'UK', 'Germany', 'France', 'India']
+capitals = ['Moscow', 'Washington', 'London', 'Berlin', 'Paris', 'Delhi']
+population = [145_934_462, 331_002_651, 80_345_321, 67_886_011, 65_273_511, 1_380_004_385]
+
+a = list(zip(countries, capitals, population))
+for i in a:
+    print(f"{i[1]} is the capital of {i[0]}, population equal {i[2]} people.")
+"""
 
 
 
+"""# 4 Задача - решена
+year = int(input('Введите год: '))
+month = int(input('Введите месяц: '))
+day = int(input('Введите день: '))
+print(f'0{day}:0{month}:{year}')
 
 
+# 5 Задача - решена
+year = int(input('Введите год: '))
+if year % 4 == 0 and year % 100 != 0:
+    print('YES')
+elif year % 400 == 0:
+    print('YES')
+else:
+    print('NO')
 
 
+# 8 Задача - решена
+mil_year = int(input('Введите количество миллионов лет: '))
+if mil_year in range(2500, 4601):
+    print(f'{mil_year} millions years ago was Archean era.')
+elif mil_year in range(540, 2500):
+    print(f'{mil_year} millions years ago was Proterozoic era.')
+elif mil_year in range(248, 540):
+    print(f'{mil_year} millions years ago was Paleozoic era.')
+else:
+    print('No era like this in the task!')
 
 
+# 10 Задача - решена
+i = 0
+while i != 1:
+    words = str(input('Введите слово: '))
+    if len(words) < 4:
+        continue
+    else:
+        break"""
 
+
+ip = str(input())
+ip_list = ip.split('.')
+print(ip_list)
+check = list(map(lambda x: True if x.isdigit() and 0 <= int(x) <= 255 else False, ip_list))
+print(all(check))
