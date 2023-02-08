@@ -1,7 +1,366 @@
 
+"""from random import *
+a = str(input())
+z = []
+for i in a:
+    z.append(i)
+shuffle(z)
+print(*z, sep='')"""
+
+"""from random import *
+for j in range(5):
+    z = []
+    i = 0
+    while i != 5:
+        rand = randrange(1, 75)
+        if j == 2:
+            if i == 2:
+                z.append(0)
+            else:
+                z.append(rand)
+        else:
+            z.append(rand)
+        i += 1
+    j += 1
+    print(*z)"""
+
+"""from random import *
+z = []
+for i in range(1, 76):
+    z.append(i)
+lst = sample(z, 25)
+lst.insert(12, 0)
+print(*lst[:5])
+print(*lst[5:10])
+print(*lst[10:15])
+print(*lst[15:20])
+print(*lst[20:25])"""
+
+"""from random import *
+n = int(input())  # length
+m = int(input())  # count
+for i in range(n):
+    j = 0
+    z = []
+    while j != m:  # Счетчик символов
+        rand = randint(1, 3)  # Если low_d равен l, I, 1, 0, o, O то нужно не добавлять этот символ и пропустить счетчик
+        if rand == 1:
+            up_d = randint(65, 90)
+            res_to_str = chr(up_d)  # ИСПРАВИТЬ НА UP ЕСЛИ НЕ ПРАВИЛЬНО
+            if res_to_str == 'I' or res_to_str == 'O':  # Только большие буквы, без цифр # or O
+                j -= 1
+                pass
+            else:
+                z.append(res_to_str)
+        elif rand == 2:
+            int_d = randint(2, 9)
+            z.append(int_d)
+        else:
+            low_d = randint(97, 122)  # Поменять чтобы исключения не выводились
+            res_to_str_2 = chr(low_d)
+            if res_to_str_2 == 'l' or res_to_str_2 == 'o':
+                j -= 1
+                pass
+            else:
+                z.append(chr(low_d))
+        j += 1
+    print(*z, sep='')"""
+
+"""def sum(x, y):
+    return x + y
 
 
-"""numbers = sorted(numbers, key=mid_sort)
+print(sum(1, 10))"""
+
+"""def sum_3(a, b, c=2): # c - именнованный параметр, он необязателен
+    return a + b + c
+
+
+print(sum_3(a=2, b=4, c=4))"""
+
+"""def hello_name():
+    name = str(input())
+    second_name = str(input())
+    return (f'Уважаемый, {name} {second_name}! Вы верно выролнили это задание!')
+
+
+print(hello_name())"""
+
+"""def print_weight(weight):
+    return (f'Предмет имеет вес: {x} кг.')
+
+x = float(input())
+print(print_weight(weight=x))"""
+
+"""def min_max_lst():
+    lst = list(map(int, input().split()))
+    return (f'Min = {min(lst)}, max = {max(lst)}, sum = {sum(lst)}')
+
+
+print(min_max_lst())"""
+
+"""def p_pryamougol(width, height):
+    return (f'Периметр прямоугольника, равен {width * height}')
+
+
+a = int(input())
+b = int(input())
+print(p_pryamougol(width=a, height=b))"""
+
+"""def check_email(email):
+    z = []
+    for i in range(65, 91):
+        z.append(chr(i))
+    for j in range(97, 123):
+        z.append(chr(j))
+    for k in range(0, 10):
+        z.append(k)
+    for l in '@._':
+        z.append(l)
+    for m in email:
+        if m in z:
+            res = 'ДА'
+        elif m not in z:
+            res = 'НЕТ'
+    return res
+
+e_email = input()
+print(check_email(email=e_email))"""
+
+"""def fancy(length, char1='-', char2='*'):
+    return (char1 + char2) * length + char1
+
+
+print(fancy(char2='$', length=3))"""
+
+"""def matrix(n=1, m=None, value=0):
+    if n == 1 and m == None:
+        m = 1
+    elif n != 1 and m == None:
+        m = n
+    return [[value] * m for _ in range(n)]
+
+print(matrix())                   # матрица 1 × 1 из 0
+print(matrix(3))                  # матрица 3 × 3 из 0
+print(matrix(2, 5))               # матрица 2 × 5 из 0
+print(matrix(3, 4, 9))            # матрица 3 × 4 из 9"""
+
+"""def my_func(*args):
+    print(type(args))
+    print(args)
+
+
+my_func()
+my_func(1, 2, 3)
+my_func('a', 'b')"""
+
+# Выводит сумму квадратов всех введенных чисел
+"""def sq_sum(*args):
+    z = []
+    for i in args:
+        sqr = i**2
+        z.append(sqr)
+    return sum(z)
+
+
+print(sq_sum(1, 2, 3))"""
+
+"""def mean(*args):
+    z = []
+    for i in args:
+        if len(args) <= 1:
+            return float(i)
+        elif len(args) >= 2:
+            if type(i) == int or type(i) == float:
+                z.append(i)
+                continue
+            else:
+                continue
+    if args == ():
+        return float(0)
+    elif z == []:
+        return float(0)
+    else:
+        return float(sum(z) / len(z))
+
+
+print(mean())
+print(mean(7))
+print(mean(1.5, True, ['stepik'], 'beegeek', 2.5, (1, 2)))
+print(mean(True, ['stepik'], 'beegeek', (1, 2)))
+print(mean(-1, 2, 3, 10, ('5')))
+print(mean(1, 2, 3, 4, 5, 6, 7, 8, 9, 10))"""
+
+"""def greet(name, *args):
+    if name and not args:
+        return f'Hello, {name}!'
+    else:
+        return f'Hello, {name} and {" and ".join(args)}!'
+
+
+
+print(greet('Timur'))
+print(greet('Timur', 'Roman'))
+print(greet('Timur', 'Roman', 'Ruslan'))"""
+
+"""def print_products(*args):
+    z = []
+    for i in args:
+        if type(i) == str and i != '':
+            z.append(i)
+    i = 1
+    for j in z:
+        print(f"{i}) {j}")
+        i += 1
+    if z == []:
+        print('Нет продуктов')
+        
+        
+print_products('Бананы', [1, 2], ('Stepik',), 'Яблоки', '', 'Макароны', 5, True)"""
+
+"""def info_kwargs(**kwargs):
+    z = []
+    x = []
+    for i in kwargs:
+        z.append(i)
+        x.append(kwargs[i])
+    slovar = dict(zip(z, x))
+    for i in sorted(slovar):
+        print(f"{i}: {slovar[i]}")
+
+
+
+
+
+info_kwargs(first_name='Timur', last_name='Guev', age=28, job='teacher')"""
+
+""""numbers = [(10, 10, 10), (30, 45, 56), (81, 39), (1, 2, 3), (12,), (-2, -4, 100), (1, 2, 99), (89, 9, 34),
+           (10, 20, 30, -2), (50, 40, 50), (34, 78, 65), (-5, 90, -1, -5), (1, 2, 3, 4, 5, 6), (-9, 8, 4),
+           (90, 1, -45, -21)]
+
+z = []
+x = []
+for i in numbers:
+    chisla = []
+    x.append(i)
+    for j in i:
+        chisla.append(j)
+    z.append(sum(chisla) // len(chisla))
+slovar = dict(zip(z, x))
+min_slovar = min(slovar)
+max_slovar = max(slovar)
+for l in slovar:
+    if l == min_slovar:
+        print(slovar[l])
+for m in slovar:
+    if m == max_slovar:
+        print(slovar[m])"""
+
+"""numbers = [(10, 10, 10), (30, 45, 56), (81, 80, 39), (1, 2, 3), (12, 45, 67), (-2, -4, 100), (1, 2, 99), (89, 90, 34), (10, 20, 30), (50, 40, 50), (34, 78, 65), (-5, 90, -1)]
+
+z = []
+x = []
+v = []
+for i in numbers:
+    x.append(i)
+    max_value = max(i)
+    min_value = min(i)
+    z.append(max_value + min_value)
+sor_list = sorted(z)
+get_list = dict(zip(z, x))
+for j in sor_list:
+    for k in get_list:
+        if j == k:
+            v.append(get_list[k])
+        else:
+            pass
+
+
+
+numbers = v
+print(numbers)"""
+
+""""athletes = [('Дима', 10, 130, 35), ('Тимур', 11, 135, 39), ('Руслан', 9, 140, 33), ('Рустам', 10, 128, 30),
+            ('Амир', 16, 170, 70), ('Рома', 16, 188, 100), ('Матвей', 17, 168, 68), ('Петя', 15, 190, 90)]
+
+index = int(input())
+def sorts(val):
+    z = []
+    x = []
+    names = []
+
+    for i in athletes:
+        z.append(i[index - 1])
+        x.append(i[1:4])
+    combined_dict = dict(zip(z, x))
+    for j in sorted(combined_dict):
+        v = []
+        for k in combined_dict[j]:
+            v.append(k)
+        print(j, *v)
+
+print(sorts(athletes))
+
+# Как то добавить, чтобы вместо j был вывод только имен спортсменов"""
+
+"""def rearrange_abc(txt):
+    a = sorted(txt)
+    return ''.join(a)
+
+print(rearrange_abc('Слово'))"""
+
+"""def society_name(*friends):
+    z = []
+    for i in friends:
+        for j in i:
+            z.append(j[0])
+
+    print(*z, sep='')
+
+
+society_name(["Артем", "Екатерина", "Максим"])"""
+
+"""def profit_margin(cost_price, sales_price):
+    prof = (cost_price * 100) / sales_price
+    res = 100 - prof
+    print(round(res, 1))
+
+
+profit_margin(28, 39)"""
+
+"""def id_odd(x):
+    return x % 2
+
+
+a = [4, 3, -10, 1, 7, 12]
+b = sorted(a, key=id_odd)
+print(b)"""
+
+"""def key_sort(x):
+    return x if x % 2 == 0 else 100 + x
+
+
+a = [4, 3, -10, 1, 7, 12]
+print(sorted(a, key=key_sort))"""
+
+"""numbers = [(10, 10, 10), (30, 45, 56), (81, 39), (1, 2, 3), (12,), (-2, -4, 100), (1, 2, 99), (89, 9, 34),
+           (10, 20, 30, -2), (50, 40, 50), (34, 78, 65), (-5, 90, -1, -5), (1, 2, 3, 4, 5, 6), (-9, 8, 4),
+           (90, 1, -45, -21)]
+
+def key_sort(x):
+    return sum(x) / len(x)
+
+
+print(min(numbers, key=key_sort))
+print(max(numbers, key=key_sort))"""
+
+"""numbers = [(10, 10, 10), (30, 45, 56), (81, 80, 39), (1, 2, 3), (12, 45, 67), (-2, -4, 100), (1, 2, 99), (89, 90, 34), (10, 20, 30), (50, 40, 50), (34, 78, 65), (-5, 90, -1)]
+
+def mid_sort(x):
+    return min(x) + max(x)
+
+
+numbers = sorted(numbers, key=mid_sort)
 
 
 print(numbers)"""
@@ -375,165 +734,71 @@ b = list(filter(lambda x: a1.append(x) if type(x) == str else False, z1))
 print(*a1, sep=' ')"""
 
 
-"""a = list(map(int, input().split()))
-print(255 - a[0], 255 - a[1], 255 - a[2])"""
+'''a = list(map(int, input().split()))
+print(255 - a[0], 255 - a[1], 255 - a[2])
+'''
 
 
-"""def ignore_command(command):
-    ignore = ['alias', 'configuration', 'ip', 'sql', 'select', 'update', 'exec', 'del', 'truncate']
-    return any(map(lambda x: True if x in command else False, ignore))
+"""file_name = str(input())
 
-print(ignore_command('get ip'))
-print(ignore_command('w'))"""
-
-
-"""countries = ['Russia', 'USA', 'UK', 'Germany', 'France', 'India']
-capitals = ['Moscow', 'Washington', 'London', 'Berlin', 'Paris', 'Delhi']
-population = [145_934_462, 331_002_651, 80_345_321, 67_886_011, 65_273_511, 1_380_004_385]
-
-a = list(zip(countries, capitals, population))
-for i in a:
-    print(f"{i[1]} is the capital of {i[0]}, population equal {i[2]} people.")
-"""
+im_file = open(file_name, 'r')
+content = [x.strip() for x in im_file.readlines()]
+print(*content)
+im_file.close()"""
 
 
-
-"""# 4 Задача - решена
-year = int(input('Введите год: '))
-month = int(input('Введите месяц: '))
-day = int(input('Введите день: '))
-print(f'0{day}:0{month}:{year}')
-
-
-# 5 Задача - решена
-year = int(input('Введите год: '))
-if year % 4 == 0 and year % 100 != 0:
-    print('YES')
-elif year % 400 == 0:
-    print('YES')
-else:
-    print('NO')
+"""file_name = str(input())
+file = open(file_name, 'r')
+info = file.readlines()
+print(info[-2])
+file.close()"""
 
 
-# 8 Задача - решена
-mil_year = int(input('Введите количество миллионов лет: '))
-if mil_year in range(2500, 4601):
-    print(f'{mil_year} millions years ago was Archean era.')
-elif mil_year in range(540, 2500):
-    print(f'{mil_year} millions years ago was Proterozoic era.')
-elif mil_year in range(248, 540):
-    print(f'{mil_year} millions years ago was Paleozoic era.')
-else:
-    print('No era like this in the task!')
+"""import random
+file = open('lines.txt', 'r', encoding='utf-8')
+content = file.readlines()
+print(random.choice(content))"""
 
 
-# 10 Задача - решена
-i = 0
-while i != 1:
-    words = str(input('Введите слово: '))
-    if len(words) < 4:
-        continue
-    else:
-        break"""
-
-
-"""ip = str(input())
-ip_list = ip.split('.')
-print(ip_list)
-check = list(map(lambda x: True if x.isdigit() and 0 <= int(x) <= 255 else False, ip_list))
-print(all(check))"""
-
-
-"""a = str(input())
-b = str(input())
-a1 = int(a)
-b1 = int(b)
+"""file = open('numbers.txt', 'r')
+ready = file.readlines()
 z = []
-for i in range(a1, b1 + 1):
-    if '0' not in str(i):
-        z.append(str(i))
-x = []
+for i in ready:
+    z.append(int(i.strip()))
+print(sum(z))"""
+
+
+"""file = open('nums.txt', 'r')
+summary = file.readlines()
+z = []
+c = []
+for i in summary:
+    z.append(i.replace(' ', '').strip())
+
 for j in z:
-    if len(str(j)) == 1 and int(j) % int(j) == 0:
-        x.append(j)
-    elif int(j) % int(j[0]) == 0 and int(j) % int(j[1]) == 0:
-        x.append(j)
-    elif len(str(j)) == 3 and int(j) % int(j[0]) == 0 and int(j) % int(j[1]) == 0 and int(j) % int(j[2]) == 0:
-        x.append(j)
-print(*x)"""
-
-
-"""def any_isdigit(iterable):
-    for element in iterable:
-        if element.isdigit():
-            return True
-    return False
-
-def any_lower(iterable):
-    for element in iterable:
-        if element == element.lower() and not element.isdigit():
-            return True
-    return False
-
-def any_upper(iterable):
-    for element in iterable:
-        if element == element.upper() and not element.isdigit():
-            return True
-    return False
-
-password = str(input())
-if len(password) >= 7 and any_isdigit(password) and any_upper(password) and any_lower(password):
-    print('YES')
-else:
-    print('NO')"""
-
-
-"""def any_5(iterable):
-    for element in iterable:
-        if element == '5':
-            return True
-    return False
-
-
-num_classes = int(input())
-k = 0
-der = []
-while k != num_classes:
-    num_students = int(input())
-    names = []
-    grades = []
-    z = []
-    for i in range(num_students):
-        name = list(map(str, input().split()))
-        z.append(name[1])
-    k += 1
-    if any_5(z):
-        der.append(True)
+    if j != '':
+        c.append(int(j))
     else:
-        der.append(False)
-
-print('YES' if all(der) else 'NO')"""
-
-
-"""king_stolb = int(input())
-king_stroka = int(input())
-king_stolb_move = int(input())
-king_stroka_move = int(input())
-
-if 0 < king_stolb_move <= 8 and king_stolb_move - king_stolb == 1 or king_stolb_move + 1 == king_stolb or king_stolb_move == king_stolb:
-    if 0 < king_stroka_move <= 8 and king_stroka_move - king_stroka == 1 or king_stroka_move + 1 == king_stroka or king_stroka_move == king_stroka:
-        print('YES')
-    else:
-        print('NO')
-else:
-    print('NO')"""
+        pass
+print(sum(c))
+file.close()"""
 
 
-
-
-
-
-
-
-
-
+file = open('prices.txt', 'r', encoding='utf-8')
+stroki = file.readlines()
+c = []
+for i in stroki:
+    z = (i.strip().split())
+    for j in z:
+        if j.isdigit():
+            c.append(int(j))
+kolvo = 0
+cost = 1
+x = 0
+get = []
+while x != len(c):
+    get.append(c[kolvo] * c[cost])
+    kolvo += 2
+    cost += 2
+    x += 2
+print(sum(get))
