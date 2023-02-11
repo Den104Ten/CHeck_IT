@@ -784,7 +784,7 @@ print(sum(c))
 file.close()"""
 
 
-file = open('prices.txt', 'r', encoding='utf-8')
+'''file = open('prices.txt', 'r', encoding='utf-8')
 stroki = file.readlines()
 c = []
 for i in stroki:
@@ -801,4 +801,66 @@ while x != len(c):
     kolvo += 2
     cost += 2
     x += 2
-print(sum(get))
+print(sum(get))'''
+
+
+#with open('input.txt', encoding='utf-8') as file:
+"""    print('Repeat after me:', file.readline().strip())
+    for line in file:
+        print(line.strip() + '!')"""
+
+
+#with open('text.txt', 'r') as file:
+""""    for i in file:
+        z = (i.split())
+    z.reverse()
+    c = []
+    for j in z:
+        c.append(j[::-1])
+    print(*c)"""
+
+
+#with open('data.txt', 'r') as file:
+"""z = []
+    for i in file:
+        z.append(i.strip())
+    z.reverse()
+    print(*z, sep='\n')"""
+
+
+#with open('lines(1).txt', 'r') as file:
+"""    z = []
+    for i in file:
+        z.append(len(i))
+    max_chislo = max(z)
+    c = []
+    file.seek(0)
+    for j in file:
+        if len(j) == max_chislo:
+            c.append(j.strip())
+        else:
+            pass
+    print(*c, sep='\n')"""
+
+
+#with open('numbers.txt', 'r') as file:
+"""z = []
+    for i in file:
+        z.append(i.strip().split())
+    for j in z:
+        a = list(map(int, j))
+        print(sum(a))"""
+            
+
+with open('nums.txt', 'r') as file:
+    z = []
+    for i in file:
+        for j in i:
+            z.append(int(j) if j.isdigit() else 0)
+    print(sum(z))
+
+
+
+
+
+
