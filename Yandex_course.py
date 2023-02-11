@@ -361,7 +361,7 @@ print(sum(get))'''
     print(f"{lines} lines")"""
 
 
-from random import *
+"""from random import *
 with open('first_names.txt', 'r') as names_file:
 
     # Количество имен
@@ -393,7 +393,30 @@ with open('last_names.txt', 'r') as lastnames_file:
 
 d = dict(zip(lst_names, lst_lastnames))
 for key in d:
-    print(key, d[key])
+    print(key, d[key])"""
 
 
 
+#with open('population.txt', 'r') as file:
+"""    z = []
+    for i in file:
+        z.append(i.strip().split())
+    countries = []
+    for j in z:
+        if j[1].isdigit() and int(j[1]) > 500000:
+            for k in j:
+                if k[0] == 'G':
+                    countries.append(k)
+    for h in countries:
+        print(h)"""
+
+
+
+with open('data.csv', 'r') as file:
+    z = (file.readline().strip().split(','))
+    a = 1
+    for i in file:
+        x = (file.readline().strip().split(','))
+        print(dict(zip(z, x)))
+
+# Курсор перскакивает сразу на одну строку в перед, исправить это
