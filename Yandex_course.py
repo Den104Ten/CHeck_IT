@@ -410,13 +410,13 @@ for key in d:
     for h in countries:
         print(h)"""
 
+"""def read_csv():
+    with open('data.csv', 'r') as file:
+        z = (file.readline().strip().split(','))
+        a = 1
+        d = []
+        for i in file:
+            d.append((dict(zip(z, i.strip().split(',')))))
+        return d
 
-
-with open('data.csv', 'r') as file:
-    z = (file.readline().strip().split(','))
-    a = 1
-    for i in file:
-        x = (file.readline().strip().split(','))
-        print(dict(zip(z, x)))
-
-# Курсор перскакивает сразу на одну строку в перед, исправить это
+read_csv()"""
