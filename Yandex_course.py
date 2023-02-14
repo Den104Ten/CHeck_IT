@@ -593,5 +593,24 @@ print(xo('sdcsdcsd'))"""
 print(accum('RqaEzty'))"""
 
 
+"""def hide_card(card_number):
+    z = ['*' * 12]
+    z1 = []
+    for i in card_number:
+        if i != ' ':
+            z1.append(i)
+        else:
+            pass
+    a = ''.join(z1)
+    z.append(a[-4:])
+    return ''.join(z)"""
+
+
+def same_parity(numbers):
+    numbers = list(filter(lambda x: numbers[0] % 2 == x % 2, numbers))
+    return numbers
+
+
+print(same_parity([-7, 0, 67, -9, 70, -29, 90]))
 
 
