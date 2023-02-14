@@ -420,3 +420,178 @@ for key in d:
         return d
 
 read_csv()"""
+
+
+"""a = str(input())
+
+with open('output.txt', 'w') as file:
+    file.write(a)
+
+    print(file)
+"""
+
+
+"""from random import *
+with open('random.txt', 'w') as file:
+    i = 0
+    while i != 25:
+        rand = randint(111, 777)
+        rand_to_str = str(rand)
+
+        if i == 24:
+            file.write(rand_to_str)
+        else:
+            file.write(rand_to_str + '\n')
+        i += 1
+
+        print(file)"""
+
+"""dscds
+with open('input.txt', 'r') as file_input:
+    with open('output.txt', 'w') as file_output:
+        k = 0
+        for i in file_input:
+            k += 1
+            file_output.write(f"{k}) {i}")"""
+
+
+"""as
+with open('class_scores.txt', 'r', encoding='utf-8') as file_scores:
+    with open('new_scores.txt', 'w', encoding='utf-8') as file_new_scores:
+        z = []
+        for i in file_scores:
+            z.append(i.strip().split())
+        for j in z:
+            if int(j[1]) == 95 or int(j[1]) == 96 or int(j[1]) == 97 or int(j[1]) == 98 or int(j[1]) == 99 or int(j[1]) == 100:
+                file_new_scores.write(j[0] + ' ')
+                file_new_scores.write('100' + '\n')
+            else:
+                a = str(int(j[1]) + 5)
+                file_new_scores.write(j[0] + ' ')
+                file_new_scores.write(a + '\n')"""
+
+
+"""as
+with open('logfile.txt', 'r', encoding='utf-8') as file_input:
+    with open('output.txt', 'w', encoding='utf-8') as file_output:
+        z = []
+        for i in file_input:
+            z.append(i.strip().split())
+        print(z)
+        for j in z:
+            t1 = j[2]
+            for k in t1:
+                print(k)"""
+
+
+"""def descending_order(num):
+    return int("".join(sorted(str(num), reverse=True)))
+
+
+descending_order(8932)"""
+
+
+"""def is_isogram(string):
+    if string == '':
+        return True
+    z = []
+    for i in string:
+        z.append(i.lower())
+    check = None
+    for j in z:
+        if z.count(j) > 1:
+            check = False
+            break
+        else:
+            check = True
+    print(check)
+
+is_isogram('')"""
+
+
+"""def spin_words(sentence):
+    z = (sentence.split())
+    x = []
+    for i in z:
+        if len(i) >= 5:
+            x.append(i[::-1])
+        else:
+            x.append(i)
+    return " ".join(x)
+
+
+
+spin_words('Hey fellow warriors')"""
+
+
+"""def alphabet_position(text):
+    z = {'a': '1', 'b': '2', 'c': '3', 'd': '4', 'e': '5', 'f': '6', 'g': '7', 'h': '8', 'i': '9', 'j': '10',
+         'k': '11', 'l': '12', 'm': '13', 'n': '14', 'o': '15', 'p': '16', 'q': '17', 'r': '18', 's': '19', 't': '20',
+         'u': '21', 'v': '22', 'w': '23', 'x': '24', 'y': '25', 'z': '26'}
+    x = []
+    for i in text.lower():
+        if i.isalpha():
+            x.append(z[i])
+    return ' '.join(x)
+
+
+print(alphabet_position("The sunset sets at twelve o' clock."))"""
+
+
+"""def find_short(s):
+    z = (s.split())
+    l = min(z, key=len)
+    l = len(l)
+    return l
+
+
+print(find_short('i want to travel the world writing code one day"'))"""
+
+
+"""def solution(text, ending):
+    return True if text[-2] + text[-1] == ending or text[-1] == ending else False
+
+
+
+print(solution('sensei', 'i'))"""
+
+
+"""def square_digits(num):
+    a = [x for x in str(num)]
+    a1 = list(map(int, a))
+    b = [z**2 for z in a1]
+    b1 = list(map(str, b))
+    a = ''.join(b1)
+    return int(a)
+
+
+print(square_digits(9119))"""
+
+
+"""def xo(s):
+    s = s.lower()
+    return s.count('x') == s.count('o')
+
+print(xo('sdcsdcsd'))"""
+
+
+"""def accum(s):
+    f = 0
+    i = 1
+    z = []
+    while i != len(s):
+        z.append(s[f] * i)
+        f += 1
+        i += 1
+    x = []
+    for k in z:
+        print(k)
+        x.append(k[0].upper() + k[1:].lower())
+    return '-'.join(x)
+
+
+print(accum('RqaEzty'))"""
+
+
+
+
