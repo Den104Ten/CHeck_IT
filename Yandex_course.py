@@ -674,7 +674,7 @@ print(is_valid('49 83'))
 """
 
 
-def print_given(*args, **kwargs):
+"""def print_given(*args, **kwargs):
     for i in args:
         print(i, type(i))
     z = []
@@ -682,15 +682,30 @@ def print_given(*args, **kwargs):
     for j in kwargs:
         z.append(j)
         x.append(kwargs[j])
-        print(j, kwargs[j], type(j))
     a = dict(zip(z, x))
-    for i in a:
-        print(i, a[i])
+    for i in sorted(a):
+        print(i, a[i], type(a[i]))
+
+print_given(1, [1, 2, 3], 'three', two=2)"""
 
 
-print_given(b=2, d=4, c=3, a=1)
+"""convert = lambda string: string.lower() if len(string.lower()) > len(string.upper()) or len(string.lower()) == len(string.upper()) else string.upper()
+print(convert('pyTHON'))"""
 
 
+def convert(string):
+    z_lower = []
+    z_upper = []
+    for i in string:
+        if i.islower():
+            z_lower.append(i)
+        elif i.isupper():
+            z_upper.append(i)
+    if len(z_lower) > len(z_upper):
+        return string.lower()
+    elif len(z_upper) > len(z_lower):
+        return string.upper()
+    else:
+        return string.lower()
 
-
-
+print(convert('ABCdef'))
