@@ -606,11 +606,91 @@ print(accum('RqaEzty'))"""
     return ''.join(z)"""
 
 
-def same_parity(numbers):
+"""def same_parity(numbers):
     numbers = list(filter(lambda x: numbers[0] % 2 == x % 2, numbers))
     return numbers
 
 
-print(same_parity([-7, 0, 67, -9, 70, -29, 90]))
+print(same_parity([-7, 0, 67, -9, 70, -29, 90]))"""
+
+
+
+"""a = [78, 56, 23, 8, 54512, 65, 95, 2354, 41, 5000]
+a.sort(key=lambda x: x % 10)
+print(a)"""
+
+
+"""def linear(k, b):
+    return lambda x: x * k + b
+
+graf_1 = linear(2, 5)
+print(graf_1(3))
+"""
+
+
+"""from functools import reduce
+
+data = [['Tokyo', 35676000, 'primary'],
+        ['New York', 19354922, 'nan'],
+        ['Mexico City', 19028000, 'primary'],
+        ['Mumbai', 18978000, 'admin'],
+        ['Sao Paulo', 18845000, 'admin'],
+        ['Delhi', 15926000, 'admin'],
+        ['Shanghai', 14987000, 'admin'],
+        ['Kolkata', 14787000, 'admin'],
+        ['Los Angeles', 12815475, 'nan'],
+        ['Dhaka', 12797394, 'primary'],
+        ['Buenos Aires', 12795000, 'primary'],
+        ['Karachi', 12130000, 'admin'],
+        ['Cairo', 11893000, 'primary'],
+        ['Rio de Janeiro', 11748000, 'admin'],
+        ['Osaka', 11294000, 'admin'],
+        ['Beijing', 11106000, 'primary'],
+        ['Manila', 11100000, 'primary'],
+        ['Moscow', 10452000, 'primary'],
+        ['Istanbul', 10061000, 'admin'],
+        ['Paris', 9904000, 'primary']]
+
+z = []
+a = list(filter(lambda x: z.append(x[0]) if x[1] > 10_000_000 and x[2] == 'primary' else False, data))
+print("Cities"", ', '.join(sorted(z)))"""
+
+
+"""def is_num(x):
+    try:
+        float(x) or int(x)
+        return True
+    except ValueError:
+        return False"""
+
+"""is_num = lambda x: True if x[0] == '-' and x[1:].replace('.', '', 1).isdigit() or x[0].isdigit() and x[1:].replace('.', '', 1).isdigit() else False
+is_num = lambda x: True if x[0] == '-' and x[1:].replace('.', '', 1) or x[0].isdigit() and x[1:].replace('.', '', 1).isdigit() else False
+
+print(is_num('0'))"""
+
+
+"""is_valid = lambda x: True if len(x) in range(4, 7) and x.isdigit() and x.count(' ') == 0 else False
+print(is_valid('49 83'))
+"""
+
+
+def print_given(*args, **kwargs):
+    for i in args:
+        print(i, type(i))
+    z = []
+    x = []
+    for j in kwargs:
+        z.append(j)
+        x.append(kwargs[j])
+        print(j, kwargs[j], type(j))
+    a = dict(zip(z, x))
+    for i in a:
+        print(i, a[i])
+
+
+print_given(b=2, d=4, c=3, a=1)
+
+
+
 
 
