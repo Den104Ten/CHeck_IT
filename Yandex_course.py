@@ -693,7 +693,7 @@ print_given(1, [1, 2, 3], 'three', two=2)"""
 print(convert('pyTHON'))"""
 
 
-def convert(string):
+"""def convert(string):
     z_lower = []
     z_upper = []
     for i in string:
@@ -708,4 +708,23 @@ def convert(string):
     else:
         return string.lower()
 
-print(convert('ABCdef'))
+print(convert('ABCdef'))"""
+
+
+def likes(names):
+    if names == []:
+        return 'Никто не оценил данную запись'
+    elif len(names) == 1:
+        return f'{names[0]} оценил(а) данную запись'
+    elif len(names) == 2:
+        return f'{names[0]} и {names[1]} оценили данную запись'
+    elif len(names) == 3:
+        return f'{names[0]}, {names[1]} и {names[2]} оценили данную запись'
+    elif len(names) >= 4:
+        return f'{names[0]}, {names[1]} и {len(names) - 2} других оценили данную запись'
+
+
+print(likes(['Эндрю', 'Тоби', 'Том', 'Артур']))
+
+
+
