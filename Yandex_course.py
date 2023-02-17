@@ -711,7 +711,7 @@ print(convert('pyTHON'))"""
 print(convert('ABCdef'))"""
 
 
-def likes(names):
+"""def likes(names):
     if names == []:
         return 'Никто не оценил данную запись'
     elif len(names) == 1:
@@ -724,7 +724,41 @@ def likes(names):
         return f'{names[0]}, {names[1]} и {len(names) - 2} других оценили данную запись'
 
 
-print(likes(['Эндрю', 'Тоби', 'Том', 'Артур']))
+print(likes(['Эндрю', 'Тоби', 'Том', 'Артур']))"""
 
 
+"""def index_of_nearest(numbers, number):
+    if numbers == []:
+        return -1
+    else:
+        a = min(numbers, key=lambda x: abs(x-number))
+        k = 0
+        for i in numbers:
+            if i == a:
+                return k
+            else:
+                k += 1
+
+
+print(index_of_nearest([7, 13, 3, 5, 18], 4))"""
+
+
+
+
+def spell(*args):
+    if args:
+        from_keys = {}
+        for i in args:
+            from_keys = {f'{i[0].lower()}': 0}
+            print(from_keys)
+        for j in args:
+            if j[0] == from_keys:
+                from_keys[j] == len(j)
+        print(from_keys)
+    else:
+        return []
+
+
+words = ['fruit', 'football', 'February', 'forest', 'Family']
+print(spell(*words))
 
