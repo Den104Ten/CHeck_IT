@@ -745,20 +745,61 @@ print(index_of_nearest([7, 13, 3, 5, 18], 4))"""
 
 
 
-def spell(*args):
+"""def spell(*args):
     if args:
         from_keys = {}
+        z = []
+        x = []
         for i in args:
-            from_keys = {f'{i[0].lower()}': 0}
-            print(from_keys)
-        for j in args:
-            if j[0] == from_keys:
-                from_keys[j] == len(j)
-        print(from_keys)
+            from_keys = {f'{i[0].lower()}': len(i)}
+            for j in from_keys:
+                z.append(from_keys[j])
+                x.append(from_keys)
+        rop = []
+        for k in x:
+            for l in k:
+                #print(k[l])
+                if k[l] == max(z):
+                    rop.append(k)
+        return rop[0]
     else:
         return []
 
 
-words = ['fruit', 'football', 'February', 'forest', 'Family']
-print(spell(*words))
+words = ['россия', 'Австрия', 'австралия', 'РумыниЯ', 'Украина', 'КИТай', 'УЗБЕКИСТАН']
+print(spell(*words))"""
+
+
+"""def spell(*args):
+    if args:
+        letter_z = []
+        word_z = []
+        for i in args:
+            letter_z.append(i[0].lower())
+            word_z.append(len(i))
+        result = dict(zip(letter_z, word_z))
+
+        for j in args:
+            if j[0].lower() in result:
+                if result[j[0].lower()] < len(j):
+                    result[j[0].lower()] = len(j)
+        return result
+    else:
+        return {}
+
+
+
+print(spell())"""
+
+
+def choose_plural(amount, variants):
+    variant = 2
+    if amount % 10 == 1 and amount % 100 != 11:
+        variant = 0
+    elif amount % 10 >= 2 and amount % 10 <= 4 and (amount % 100 < 10 or amount % 100 >= 20):
+        variant = 1
+    return '{} {}'.format(amount, variants[variant])
+
+
+print(choose_plural(112, ('цент', 'цента', 'центов')))
 
