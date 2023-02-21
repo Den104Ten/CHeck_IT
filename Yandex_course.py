@@ -792,7 +792,7 @@ print(spell(*words))"""
 print(spell())"""
 
 
-def choose_plural(amount, variants):
+"""def choose_plural(amount, variants):
     variant = 2
     if amount % 10 == 1 and amount % 100 != 11:
         variant = 0
@@ -801,5 +801,87 @@ def choose_plural(amount, variants):
     return '{} {}'.format(amount, variants[variant])
 
 
-print(choose_plural(112, ('цент', 'цента', 'центов')))
+print(choose_plural(112, ('цент', 'цента', 'центов')))"""
+
+
+"""d1 = int(input()) #10  # Расстояние от дома до 1-го магазина
+d2 = int(input()) #10  # Расстояние от дома до 2-го магазина
+d3 = int(input()) #45  # Расстояние длины дорожки соединяющей магазины
+
+steps = 0
+if d1 > d2 and d1 > d3:
+    steps += d2
+    if d1 > d3:
+        steps += d3
+        if d1 >= (d2 + d3):
+            steps += (d2 + d3)
+        else:
+            steps += d1
+
+elif d3 > d1 and d3 > d2:
+    steps += d1
+    if d3 > d2:
+        steps += d2
+        if d3 >= (d1 + d2):
+            steps += (d1 + d2)
+        else:
+            steps += d3
+
+elif d2 > d1 and d2 > d3:
+    steps += d1
+    if d2 > d3:
+        steps += d3
+        if d2 >= (d1 + d3):
+            steps += (d1 + d3)
+        else:
+            steps += d2
+
+elif d1 == d2 == d3:
+    steps += (d1 + d2 + d3)
+
+elif d1 == d2 and d1 > d3:
+    steps += d1
+    if d1 > d3:
+        steps += (d3 + d2)
+
+print(steps)"""
+
+
+"""ru_letters = 'АаВСсЕеНКМОоРрТХху'
+z_ru = []
+for i in ru_letters:
+    z_ru.append(i)
+
+en_letters = 'AaBCcEeHKMOoPpTXxy'
+z_en = []
+for j in en_letters:
+    z_en.append(j)
+
+
+a1, b2, c3 = [str(input()) for _ in range(3)]
+
+if a1 in ru_letters and b2 in ru_letters and c3 in ru_letters:
+    print('ru')
+elif a1 in en_letters and b2 in en_letters and c3 in en_letters:
+    print('en')
+else:
+    print('mix')"""
+
+
+a = input().split()
+rot = []
+for l in a:
+    rot.append(str(l))
+
+v = list(filter(lambda x: x if rot.count(x) >= 2 else False, rot))
+
+z = []
+for i in v:
+    z.append(i if i not in z else False)
+g = []
+for j in z:
+    if j:
+        g.append(int(j))
+k = sorted(g)
+print(*k)
 
