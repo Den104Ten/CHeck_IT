@@ -1071,3 +1071,29 @@ for i in new_mail_lst:
         mail_lst.append(i)
 
 print(mail_lst)"""
+
+
+import math
+
+def f(x):
+    return math.log(x) + 0.5 * x**3
+
+a = 0.1
+b = 0.5
+
+epsilon = 0.001
+
+while abs(b - a) > epsilon:
+    c = (a + b) / 2
+    if f(a) * f(c) < 0:
+        b = c
+    else:
+        a = c
+
+x = (a + b) / 2
+print(f'Корень уравнения: {x:.3f}')
+
+
+
+
+
