@@ -1045,7 +1045,7 @@ for k in result:
     print(k)"""
 
 
-mail_sum = int(input())
+"""mail_sum = int(input())
 
 mail_lst = []
 for _ in range(mail_sum):
@@ -1070,4 +1070,4 @@ for i in new_mail_lst:
     else:
         mail_lst.append(i)
 
-print(mail_lst)
+print(mail_lst)"""
