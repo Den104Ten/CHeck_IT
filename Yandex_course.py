@@ -868,7 +868,7 @@ else:
     print('mix')"""
 
 
-a = input().split()
+"""a = input().split()
 rot = []
 for l in a:
     rot.append(str(l))
@@ -883,5 +883,123 @@ for j in z:
     if j:
         g.append(int(j))
 k = sorted(g)
-print(*k)
+print(*k)"""
+
+
+"""import math
+
+def round_up(number, digits):
+    number = str(number)
+    rounded_number = number[:-digits] + str(int(number[-digits]) + 1)
+    return float(rounded_number)
+
+def round_down(number, digits):
+    number = str(number)
+    rounded_number = number[:-digits] + str(int(number[-digits]) - 1)
+    return float(rounded_number)
+
+s = input()  #ОКРУГЛ(1,5136;2) ОКРУГЛВВЕРХ(1,5136;2) ОКРУГЛВНИЗ(1,5136;2)
+z = []
+x = []
+for i in s:
+    if i.isalpha():
+        z.append(i)
+    elif i.isdigit() or i == ',':
+        x.append(i)
+if ''.join(z) == 'ОКРУГЛ':
+    spisok = ''.join(x)
+    for j in spisok:
+        if j == ',':
+            got = spisok.replace(',', '.')
+            chislo = (got[:-1])
+
+            f = float(chislo)
+            h = int(spisok[-1])
+            print(round(f, h))
+
+if ''.join(z) == 'ОКРУГЛВВЕРХ':
+    spisok_2 = ''.join(x)
+    for j in spisok_2:
+        if j == ',':
+            got = spisok_2.replace(',', '.')
+            chislo = (got[:-1])
+            f = float(chislo)
+            h = int(spisok_2[-1])
+            print(round_up(f, h + 1))
+
+if ''.join(z) == 'ОКРУГЛВНИЗ':
+    spisok_3 = ''.join(x)
+    for j in spisok_3:
+        if j == ',':
+            got = spisok_3.replace(',', '.')
+            chislo = (got[:-1])
+            f = float(chislo)
+            h = int(spisok_3[-1])
+            print(round_down(f, h + 1))"""
+
+
+"""a with open('Super.csv', 'r') as infile:
+    big_string = infile.readline()
+    keys = []
+    for i in big_string.split(';'):
+        keys.append(i.strip('п»ї').replace('\n', ''))
+    # keys словарь для ключей!!!
+
+    len_lines = len(infile.readlines())
+
+    infile.seek(3)
+    values = []
+    for j in range(len_lines):
+        if j == 1:
+            infile.seek(2)
+        else:
+            print(dict(zip(keys, infile.readline().split(';'))))"""
+
+
+"""n = int(input())
+z = [str(i) for i in range(1, n + 1)]
+print(z)
+print()
+
+keys = []
+values = []
+
+for j in z:
+    for k in z[9:]:
+        if int(j) == int(k[0]) + int(k[1]):
+            print(j, k)"""
+
+
+
+"""from itertools import product
+
+a = [1, 2020, 70]
+b = [2, 4, 7, 2000]
+c = [3, 70, 7]
+
+for i, j, k in product(a, b, c):
+    print(i, j, k)"""
+
+
+peoples = int(input())
+z = []
+for _ in range(peoples):
+    z.append(input().split(','))
+print(z)
+
+x = []
+for l in z:
+    for h in l:
+        x.append(h)
+print(x)
+
+result = []
+for j in x:
+    if j in z:
+        result.append(j)
+
+print(result)
+print(z)
+
+
 
