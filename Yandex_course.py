@@ -981,7 +981,7 @@ for i, j, k in product(a, b, c):
     print(i, j, k)"""
 
 
-peoples = int(input())
+"""peoples = int(input())
 z = []
 for _ in range(peoples):
     z.append(input().split(','))
@@ -999,7 +999,75 @@ for j in x:
         result.append(j)
 
 print(result)
-print(z)
+print(z)"""
+
+
+"""word = str(input())
+book_sum = int(input())
+
+check_words = []  # список из введенных слов
+for _ in range(book_sum):
+    check_words.append(input())
+
+
+glasn = ['а', 'у', 'о', 'ы', 'и', 'э', 'я', 'ю', 'ё', 'е']
+soglasn = ['б', 'в', 'г', 'д', 'ж', 'з', 'й', 'к', 'л', 'м', 'н', 'п', 'р', 'с', 'т', 'ф', 'х', 'ц', 'ч', 'ш', 'щ', 'ъ', 'ь']
+
+# функция для преобразования слов в код из 1 и 2
+def word_to_num(text):
+    glasn = ['а', 'у', 'о', 'ы', 'и', 'э', 'я', 'ю', 'ё', 'е']
+    soglasn = ['б', 'в', 'г', 'д', 'ж', 'з', 'й', 'к', 'л', 'м', 'н', 'п', 'р', 'с', 'т', 'ф', 'х', 'ц', 'ч', 'ш', 'щ', 'ъ', 'ь']
+    word_num = []
+    for i in text:
+        if i in soglasn:
+            word_num.append(1)
+        else:
+            word_num.append(2)
+    return word_num
+
+
+if word[-1] in soglasn:
+    word = word[:-1]
+else:
+    pass
+
+first_word_num = word_to_num(word)  # преобразование начального слова в цифры
+
+
+result = []
+for j in check_words:
+    if word_to_num(j[:len(first_word_num)]) == first_word_num:
+        result.append(j)
+    else:
+        pass
+
+for k in result:
+    print(k)"""
+
+
+mail_sum = int(input())
+
+mail_lst = []
+for _ in range(mail_sum):
+    mail_lst.append(input().replace('@beegeek.bzz', ''))  # создаю список из имен без обозначения почты
+
+new_mail_lst = []
+new_mail_sum = int(input())
+for _ in range(new_mail_sum):
+    new_mail_lst.append(input())
+
+
+print(mail_lst)
+print(new_mail_lst)
 
 
 
+for i in new_mail_lst:
+    if i in mail_lst:  # добавляет новый ящик, если один такой уже есть с окончанием 1
+        mail_lst.append(i + '1')
+    elif i and i[-1].isdigit() in mail_lst:
+        mail_lst.append(i + f'{int(i[-1]) + 1}')
+    else:
+        mail_lst.append(i)
+
+print(mail_lst)
