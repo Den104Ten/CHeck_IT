@@ -1073,7 +1073,7 @@ for i in new_mail_lst:
 print(mail_lst)"""
 
 
-import math
+"""import math
 
 def f(x):
     return math.log(x) + 0.5 * x**3
@@ -1091,9 +1091,34 @@ while abs(b - a) > epsilon:
         a = c
 
 x = (a + b) / 2
-print(f'Корень уравнения: {x:.3f}')
+print(f'Корень уравнения: {x:.3f}')"""
 
 
+"""numbers = {9089, -67, -32, 1, 78, 23, -65, 99, 9089, 34, -32, 0, -67, 1, 11, 111, 111, 1, 23}
+
+print(sum([i**2 for i in numbers]))"""
+
+
+"""fruits = {'apple', 'banana', 'cherry', 'avocado', 'pineapple', 'apricot', 'banana', 'avocado', 'grapefruit'}
+
+fruits_sorted = sorted(fruits, reverse=True)
+for i in fruits_sorted:
+    print(i)"""
+
+
+"""text = str(input())
+text_set = set(text)
+if len(text) == len(text_set):
+    print('YES')
+else:
+    print('NO')"""
+
+
+text = input().split()
+if set(text[0]) == set(text[1]) == set(text[2]):
+    print('YES')
+else:
+    print('NO')
 
 
 
