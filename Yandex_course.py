@@ -1114,11 +1114,51 @@ else:
     print('NO')"""
 
 
-text = input().split()
+"""text = input().split()
 if set(text[0]) == set(text[1]) == set(text[2]):
     print('YES')
 else:
-    print('NO')
+    print('NO')"""
 
+
+"""num_1 = set(input().split())
+num_2 = set(input().split())
+
+print(len(num_3 := num_1.intersection(num_2)))
+"""
+
+
+"""num_1 = set(input().split())
+num_2 = set(input().split())
+
+print(*sorted(map(int, (num_3 := num_1.intersection(num_2)))))
+"""
+
+
+"""num_1 = set(input().split())
+num_2 = set(input().split())
+
+print(*sorted(map(int, (num_3 := num_1.difference(num_2)))))
+"""
+
+
+n = int(input())
+
+z = []
+for _ in range(n):
+    z.append(set(input()))
+
+my_set = set(z[0])
+
+for i in range(len(z)):
+    my_set.intersection_update(z[i])
+
+print(*sorted(my_set))
+
+"""my_set_result = set()
+for i in range(len(z) + 1):
+    my_set_result = z[0].intersection_update(z[i + 1])
+
+print(my_set_result)"""
 
 
