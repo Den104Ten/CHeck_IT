@@ -1114,11 +1114,176 @@ else:
     print('NO')"""
 
 
-text = input().split()
+"""text = input().split()
 if set(text[0]) == set(text[1]) == set(text[2]):
     print('YES')
 else:
-    print('NO')
+    print('NO')"""
+
+
+"""n = int(input())
+i = 0
+z = []
+while i != n:
+    z.append(set(input().lower()))
+    i += 1
+for j in z:
+    print(len(j))"""
+
+
+"""n = int(input())
+i = 0
+z = set()
+while i != n:
+    z.add(input().lower())
+    i += 1
+
+lst = []
+for j in z:
+    lst.append(j)
+
+result = (''.join(lst))
+print(len(set(result)))"""
+
+
+"""text = [input().lower().strip('.,;:-?!').split()]
+
+z = set()
+lst = []
+
+for i in text:
+    for j in i:
+        z.add(j.strip('.,;:-?!'))
+
+print(len(z))"""
+
+
+"""text = [input().split()]
+
+
+z = []
+
+for i in text:
+    for j in i:
+        if int(j) not in z:
+            print('NO')
+            z.append(int(j))
+        else:
+            print('YES')
+            z.append(int(j))"""
+
+
+"""from functools import reduce
+
+print(volume := reduce(lambda x, y: x * y, map(int, input().split())))"""
+
+
+"""x, y, z = input().split()
+
+print(int(x) * int(y) * int(z))"""
+
+
+"""num_1 = set(input())
+num_2 = set(input())
+
+result = 0
+
+for i in num_1:
+    if set(i).issubset(num_2):
+        result = 'YES'
+        break
+    else:
+        result = 'NO'
+
+print(result)"""
+
+
+"""num_1 = set(input())
+num_2 = set(input())
+print('YES' if any([set(i).issubset(num_2) for i in num_1]) else 'NO')"""
+
+
+"""num_1 = set(input())
+num_2 = set(input())
+print('YES' if all([set(i).issubset(num_1) for i in num_2]) else 'NO')
+"""
+
+
+"""std_1 = set(input().split())
+std_2 = set(input().split())
+std_3 = set(input().split())
+
+std_1_and_2 = set()
+
+print(std_2)
+
+
+for i in std_1:
+    print(i)
+    if len(i) >= 2:
+        print(std_2.issubset(i))
+        if set(i).issubset(std_2):
+            std_1_and_2.add(i)
+
+print(std_1.issubset(std_2))
+
+z = []"""
+
+"""for i in std_1_and_2:
+    if set(i).isdisjoint(std_3):
+        z.append(i)
+
+print(' '.join(sorted(z, reverse=True)))"""
+
+
+"""std_1 = set(input().split())
+std_2 = set(input().split())
+std_3 = set(input().split())
+
+std_1_and_std_2 = std_1.intersection(std_2)
+std_difference = std_1_and_std_2.difference(std_3)
+print(*sorted(std_difference, reverse=True, key=int))
+"""
+
+
+"""set_1 = set(int(i) for i in input().split())
+set_2 = set(int(i) for i in input().split())
+set_3 = set(int(i) for i in input().split())
+
+set_res = set_1.intersection(set_2, set_3)
+
+set_res_2 = set_1.union(set_2, set_3)
+
+set_dif = set_res_2.difference(set_res)
+print(*sorted(set_dif))"""
+
+
+"""set_1 = set(map(int, input().split()))
+set_2 = set(map(int, input().split()))
+set_3 = set(map(int, input().split()))
+
+set_1_2 = set_1.union(set_2)
+
+set_res = set_3.difference(set_1_2)
+print(*sorted(set_res, reverse=True, key=int))"""
+
+
+"""set_1 = set(map(int, input().split()))
+set_2 = set(map(int, input().split()))
+set_3 = set(map(int, input().split()))
+
+set_res = set(x for x in range(10 + 1))
+
+set_general = set_1.union(set_2, set_3)
+
+set_last = set_res.difference(set_general)
+print(*sorted(set_last))"""
+
+
+words = ['Plum', 'Grapefruit', 'apple', 'orange', 'pomegranate', 'Cranberry', 'lime', 'Lemon', 'grapes', 'persimmon', 'tangerine', 'Watermelon', 'currant', 'Almond']
+
+set_res = {x[0].lower() for x in words}
+print(*sorted(set_res))
 
 
 
