@@ -117,7 +117,7 @@ print(filter_result)
 print(reduce_result)"""
 
 
-from functools import reduce
+#from functools import reduce
 
 """data = [['Tokyo', 35676000, 'primary'],
         ['New York', 19354922, 'nan'],
@@ -1280,10 +1280,320 @@ set_last = set_res.difference(set_general)
 print(*sorted(set_last))"""
 
 
-words = ['Plum', 'Grapefruit', 'apple', 'orange', 'pomegranate', 'Cranberry', 'lime', 'Lemon', 'grapes', 'persimmon', 'tangerine', 'Watermelon', 'currant', 'Almond']
+"""words = ['Plum', 'Grapefruit', 'apple', 'orange', 'pomegranate', 'Cranberry', 'lime', 'Lemon', 'grapes', 'persimmon', 'tangerine', 'Watermelon', 'currant', 'Almond']
 
 set_res = {x[0].lower() for x in words}
-print(*sorted(set_res))
+print(*sorted(set_res))"""
+
+
+
+# 1 Задание верное
+"""lst_1 = list(map(int, input().split()))
+lst_2 = list(map(int, input().split()))
+
+print(max(lst_1) * max(lst_2))
+
+
+# Задание 2
+countries = list(input().split(' '))
+num_countries = int(input())
+
+z = []
+
+for _ in range(num_countries):
+    new, old = input().split()
+    if old in countries:
+        countries.remove(old)
+        countries.append(new)
+print('-'.join(countries))"""
+
+
+"""students = []
+grades = []
+while True:
+    input_str = input().strip()
+    if input_str == 'конец':
+        break
+    name, grade = input_str.split()
+    grade = float(grade)
+    if grade >= 8:
+        students.append(name)
+    grades.append(grade)
+
+avg_grade = sum(grades) / len(grades)
+
+print(', '.join(students))
+print(avg_grade)"""
+
+
+"""# Вопрос 1
+def checkcolor(des, color):
+    if color.lower() in des.lower():
+        return True
+    else:
+        return False
+
+print(checkcolor('Mersedes зелЕный', 'ЗеленыЙ'))
+
+
+
+# Вопрос 2
+def checksurname(sur, end):
+    if sur[-len(end):] == end:
+        return True
+    else:
+        return False
+
+
+
+# Вопрос 3
+def football(list):
+    if list.count('победа') >= 3:
+        return True
+    elif list.count('победа') >= 2 and list.count('ничья') >= 2:
+        return True
+    else:
+        return False
+
+
+
+# Вопрос 4
+def union(lst, union_name):
+    count = 0
+    for artist in lst:
+        if artist.startswith(union_name + '-'):
+            count += 1
+    return f'Количество художников {count}'
+
+
+# Вопрос 5
+def checkemper(emp, user):
+    user_list = user.split("/")
+    user_years = int(user_list[1])
+    if user_list[0] in emp.keys():
+        years_list = emp[user_list[0]].split("-")
+        start_year = int(years_list[0])
+        end_year = int(years_list[1])
+        if user_years == (end_year - start_year + 1):
+            return True
+        else:
+            return False
+    else:
+        return False
+    
+    
+# Вопрос 6
+s = int(input())
+r = int(input())
+
+def checkclass(students, room):
+    if students < room:
+        return 'КАБИНЕТ ПОДХОДИТ'
+    else:
+        return 'КАБИНЕТ НЕ ПОДХОДИТ'
+
+
+print(checkclass(s, r))"""
+
+
+
+# Вопрос 7
+"""def film_in_lib(film, director, collection):
+    if director in collection:
+        if film in collection[director]:
+            return 'Фильм есть в коллекции'
+    return 'Увы!'
+
+lib = {'Д.Кемерон': ['Чужие', 'Титаник'], 'С.Спилберг': ['Список шиндлера', 'Война миров', 'Парк Юрского периода']}
+
+film = input()
+director = input()
+
+print(film_in_lib(film, director, lib))"""
+
+
+"""# Вопрос 5
+def checkemper(emp, user):
+    user_list = user.split("/")
+    user_years = int(user_list[1])
+    if user_list[0] in emp.keys():
+        years_list = emp[user_list[0]].split("-")
+        start_year = int(years_list[0])
+        end_year = int(years_list[1])
+        if user_years == (end_year - start_year + 1) or user_years == (start_year - end_year + 1):
+            return True
+        else:
+            return False
+    else:
+        return False
+
+
+print(checkemper({'Сы Юй Ди':'2043-2034', 'Сы Ци':'2033-1995', 'Сы Тай-кан':'1994-1982', 'Сы Чжун-кан':'1981-1953', 'Сы Сян':'1952-1886', 'Сы Шао-кан':'1885-1864', 'Сы Чжу':'1863- 1847'}, 'Сы Шао-кан/22'))
+"""
+
+
+"""# импортируем тип date из модуля datetime
+from datetime import date
+
+# выводим текущую дату
+print(date.today())"""
+
+
+"""# импортируем тип date из модуля datetime
+from datetime import date
+
+# счетчик для нужного количества ураганов
+early_hurricanes = 0
+
+# цикл по датам в которые был ураган
+for hurricane in florida_hurricane_dates:
+    # если месяц урагана меньше чем июнь (порядковый номер 6)
+    if hurricane.month < 6:
+        early_hurricanes += 1
+
+print(early_hurricanes)"""
+
+
+"""from datetime import date
+
+dates = [date(2010, 9, 28), date(2017, 1, 13), date(2009, 12, 25), date(2010, 2, 27), date(2021, 10, 11), date(2020, 3, 13), date(2000, 7, 7), date(1999, 4, 14), date(1789, 11, 19), date(2013, 8, 21), date(1666, 6, 6), date(1968, 5, 26)]
+
+for date in dates:
+    if date.month in range(1, 3 + 1):
+        print(f'{date.year}-Q1')
+    elif date.month in range(4, 6 + 1):
+        print(f'{date.year}-Q2')
+    elif date.month in range(7, 9 + 1):
+        print(f'{date.year}-Q3')
+    else:
+        print(f'{date.year}-Q4')"""
+
+
+"""from datetime import date
+def get_min_max(dates):
+    return (min(dates), max(dates)) if dates else ()
+
+
+print(get_min_max([]))"""
+
+
+"""from datetime import date
+def get_date_range(start, end):
+    real_numbers = start.toordinal(), end.toordinal()
+    if start.toordinal() > end.toordinal():
+        return []
+    else:
+        for i in range(start.toordinal(), end.toordinal() + 1):
+            return date.fromordinal(i)
+
+
+date1 = date(2021, 10, 1)
+date2 = date(2021, 10, 5)
+
+print(get_date_range(date1, date2), sep='\n')"""
+
+
+"""from datetime import date
+def saturdays_between_two_dates(start, end):
+    count_saturdays = 0
+
+    if end < start:
+        for i in range(end.toordinal(), start.toordinal() + 1):
+            if date.fromordinal(i).isoweekday() == 6:
+                count_saturdays += 1
+        return count_saturdays
+
+    else:
+        for i in range(start.toordinal(), end.toordinal() + 1):
+            if date.fromordinal(i).isoweekday() == 6:
+                count_saturdays += 1
+        return count_saturdays
+
+
+date1 = date(2020, 7, 26)
+date2 = date(2020, 7, 2)
+
+print(saturdays_between_two_dates(date1, date2))"""
+
+
+"""from datetime import time
+
+alarm = time(7, 30, 25)
+
+print('Часы:', alarm.strftime('%H'))
+print('Минуты:', alarm.strftime('%M'))
+print('Секунды:', alarm.strftime('%S'))"""
+
+
+"""from datetime import date
+
+birthday = date(1992, 10, 6)
+
+print('Название месяца:', birthday.strftime('%B'))
+print('Название дня недели:', birthday.strftime('%A'))
+print('Год:', birthday.strftime('%Y'))
+print('Месяц:', birthday.strftime('%m'))
+print('День:', birthday.strftime('%d'))"""
+
+
+"""from datetime import date
+# присваиваем самую раннюю дату урагана в переменную first_date
+first_date = min(florida_hurricane_dates)
+
+# конвертируем дату в ISO и RU формат
+iso = 'Дата первого урагана в ISO формате: ' + first_date.strftime('%Y-%m-%d')
+ru = 'Дата первого урагана в RU формате: ' + first_date.strftime('%d.%m.%Y')
+us = 'Дата первого урагана в US формате: ' + first_date.strftime('%m/%d/%Y')
+
+print(iso)
+print(ru)
+print(us)"""
+
+
+"""from datetime import date
+
+andrew = date(1992, 8, 24)
+
+print(andrew.strftime('%Y-%m'))   # выводим дату в формате YYYY-MM
+print(andrew.strftime('%B (%Y)'))   # выводим дату в формате month_name (YYYY)
+print(andrew.strftime('%Y-%j'))   # выводим дату в формате YYYY-day_number"""
+
+
+"""from datetime import date
+
+day_1, month_1, year_1 = input().split('-')
+day_2, month_2, year_2 = input().split('-')
+
+my_date_1 = date(int(day_1), int(month_1), int(year_1))
+my_date_2 = date(int(day_2), int(month_2), int(year_2))
+
+if my_date_1 < my_date_2:
+    print(my_date_1.strftime('%d-%m (%Y)'))
+else:
+    print(my_date_2.strftime('%d-%m (%Y)'))"""
+
+
+"""from datetime import date
+
+num = int(input())
+
+z = []
+
+for _ in range(num):
+    day_1, month_1, year_1 = input().split('-')
+    my_date = date(int(day_1), int(month_1), int(year_1))
+    z.append(my_date)
+
+f = sorted(z)
+for i in range(len(f)):
+    print(f[i].strftime('%d/%m/%Y'))"""
+
+
+
+
+
+
+
 
 
 
