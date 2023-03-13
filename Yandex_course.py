@@ -1589,11 +1589,34 @@ for i in range(len(f)):
     print(f[i].strftime('%d/%m/%Y'))"""
 
 
+"""from datetime import date
+def print_good_dates(dates):
+    lst = []
+    for i in dates:
+        z = str(i).split('-')
+        if z[0] == '1992' and int(z[1]) + int(z[2]) == 29:
+            lst.append(date(int(z[0]), int(z[1]), int(z[2])).strftime('%B %d, %Y').split())
+
+    for j in sorted(lst, reverse=True, key=lambda x: x[1]):
+        print(*j)
+
+
+dates = [date(1992, 10, 19), date(1991, 12, 6), date(1992, 9, 20)]
+print_good_dates(dates)"""
+
+
+from datetime import date
+def is_correct(day, month, year):
+    try:
+        if date(day, month, year):
+            return True
+
+    except:
+        return False
 
 
 
 
-
-
+print(is_correct(31, 12, 2021))
 
 
