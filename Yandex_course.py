@@ -1556,16 +1556,108 @@ while i != 5:
     else:
         continue"""
 
-from datetime import datetime
+"""from datetime import datetime
 import time
 
 while True:
     date_now = datetime.now().strftime('%H:%M PM')
     print(date_now)
-    time.sleep(60)
+    time.sleep(60)"""
 
 
-# выводит очень часто время, это не правильно
+"""from datetime import datetime
+
+text = 'Уважаемый пациент, доктор готов принять Вас 15.07.2022 в 08:30'
+
+dt = datetime.strptime(text, 'Уважаемый пациент, доктор готов принять Вас %d.%m.%Y в %H:%M')
+
+print(dt)"""
+
+
+"""from datetime import datetime
+
+seconds = 2483228800
+dt = datetime(2011, 11, 4)
+
+print(datetime.fromtimestamp(seconds))
+print(dt.timestamp())"""
+
+
+"""
+from datetime import datetime
+
+times_of_purchases = [datetime(2017, 10, 1, 12, 23, 25), datetime(2017, 10, 1, 15, 26, 26),
+                      datetime(2017, 10, 1, 15, 42, 57), datetime(2017, 10, 1, 17, 49, 59),
+                      datetime(2017, 10, 2, 6, 37, 10), datetime(2017, 10, 2, 6, 42, 53),
+                      datetime(2017, 10, 2, 8, 56, 45), datetime(2017, 10, 2, 9, 18, 3),
+                      datetime(2017, 10, 2, 12, 23, 48), datetime(2017, 10, 2, 12, 45, 5),
+                      datetime(2017, 10, 2, 12, 48, 8), datetime(2017, 10, 2, 12, 10, 54),
+                      datetime(2017, 10, 2, 19, 18, 10), datetime(2017, 10, 2, 12, 31, 45),
+                      datetime(2017, 10, 3, 20, 57, 10), datetime(2017, 10, 4, 7, 4, 57),
+                      datetime(2017, 10, 4, 7, 13, 31), datetime(2017, 10, 4, 7, 13, 42),
+                      datetime(2017, 10, 4, 7, 21, 54), datetime(2017, 10, 4, 14, 22, 12),
+                      datetime(2017, 10, 4, 14, 50), datetime(2017, 10, 4, 15, 7, 27),
+                      datetime(2017, 10, 4, 12, 44, 49), datetime(2017, 10, 4, 12, 46, 41),
+                      datetime(2017, 10, 4, 16, 32, 33), datetime(2017, 10, 4, 16, 34, 44),
+                      datetime(2017, 10, 4, 16, 46, 59), datetime(2017, 10, 4, 12, 26, 6)]
+
+lst_am = []
+lst_pm = []
+for i in times_of_purchases:
+    if i.hour >= 12:
+        lst_pm.append(1)
+    else:
+        lst_am.append(1)
+
+print('До полудня') if len(lst_am) > len(lst_pm) else print('После полудня')"""
+
+
+"""from datetime import date, time, datetime
+
+dates = [date(1793, 8, 23), date(1410, 3, 11), date(804, 11, 12), date(632, 6, 4),
+         date(295, 1, 23), date(327, 8, 24), date(167, 4, 16), date(229, 1, 24),
+         date(1239, 2, 5), date(1957, 7, 14), date(197, 8, 24), date(479, 9, 6)]
+
+times = [time(7, 33, 27), time(21, 2, 10), time(17, 20, 47), time(20, 8, 59),
+         time(12, 42, 56), time(15, 9, 57), time(17, 47, 9), time(9, 40, 2),
+         time(11, 47, 1), time(17, 27, 10), time(17, 55, 40), time(9, 14, 9)]
+
+
+z = []
+dict_datetime = dict(zip(dates, times))
+for i in dict_datetime:
+    z.append(datetime.combine(i, dict_datetime[i]))
+
+lst_result = (sorted(z, key=lambda x: x.second))
+
+for j in lst_result:
+    print(j)"""
+
+
+from datetime import datetime
+
+data = {'Дима': ('03.11.2021 09:31:18', '03.11.2021 11:41:28'),
+        'Геор': ('01.11.2021 09:03:04', '01.11.2021 12:40:35'),
+        'Анна': ('02.11.2021 04:41:54', '02.11.2021 05:39:40'),
+        'Илина': ('02.11.2021 01:36:40', '02.11.2021 04:48:27'),
+        'Герман': ('04.11.2021 07:51:19', '04.11.2021 09:53:53'),
+        'Руслан': ('01.11.2021 11:26:06', '01.11.2021 12:56:24'),
+        'Лера': ('03.11.2021 11:09:41', '03.11.2021 14:37:41'),
+        'Егор': ('03.11.2021 05:29:38', '03.11.2021 06:01:59'),
+        'Максим': ('05.11.2021 13:05:03', '05.11.2021 14:27:41'),
+        'Саша': ('03.11.2021 04:14:26', '03.11.2021 05:10:58'),
+        'Марина': ('05.11.2021 15:21:06', '05.11.2021 18:33:46')}
+
+for i in data:
+    print(datetime(data[i][0]))
+
+
+
+
+
+
+
+
 
 
 
