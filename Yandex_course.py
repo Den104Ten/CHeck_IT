@@ -1,6 +1,3 @@
-
-
-
 """numbers = [97, 42, 9, 32, 3, 45, 31, 77, -1, 11, -2, 75, 5, 51, 34, 28, 46, 1, -8, 84, 16, 51, 90, 56, 65, 90, 23, 35,
            11, -10, 70, 90, 90, 12, 96, 58, -8, -4, 91, 76, 94, 60, 72, 43, 4, -6, -5, 51, 58, 60, 30, 38, 67, 62, 36,
            72, 34, 82, 62, -1, 60, 82, 87, 81, -7, 57, 26, 36, 17, 43, 80, 40, 75, 94, 91, 64, 38, 72, 29, 84, 38, 35,
@@ -10,7 +7,6 @@ def sqr(num):
     return num**2
 
 print(reduce(sqr, numbers, 0))"""
-
 
 """def map(function, items):
     result = []
@@ -47,9 +43,6 @@ def num_to_sqr(num):
 
 print(sum(num_to_sqr(numbers)))"""
 
-
-
-
 """def func_apply(func, items):
     z = []
     for i in items:
@@ -69,7 +62,6 @@ print(func_apply(mul7, [1, 2, 3, 4, 5, 6]))
 print(func_apply(add3, [1, 2, 3, 4, 5, 6]))
 print(func_apply(str, [1, 2, 3, 4, 5, 6]))"""
 
-
 """def increase(num):
     return num + 7
 
@@ -77,8 +69,6 @@ print(func_apply(str, [1, 2, 3, 4, 5, 6]))"""
 numbers = [1, 2, 3, 4, 5, 6]
 new_numbers = list(map(increase, numbers))
 print(*new_numbers)"""
-
-
 
 """def func(elem):
     return elem >= 0
@@ -100,7 +90,6 @@ print(result)
 
 """
 
-
 """from functools import reduce
 
 floats = [4.35, 6.09, 3.25, 9.77, 2.16, 8.88, 4.59, 34.23, 12.12, 4.67, 2.45, 9.32]
@@ -116,8 +105,7 @@ print(map_result)
 print(filter_result)
 print(reduce_result)"""
 
-
-#from functools import reduce
+# from functools import reduce
 
 """data = [['Tokyo', 35676000, 'primary'],
         ['New York', 19354922, 'nan'],
@@ -160,11 +148,9 @@ print("Cities: "), check10mil(data)"""
 print(func("abcd"))
 print(func("abca"))"""
 
-
 """is_non_negative_num = lambda x: True if x.replace('.', '').isdigit() and x.count('.') < 2 else False
 print(is_non_negative_num('10.34ab'))
 print(is_non_negative_num('10.34'))"""
-
 
 """words = ['beverage', 'monday', 'abroad', 'bias', 'abuse', 'abolish', 'abuse', 'abuse', 'bid', 'wednesday', 'able',
          'betray', 'accident', 'abduct', 'bigot', 'bet', 'abandon', 'besides', 'access', 'friday', 'bestow', 'abound',
@@ -176,7 +162,6 @@ check_6 = list(filter(lambda x: x if len(x) == 6 else False, words))
 a = sorted(check_6)
 print(*a, sep=' ')"""
 
-
 """numbers = [46, 61, 34, 17, 56, 26, 93, 1, 3, 82, 71, 37, 80, 27, 77, 94, 34, 100, 36, 81, 33, 81, 66, 83, 41, 80, 80,
            93, 40, 34, 32, 16, 5, 16, 40, 93, 36, 65, 8, 19, 8, 75, 66, 21, 72, 32, 41, 59, 35, 64, 49, 78, 83, 27, 57,
            53, 43, 35, 48, 17, 19, 40, 90, 57, 77, 56, 80, 95, 90, 27, 26, 6, 4, 23, 52, 39, 63, 74, 15, 66, 29, 88,
@@ -185,7 +170,6 @@ print(*a, sep=' ')"""
 a = list(filter(lambda x: False if x > 47 and x % 2 != 0 else x, numbers))
 b = list(map(lambda q: q // 2 if q % 2 == 0 else q, a))
 print(*b, sep=' ')"""
-
 
 """data = [(19542209, 'New York'), (4887871, 'Alabama'), (1420491, 'Hawaii'), (626299, 'Vermont'),
         (1805832, 'West Virginia'), (39865590, 'California'), (11799448, 'Ohio'), (10711908, 'Georgia'),
@@ -196,7 +180,6 @@ a = sorted(data, key=lambda x: x[1][-1], reverse=True)
 for i in a:
     print(f"{i[1]}: {i[0]}")"""
 
-
 """data = ['год', 'человек', 'время', 'дело', 'жизнь', 'день', 'рука', 'раз', 'работа', 'слово', 'место', 'лицо', 'друг',
         'глаз', 'вопрос', 'дом', 'сторона', 'страна', 'мир', 'случай', 'голова', 'ребенок', 'сила', 'конец', 'вид',
         'система', 'часть', 'город', 'отношение', 'женщина', 'деньги']
@@ -206,12 +189,10 @@ data.sort()
 a = (sorted(data, key=len))
 print(*a, sep=' ')"""
 
-
 """mixed_list = ['tuesday', 'abroad', 'abuse', 'beside', 'monday', 'abate', 'accessory', 'absorb', 1384878, 'sunday', 'about', 454805, 'saturday', 'abort', 2121919, 2552839, 977970, 1772933, 1564063, 'abduct', 901271, 2680434, 'bicycle', 'accelerate', 1109147, 942908, 'berry', 433507, 'bias', 'bestow', 1875665, 'besides', 'bewilder', 1586517, 375290, 1503450, 2713047, 'abnormal', 2286106, 242192, 701049, 2866491, 'benevolent', 'bigot', 'abuse', 'abrupt', 343772, 'able', 2135748, 690280, 686008, 'beyond', 2415643, 'aboard', 'bet', 859105, 'accident', 2223166, 894187, 146564, 1251748, 2851543, 1619426, 2263113, 1618068, 'berth', 'abolish', 'beware', 2618492, 1555062, 'access', 'absent', 'abundant', 2950603, 'betray', 'beverage', 'abide', 'abandon', 2284251, 'wednesday', 2709698, 'thursday', 810387, 'friday', 2576799, 2213552, 1599022, 'accept', 'abuse', 'abound', 1352953, 'bid', 1805326, 1499197, 2241159, 605320, 2347441]
 
 a = list(filter(lambda x: x if type(x) == int else False, mixed_list))
 print(max(a))"""
-
 
 """mixed_list = ['beside', 48, 'accelerate', 28, 'beware', 'absorb', 'besides', 'berry', 15, 65, 'abate', 'thursday', 76, 70, 94, 35, 36, 'berth', 41, 'abnormal', 'bicycle', 'bid', 'sunday', 'saturday', 87, 'bigot', 41, 'abort', 13, 60, 'friday', 26, 13, 'accident', 'access', 40, 26, 20, 75, 13, 40, 67, 12, 'abuse', 78, 10, 80, 'accessory', 20, 'bewilder', 'benevolent', 'bet', 64, 38, 65, 51, 95, 'abduct', 37, 98, 99, 14, 'abandon', 'accept', 46, 'abide', 'beyond', 19, 'about', 76, 26, 'abound', 12, 95, 'wednesday', 'abundant', 'abrupt', 'aboard', 50, 89, 'tuesday', 66, 'bestow', 'absent', 76, 46, 'betray', 47, 'able', 11]
 
@@ -225,11 +206,9 @@ z1 = sorted(z)
 b = list(filter(lambda x: a1.append(x) if type(x) == str else False, z1))
 print(*a1, sep=' ')"""
 
-
 '''a = list(map(int, input().split()))
 print(255 - a[0], 255 - a[1], 255 - a[2])
 '''
-
 
 """file_name = str(input())
 
@@ -238,19 +217,16 @@ content = [x.strip() for x in im_file.readlines()]
 print(*content)
 im_file.close()"""
 
-
 """file_name = str(input())
 file = open(file_name, 'r')
 info = file.readlines()
 print(info[-2])
 file.close()"""
 
-
 """import random
 file = open('lines.txt', 'r', encoding='utf-8')
 content = file.readlines()
 print(random.choice(content))"""
-
 
 """file = open('numbers.txt', 'r')
 ready = file.readlines()
@@ -258,7 +234,6 @@ z = []
 for i in ready:
     z.append(int(i.strip()))
 print(sum(z))"""
-
 
 """file = open('nums.txt', 'r')
 summary = file.readlines()
@@ -274,7 +249,6 @@ for j in z:
         pass
 print(sum(c))
 file.close()"""
-
 
 '''file = open('prices.txt', 'r', encoding='utf-8')
 stroki = file.readlines()
@@ -295,14 +269,12 @@ while x != len(c):
     x += 2
 print(sum(get))'''
 
-
-#with open('input.txt', encoding='utf-8') as file:
+# with open('input.txt', encoding='utf-8') as file:
 """    print('Repeat after me:', file.readline().strip())
     for line in file:
         print(line.strip() + '!')"""
 
-
-#with open('text.txt', 'r') as file:
+# with open('text.txt', 'r') as file:
 """"    for i in file:
         z = (i.split())
     z.reverse()
@@ -311,16 +283,14 @@ print(sum(get))'''
         c.append(j[::-1])
     print(*c)"""
 
-
-#with open('data.txt', 'r') as file:
+# with open('data.txt', 'r') as file:
 """z = []
     for i in file:
         z.append(i.strip())
     z.reverse()
     print(*z, sep='\n')"""
 
-
-#with open('lines(1).txt', 'r') as file:
+# with open('lines(1).txt', 'r') as file:
 """    z = []
     for i in file:
         z.append(len(i))
@@ -334,17 +304,15 @@ print(sum(get))'''
             pass
     print(*c, sep='\n')"""
 
-
-#with open('numbers.txt', 'r') as file:
+# with open('numbers.txt', 'r') as file:
 """z = []
     for i in file:
         z.append(i.strip().split())
     for j in z:
         a = list(map(int, j))
         print(sum(a))"""
-            
 
-#with open('file.txt', 'r') as file:
+# with open('file.txt', 'r') as file:
 """    letters = 0
     words_1 = 0
     lines = 0
@@ -359,7 +327,6 @@ print(sum(get))'''
     print(f"{letters} letters")
     print(f"{words_1} words")
     print(f"{lines} lines")"""
-
 
 """from random import *
 with open('first_names.txt', 'r') as names_file:
@@ -395,9 +362,7 @@ d = dict(zip(lst_names, lst_lastnames))
 for key in d:
     print(key, d[key])"""
 
-
-
-#with open('population.txt', 'r') as file:
+# with open('population.txt', 'r') as file:
 """    z = []
     for i in file:
         z.append(i.strip().split())
@@ -421,7 +386,6 @@ for key in d:
 
 read_csv()"""
 
-
 """a = str(input())
 
 with open('output.txt', 'w') as file:
@@ -429,7 +393,6 @@ with open('output.txt', 'w') as file:
 
     print(file)
 """
-
 
 """from random import *
 with open('random.txt', 'w') as file:
@@ -454,7 +417,6 @@ with open('input.txt', 'r') as file_input:
             k += 1
             file_output.write(f"{k}) {i}")"""
 
-
 """as
 with open('class_scores.txt', 'r', encoding='utf-8') as file_scores:
     with open('new_scores.txt', 'w', encoding='utf-8') as file_new_scores:
@@ -470,7 +432,6 @@ with open('class_scores.txt', 'r', encoding='utf-8') as file_scores:
                 file_new_scores.write(j[0] + ' ')
                 file_new_scores.write(a + '\n')"""
 
-
 """as
 with open('logfile.txt', 'r', encoding='utf-8') as file_input:
     with open('output.txt', 'w', encoding='utf-8') as file_output:
@@ -483,13 +444,11 @@ with open('logfile.txt', 'r', encoding='utf-8') as file_input:
             for k in t1:
                 print(k)"""
 
-
 """def descending_order(num):
     return int("".join(sorted(str(num), reverse=True)))
 
 
 descending_order(8932)"""
-
 
 """def is_isogram(string):
     if string == '':
@@ -508,7 +467,6 @@ descending_order(8932)"""
 
 is_isogram('')"""
 
-
 """def spin_words(sentence):
     z = (sentence.split())
     x = []
@@ -523,7 +481,6 @@ is_isogram('')"""
 
 spin_words('Hey fellow warriors')"""
 
-
 """def alphabet_position(text):
     z = {'a': '1', 'b': '2', 'c': '3', 'd': '4', 'e': '5', 'f': '6', 'g': '7', 'h': '8', 'i': '9', 'j': '10',
          'k': '11', 'l': '12', 'm': '13', 'n': '14', 'o': '15', 'p': '16', 'q': '17', 'r': '18', 's': '19', 't': '20',
@@ -537,7 +494,6 @@ spin_words('Hey fellow warriors')"""
 
 print(alphabet_position("The sunset sets at twelve o' clock."))"""
 
-
 """def find_short(s):
     z = (s.split())
     l = min(z, key=len)
@@ -547,14 +503,12 @@ print(alphabet_position("The sunset sets at twelve o' clock."))"""
 
 print(find_short('i want to travel the world writing code one day"'))"""
 
-
 """def solution(text, ending):
     return True if text[-2] + text[-1] == ending or text[-1] == ending else False
 
 
 
 print(solution('sensei', 'i'))"""
-
 
 """def square_digits(num):
     a = [x for x in str(num)]
@@ -567,13 +521,11 @@ print(solution('sensei', 'i'))"""
 
 print(square_digits(9119))"""
 
-
 """def xo(s):
     s = s.lower()
     return s.count('x') == s.count('o')
 
 print(xo('sdcsdcsd'))"""
-
 
 """def accum(s):
     f = 0
@@ -592,7 +544,6 @@ print(xo('sdcsdcsd'))"""
 
 print(accum('RqaEzty'))"""
 
-
 """def hide_card(card_number):
     z = ['*' * 12]
     z1 = []
@@ -605,7 +556,6 @@ print(accum('RqaEzty'))"""
     z.append(a[-4:])
     return ''.join(z)"""
 
-
 """def same_parity(numbers):
     numbers = list(filter(lambda x: numbers[0] % 2 == x % 2, numbers))
     return numbers
@@ -613,12 +563,9 @@ print(accum('RqaEzty'))"""
 
 print(same_parity([-7, 0, 67, -9, 70, -29, 90]))"""
 
-
-
 """a = [78, 56, 23, 8, 54512, 65, 95, 2354, 41, 5000]
 a.sort(key=lambda x: x % 10)
 print(a)"""
-
 
 """def linear(k, b):
     return lambda x: x * k + b
@@ -626,7 +573,6 @@ print(a)"""
 graf_1 = linear(2, 5)
 print(graf_1(3))
 """
-
 
 """from functools import reduce
 
@@ -655,7 +601,6 @@ z = []
 a = list(filter(lambda x: z.append(x[0]) if x[1] > 10_000_000 and x[2] == 'primary' else False, data))
 print("Cities"", ', '.join(sorted(z)))"""
 
-
 """def is_num(x):
     try:
         float(x) or int(x)
@@ -668,11 +613,9 @@ is_num = lambda x: True if x[0] == '-' and x[1:].replace('.', '', 1) or x[0].isd
 
 print(is_num('0'))"""
 
-
 """is_valid = lambda x: True if len(x) in range(4, 7) and x.isdigit() and x.count(' ') == 0 else False
 print(is_valid('49 83'))
 """
-
 
 """def print_given(*args, **kwargs):
     for i in args:
@@ -688,10 +631,8 @@ print(is_valid('49 83'))
 
 print_given(1, [1, 2, 3], 'three', two=2)"""
 
-
 """convert = lambda string: string.lower() if len(string.lower()) > len(string.upper()) or len(string.lower()) == len(string.upper()) else string.upper()
 print(convert('pyTHON'))"""
-
 
 """def convert(string):
     z_lower = []
@@ -710,7 +651,6 @@ print(convert('pyTHON'))"""
 
 print(convert('ABCdef'))"""
 
-
 """def likes(names):
     if names == []:
         return 'Никто не оценил данную запись'
@@ -726,7 +666,6 @@ print(convert('ABCdef'))"""
 
 print(likes(['Эндрю', 'Тоби', 'Том', 'Артур']))"""
 
-
 """def index_of_nearest(numbers, number):
     if numbers == []:
         return -1
@@ -741,9 +680,6 @@ print(likes(['Эндрю', 'Тоби', 'Том', 'Артур']))"""
 
 
 print(index_of_nearest([7, 13, 3, 5, 18], 4))"""
-
-
-
 
 """def spell(*args):
     if args:
@@ -769,7 +705,6 @@ print(index_of_nearest([7, 13, 3, 5, 18], 4))"""
 words = ['россия', 'Австрия', 'австралия', 'РумыниЯ', 'Украина', 'КИТай', 'УЗБЕКИСТАН']
 print(spell(*words))"""
 
-
 """def spell(*args):
     if args:
         letter_z = []
@@ -791,7 +726,6 @@ print(spell(*words))"""
 
 print(spell())"""
 
-
 """def choose_plural(amount, variants):
     variant = 2
     if amount % 10 == 1 and amount % 100 != 11:
@@ -802,7 +736,6 @@ print(spell())"""
 
 
 print(choose_plural(112, ('цент', 'цента', 'центов')))"""
-
 
 """d1 = int(input()) #10  # Расстояние от дома до 1-го магазина
 d2 = int(input()) #10  # Расстояние от дома до 2-го магазина
@@ -846,7 +779,6 @@ elif d1 == d2 and d1 > d3:
 
 print(steps)"""
 
-
 """ru_letters = 'АаВСсЕеНКМОоРрТХху'
 z_ru = []
 for i in ru_letters:
@@ -867,7 +799,6 @@ elif a1 in en_letters and b2 in en_letters and c3 in en_letters:
 else:
     print('mix')"""
 
-
 """a = input().split()
 rot = []
 for l in a:
@@ -884,7 +815,6 @@ for j in z:
         g.append(int(j))
 k = sorted(g)
 print(*k)"""
-
 
 """import math
 
@@ -937,7 +867,6 @@ if ''.join(z) == 'ОКРУГЛВНИЗ':
             h = int(spisok_3[-1])
             print(round_down(f, h + 1))"""
 
-
 """a with open('Super.csv', 'r') as infile:
     big_string = infile.readline()
     keys = []
@@ -955,7 +884,6 @@ if ''.join(z) == 'ОКРУГЛВНИЗ':
         else:
             print(dict(zip(keys, infile.readline().split(';'))))"""
 
-
 """n = int(input())
 z = [str(i) for i in range(1, n + 1)]
 print(z)
@@ -969,8 +897,6 @@ for j in z:
         if int(j) == int(k[0]) + int(k[1]):
             print(j, k)"""
 
-
-
 """from itertools import product
 
 a = [1, 2020, 70]
@@ -979,7 +905,6 @@ c = [3, 70, 7]
 
 for i, j, k in product(a, b, c):
     print(i, j, k)"""
-
 
 """peoples = int(input())
 z = []
@@ -1000,7 +925,6 @@ for j in x:
 
 print(result)
 print(z)"""
-
 
 """word = str(input())
 book_sum = int(input())
@@ -1044,7 +968,6 @@ for j in check_words:
 for k in result:
     print(k)"""
 
-
 """mail_sum = int(input())
 
 mail_lst = []
@@ -1072,7 +995,6 @@ for i in new_mail_lst:
 
 print(mail_lst)"""
 
-
 """import math
 
 def f(x):
@@ -1093,18 +1015,15 @@ while abs(b - a) > epsilon:
 x = (a + b) / 2
 print(f'Корень уравнения: {x:.3f}')"""
 
-
 """numbers = {9089, -67, -32, 1, 78, 23, -65, 99, 9089, 34, -32, 0, -67, 1, 11, 111, 111, 1, 23}
 
 print(sum([i**2 for i in numbers]))"""
-
 
 """fruits = {'apple', 'banana', 'cherry', 'avocado', 'pineapple', 'apricot', 'banana', 'avocado', 'grapefruit'}
 
 fruits_sorted = sorted(fruits, reverse=True)
 for i in fruits_sorted:
     print(i)"""
-
 
 """text = str(input())
 text_set = set(text)
@@ -1113,13 +1032,11 @@ if len(text) == len(text_set):
 else:
     print('NO')"""
 
-
 """text = input().split()
 if set(text[0]) == set(text[1]) == set(text[2]):
     print('YES')
 else:
     print('NO')"""
-
 
 """n = int(input())
 i = 0
@@ -1129,7 +1046,6 @@ while i != n:
     i += 1
 for j in z:
     print(len(j))"""
-
 
 """n = int(input())
 i = 0
@@ -1145,7 +1061,6 @@ for j in z:
 result = (''.join(lst))
 print(len(set(result)))"""
 
-
 """text = [input().lower().strip('.,;:-?!').split()]
 
 z = set()
@@ -1156,7 +1071,6 @@ for i in text:
         z.add(j.strip('.,;:-?!'))
 
 print(len(z))"""
-
 
 """text = [input().split()]
 
@@ -1172,16 +1086,13 @@ for i in text:
             print('YES')
             z.append(int(j))"""
 
-
 """from functools import reduce
 
 print(volume := reduce(lambda x, y: x * y, map(int, input().split())))"""
 
-
 """x, y, z = input().split()
 
 print(int(x) * int(y) * int(z))"""
-
 
 """num_1 = set(input())
 num_2 = set(input())
@@ -1197,17 +1108,14 @@ for i in num_1:
 
 print(result)"""
 
-
 """num_1 = set(input())
 num_2 = set(input())
 print('YES' if any([set(i).issubset(num_2) for i in num_1]) else 'NO')"""
-
 
 """num_1 = set(input())
 num_2 = set(input())
 print('YES' if all([set(i).issubset(num_1) for i in num_2]) else 'NO')
 """
-
 
 """std_1 = set(input().split())
 std_2 = set(input().split())
@@ -1235,7 +1143,6 @@ z = []"""
 
 print(' '.join(sorted(z, reverse=True)))"""
 
-
 """std_1 = set(input().split())
 std_2 = set(input().split())
 std_3 = set(input().split())
@@ -1244,7 +1151,6 @@ std_1_and_std_2 = std_1.intersection(std_2)
 std_difference = std_1_and_std_2.difference(std_3)
 print(*sorted(std_difference, reverse=True, key=int))
 """
-
 
 """set_1 = set(int(i) for i in input().split())
 set_2 = set(int(i) for i in input().split())
@@ -1257,7 +1163,6 @@ set_res_2 = set_1.union(set_2, set_3)
 set_dif = set_res_2.difference(set_res)
 print(*sorted(set_dif))"""
 
-
 """set_1 = set(map(int, input().split()))
 set_2 = set(map(int, input().split()))
 set_3 = set(map(int, input().split()))
@@ -1266,7 +1171,6 @@ set_1_2 = set_1.union(set_2)
 
 set_res = set_3.difference(set_1_2)
 print(*sorted(set_res, reverse=True, key=int))"""
-
 
 """set_1 = set(map(int, input().split()))
 set_2 = set(map(int, input().split()))
@@ -1279,13 +1183,10 @@ set_general = set_1.union(set_2, set_3)
 set_last = set_res.difference(set_general)
 print(*sorted(set_last))"""
 
-
 """words = ['Plum', 'Grapefruit', 'apple', 'orange', 'pomegranate', 'Cranberry', 'lime', 'Lemon', 'grapes', 'persimmon', 'tangerine', 'Watermelon', 'currant', 'Almond']
 
 set_res = {x[0].lower() for x in words}
 print(*sorted(set_res))"""
-
-
 
 # 1 Задание верное
 """lst_1 = list(map(int, input().split()))
@@ -1307,7 +1208,6 @@ for _ in range(num_countries):
         countries.append(new)
 print('-'.join(countries))"""
 
-
 """students = []
 grades = []
 while True:
@@ -1324,7 +1224,6 @@ avg_grade = sum(grades) / len(grades)
 
 print(', '.join(students))
 print(avg_grade)"""
-
 
 """# Вопрос 1
 def checkcolor(des, color):
@@ -1395,8 +1294,6 @@ def checkclass(students, room):
 
 print(checkclass(s, r))"""
 
-
-
 # Вопрос 7
 """def film_in_lib(film, director, collection):
     if director in collection:
@@ -1410,7 +1307,6 @@ film = input()
 director = input()
 
 print(film_in_lib(film, director, lib))"""
-
 
 """# Вопрос 5
 def checkemper(emp, user):
@@ -1431,13 +1327,11 @@ def checkemper(emp, user):
 print(checkemper({'Сы Юй Ди':'2043-2034', 'Сы Ци':'2033-1995', 'Сы Тай-кан':'1994-1982', 'Сы Чжун-кан':'1981-1953', 'Сы Сян':'1952-1886', 'Сы Шао-кан':'1885-1864', 'Сы Чжу':'1863- 1847'}, 'Сы Шао-кан/22'))
 """
 
-
 """# импортируем тип date из модуля datetime
 from datetime import date
 
 # выводим текущую дату
 print(date.today())"""
-
 
 """# импортируем тип date из модуля datetime
 from datetime import date
@@ -1453,7 +1347,6 @@ for hurricane in florida_hurricane_dates:
 
 print(early_hurricanes)"""
 
-
 """from datetime import date
 
 dates = [date(2010, 9, 28), date(2017, 1, 13), date(2009, 12, 25), date(2010, 2, 27), date(2021, 10, 11), date(2020, 3, 13), date(2000, 7, 7), date(1999, 4, 14), date(1789, 11, 19), date(2013, 8, 21), date(1666, 6, 6), date(1968, 5, 26)]
@@ -1468,14 +1361,12 @@ for date in dates:
     else:
         print(f'{date.year}-Q4')"""
 
-
 """from datetime import date
 def get_min_max(dates):
     return (min(dates), max(dates)) if dates else ()
 
 
 print(get_min_max([]))"""
-
 
 """from datetime import date
 def get_date_range(start, end):
@@ -1491,7 +1382,6 @@ date1 = date(2021, 10, 1)
 date2 = date(2021, 10, 5)
 
 print(get_date_range(date1, date2), sep='\n')"""
-
 
 """from datetime import date
 def saturdays_between_two_dates(start, end):
@@ -1515,7 +1405,6 @@ date2 = date(2020, 7, 2)
 
 print(saturdays_between_two_dates(date1, date2))"""
 
-
 """from datetime import time
 
 alarm = time(7, 30, 25)
@@ -1523,7 +1412,6 @@ alarm = time(7, 30, 25)
 print('Часы:', alarm.strftime('%H'))
 print('Минуты:', alarm.strftime('%M'))
 print('Секунды:', alarm.strftime('%S'))"""
-
 
 """from datetime import date
 
@@ -1534,7 +1422,6 @@ print('Название дня недели:', birthday.strftime('%A'))
 print('Год:', birthday.strftime('%Y'))
 print('Месяц:', birthday.strftime('%m'))
 print('День:', birthday.strftime('%d'))"""
-
 
 """from datetime import date
 # присваиваем самую раннюю дату урагана в переменную first_date
@@ -1549,7 +1436,6 @@ print(iso)
 print(ru)
 print(us)"""
 
-
 """from datetime import date
 
 andrew = date(1992, 8, 24)
@@ -1557,7 +1443,6 @@ andrew = date(1992, 8, 24)
 print(andrew.strftime('%Y-%m'))   # выводим дату в формате YYYY-MM
 print(andrew.strftime('%B (%Y)'))   # выводим дату в формате month_name (YYYY)
 print(andrew.strftime('%Y-%j'))   # выводим дату в формате YYYY-day_number"""
-
 
 """from datetime import date
 
@@ -1571,7 +1456,6 @@ if my_date_1 < my_date_2:
     print(my_date_1.strftime('%d-%m (%Y)'))
 else:
     print(my_date_2.strftime('%d-%m (%Y)'))"""
-
 
 """from datetime import date
 
@@ -1587,7 +1471,6 @@ for _ in range(num):
 f = sorted(z)
 for i in range(len(f)):
     print(f[i].strftime('%d/%m/%Y'))"""
-
 
 """from datetime import date
 def print_good_dates(dates):
@@ -1605,18 +1488,84 @@ dates = [date(1992, 10, 19), date(1991, 12, 6), date(1992, 9, 20)]
 print_good_dates(dates)"""
 
 
-from datetime import date
+
+
+"""from datetime import date
 def is_correct(day, month, year):
     try:
-        if date(day, month, year):
+        if date(year, month, day):
             return True
 
     except:
         return False
 
+z = []
+flag = 1
+while flag != 2:
+    date_num = input().split('.')
+    try:
+        z.append(1) if is_correct(int(date_num[0]), int(date_num[1]), int(date_num[2])) else z.append(0)
+    except:
+        break
+
+for i in z:
+    if i == 0:
+        print('Некорректная')
+    else:
+        print('Корректная')
+
+print(sum(z))"""
+
+
+"""from datetime import datetime
+
+def time_change(time_now=datetime.now()):
+    date_1 = datetime.now()
+    if date_1.strftime('%H') < str(12):
+        return date_1.strftime('%H:%M AM')
+    else:
+        return date_1.strftime('%H:%M PM')
+
+print(time_change())"""
 
 
 
-print(is_correct(31, 12, 2021))
+# Написать программу, которая будет обновлять время, если оно изменилось
+
+
+"""from datetime import datetime
+
+def time_change(time_now=datetime.now()):
+    date_now = datetime.now()
+    i = date_now
+    while i == date_now:
+        return datetime.now().strftime('%H:%M PM')
+
+
+print(time_change())"""
+
+
+"""from datetime import datetime
+
+print(date_now := datetime.now().strftime('%H:%M PM'))
+i = 0
+while i != 5:
+    if date_now != datetime.now().strftime('%H:%M PM'):
+        print(datetime.now().strftime('%H:%M PM'))
+        i += 1
+    else:
+        continue"""
+
+from datetime import datetime
+import time
+
+while True:
+    date_now = datetime.now().strftime('%H:%M PM')
+    print(date_now)
+    time.sleep(60)
+
+
+# выводит очень часто время, это не правильно
+
 
 
