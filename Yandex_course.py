@@ -1634,7 +1634,7 @@ for j in lst_result:
     print(j)"""
 
 
-from datetime import datetime
+"""from datetime import datetime
 
 data = {'Дима': ('03.11.2021 09:31:18', '03.11.2021 11:41:28'),
         'Геор': ('01.11.2021 09:03:04', '01.11.2021 12:40:35'),
@@ -1648,15 +1648,65 @@ data = {'Дима': ('03.11.2021 09:31:18', '03.11.2021 11:41:28'),
         'Саша': ('03.11.2021 04:14:26', '03.11.2021 05:10:58'),
         'Марина': ('05.11.2021 15:21:06', '05.11.2021 18:33:46')}
 
+z = []
+z_result = []
 for i in data:
-    print(datetime(data[i][0]))
+    a = datetime(int(data[i][0][6:10]), int(data[i][0][3:5]), int(data[i][0][0:2]), int(data[i][0][11:13]), int(data[i][0][14:16]), int(data[i][0][17:19])).timestamp()
+    b = datetime(int(data[i][1][6:10]), int(data[i][1][3:5]), int(data[i][1][0:2]), int(data[i][1][11:13]), int(data[i][1][14:16]), int(data[i][1][17:19])).timestamp()
+    z.append(i)
+    z_result.append(b - a)
+
+min_num = min(z_result)
+min_index = z_result.index(min_num)
+
+print(z[min_index])"""
 
 
+"""from datetime import datetime, timedelta
+
+dt = datetime(2021, 11, 4, 13, 6) + timedelta(weeks=1, hours=12)
+
+print(dt.strftime('%d.%m.%Y %H:%M:%S'))"""
 
 
+"""from datetime import date, timedelta
+
+today = date(2021, 11, 4)
+birthday = date(2022, 10, 6)
+
+days = abs(today - birthday).days
+
+print(days)"""
 
 
+"""from datetime import date, timedelta
 
+date_1 = input().split('.')
+date_res = date(day=int(date_1[0]), month=int(date_1[1]), year=int(date_1[2]))
+
+date_after = date_res - timedelta(days=1)
+date_before = date_res + timedelta(days=1)
+
+print(date_after.strftime('%d.%m.%Y'))
+print(date_before.strftime('%d.%m.%Y'))"""
+
+
+"""from datetime import date, timedelta, datetime, time
+
+time_1 = input().split(':')
+
+time_res = timedelta(hours=int(time_1[0]), minutes=int(time_1[1]), seconds=int(time_1[2]))
+
+print(time_res.seconds)"""
+
+
+from datetime import date, timedelta, datetime, time
+
+timer = input().split(':')
+timer_time = int(input())
+
+timer_res = timedelta(hours=int(timer[0]), minutes=int(timer[1]), seconds=int(timer[2])) + timedelta(seconds=timer_time)
+print(timer_res)
 
 
 
