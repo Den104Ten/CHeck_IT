@@ -1700,14 +1700,100 @@ time_res = timedelta(hours=int(time_1[0]), minutes=int(time_1[1]), seconds=int(t
 print(time_res.seconds)"""
 
 
-from datetime import date, timedelta, datetime, time
+"""from datetime import date, timedelta, datetime, time
 
 timer = input().split(':')
 timer_time = int(input())
 
-timer_res = timedelta(hours=int(timer[0]), minutes=int(timer[1]), seconds=int(timer[2])) + timedelta(seconds=timer_time)
-print(timer_res)
+timer_res = datetime(hour=int(timer[0]), minute=int(timer[1]), second=int(timer[2]), day=1, month=1, year=2001) + timedelta(seconds=timer_time)
+print(timer_res.strftime('%H:%M:%S'))"""
 
 
+"""from datetime import datetime, timedelta
+
+pattern = '%H:%M:%S'
+dt = datetime.strptime(input(), pattern) + timedelta(seconds=int(input()))
+
+print(dt.strftime(pattern))"""
+
+
+"""def num_of_sundays(year):
+    from datetime import datetime, timedelta, date
+    date_1 = datetime(year=year, day=1, month=1)
+    if date_1.weekday() == 6 or year % 4 == 0 and (year % 100 != 0 and date_1.weekday() == 5 or year % 400 == 0 and date_1.weekday() == 5):
+        return 53
+    else:
+        return 52
+
+
+print(num_of_sundays(2021))"""
+
+
+"""from datetime import datetime, timedelta, date
+
+date_1 = input().split('.')
+
+i = 0
+num = 1
+while i != 10:
+    num += 1
+    date_res = datetime(day=int(date_1[0]), month=int(date_1[1]), year=int(date_1[2]))
+    final = date_res + timedelta(days=num)
+    print(final)
+    i += 1"""
+
+
+"""from datetime import datetime, date, timedelta
+
+date_1 = input().split('.')
+
+date_default = datetime(day=int(date_1[0]), month=int(date_1[1]), year=int(date_1[2]))
+date_2 = date_default + timedelta(days=2)
+print(date_default.strftime('%d.%m.%Y'))
+print(date_2.strftime('%d.%m.%Y'))
+
+date_3 = date_2 + timedelta(days=3)
+print(date_3.strftime('%d.%m.%Y'))
+
+date_4 = date_3 + timedelta(days=4)
+print(date_4.strftime('%d.%m.%Y'))
+
+date_5 = date_4 + timedelta(days=5)
+print(date_5.strftime('%d.%m.%Y'))
+
+date_6 = date_5 + timedelta(days=6)
+print(date_6.strftime('%d.%m.%Y'))
+
+date_7 = date_6 + timedelta(days=7)
+print(date_7.strftime('%d.%m.%Y'))
+
+date_8 = date_7 + timedelta(days=8)
+print(date_8.strftime('%d.%m.%Y'))
+
+date_9 = date_8 + timedelta(days=9)
+print(date_9.strftime('%d.%m.%Y'))
+
+date_10 = date_9 + timedelta(days=10)
+print(date_10.strftime('%d.%m.%Y'))"""
+
+
+from datetime import date, time, datetime, timedelta
+
+data = [('07:14', '08:46'),
+        ('09:01', '09:37'),
+        ('10:00', '11:43'),
+        ('12:13', '13:49'),
+        ('15:00', '15:19'),
+        ('15:58', '17:24'),
+        ('17:57', '19:21'),
+        ('19:30', '19:59')]
+
+z = []
+
+for i in data:
+    date_1 = abs(timedelta(hours=int(i[0][0:2]), minutes=int(i[0][3:6])) - timedelta(hours=int(i[1][0:2]), minutes=int(i[1][3:6])))
+    z.append(date_1.seconds)
+
+print(sum(z) // 60)
 
 
