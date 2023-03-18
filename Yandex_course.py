@@ -1777,7 +1777,7 @@ date_10 = date_9 + timedelta(days=10)
 print(date_10.strftime('%d.%m.%Y'))"""
 
 
-from datetime import date, time, datetime, timedelta
+"""from datetime import date, time, datetime, timedelta
 
 data = [('07:14', '08:46'),
         ('09:01', '09:37'),
@@ -1795,5 +1795,165 @@ for i in data:
     z.append(date_1.seconds)
 
 print(sum(z) // 60)
+"""
+
+
+
+# понедельник  сколько чисел 13 в понедельнике и т.д по дням недели
+# вторник
+# среда
+# четверг
+# пятница
+# суббота
+# воскресенье
+
+
+"""
+import time
+
+start = time.time() ## точка отсчета времени
+
+#время выполнения
+
+from datetime import datetime, timedelta
+
+date_1 = datetime(day=1, month=1, year=1)
+date_2 = datetime(day=31, month=12, year=9999)
+
+
+monday = 0
+tuesday = 0
+wednesday = 0
+thirsday = 0
+friday = 0
+saturday = 0
+sunday = 0
+
+while date_1 != date_2:
+    date_1 += timedelta(days=1)
+    if date_1.day == 13 and date_1.weekday() == 0:
+        monday += 1
+    elif date_1.day == 13 and date_1.weekday() == 1:
+        tuesday += 1
+    elif date_1.day == 13 and date_1.weekday() == 2:
+        wednesday += 1
+    elif date_1.day == 13 and date_1.weekday() == 3:
+        thirsday += 1
+    elif date_1.day == 13 and date_1.weekday() == 4:
+        friday += 1
+    elif date_1.day == 13 and date_1.weekday() == 5:
+        saturday += 1
+    elif date_1.day == 13 and date_1.weekday() == 6:
+        sunday += 1
+
+
+print(monday)
+print(tuesday)
+print(wednesday)
+print(thirsday)
+print(friday)
+print(saturday)
+print(sunday)
+
+
+#конец работы программу
+
+end = time.time() - start ## собственно время работы программы
+
+print(end) ## вывод времени
+"""
+
+
+
+
+
+"""import time
+
+start = time.time() ## точка отсчета времени
+
+from datetime import datetime
+
+def zeller_congruence(day, month, year):
+    if month == 1 or month == 2:
+        month += 12
+        year -= 1
+    k = year % 100
+    j = year // 100
+    m = month
+    q = day
+    h = (q + 13*(m+1)//5 + k + k//4 + j//4 + 5*j) % 7
+    return h
+
+monday = 0
+tuesday = 0
+wednesday = 0
+thirsday = 0
+friday = 0
+saturday = 0
+sunday = 0
+
+for y in range(1, 10000):
+    for m in range(1, 13):
+        if zeller_congruence(13, m, y) == 0:
+            monday += 1
+        elif zeller_congruence(13, m, y) == 1:
+            tuesday += 1
+        elif zeller_congruence(13, m, y) == 2:
+            wednesday += 1
+        elif zeller_congruence(13, m, y) == 3:
+            thirsday += 1
+        elif zeller_congruence(13, m, y) == 4:
+            friday += 1
+        elif zeller_congruence(13, m, y) == 5:
+            saturday += 1
+        elif zeller_congruence(13, m, y) == 6:
+            sunday += 1
+
+print(monday)
+print(tuesday)
+print(wednesday)
+print(thirsday)
+print(friday)
+print(saturday)
+print(sunday)
+
+end = time.time() - start ## собственно время работы программы
+
+print(end) ## вывод времени"""
+
+
+from datetime import datetime, timedelta, date
+
+date_1 = datetime.today()
+time_hours = date_1.strftime('%H')
+time_minutes = date_1.strftime('%M')
+
+
+if date_1.weekday() in (0, 1, 2, 3, 4):
+    bud = str(timedelta(hours=21) - timedelta(hours=int(time_hours), minutes=int(time_minutes)))
+    print(bud[2:4]) if int(bud[2:4]) > 0 else print('Магазин закрыт')
+elif date_1.weekday() in (5, 6):
+    vih = (datetime(year=2023, month=1, day=1, hour=18) - datetime.today())
+    #print(vih[2:4]) if int(vih[2:4]) > 0 else print('Магазин закрыт')
+    print(vih)
+else:
+    print('Магазин закрыт')
+
+
+
+"""def check_time(today):
+    if today.weekday() in (0, 1, 2, 3, 4):
+        return timedelta(hours=21) - timedelta(today)
+    elif today.weekday() in (5, 6):
+        return timedelta(hours=18) - timedelta(today)
+    else:
+        return 'Магазин закрыт'
+
+
+print(check_time(date_1))"""
+
+
+
+
 
 
