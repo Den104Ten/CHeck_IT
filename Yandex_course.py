@@ -1922,35 +1922,62 @@ end = time.time() - start ## собственно время работы про
 print(end) ## вывод времени"""
 
 
-from datetime import datetime, timedelta, date
+"""from datetime import datetime, timedelta, date
 
-date_1 = datetime.today()
-time_hours = date_1.strftime('%H')
-time_minutes = date_1.strftime('%M')
-
+date_1 = datetime(day=20, month=3, year=2023, hour=10) #datetime.today()
 
 if date_1.weekday() in (0, 1, 2, 3, 4):
-    bud = str(timedelta(hours=21) - timedelta(hours=int(time_hours), minutes=int(time_minutes)))
-    print(bud[2:4]) if int(bud[2:4]) > 0 else print('Магазин закрыт')
+    if timedelta(hours=21) < timedelta(hours=int(datetime.today().strftime('%H')), minutes=int(datetime.today().strftime('%M'))) < timedelta(hours=9):
+        print('Магазин закрыт')
+    elif timedelta(hours=21) > timedelta(hours=int(datetime.today().strftime('%H')), minutes=int(datetime.today().strftime('%M'))) >= timedelta(hours=10):
+        bud = timedelta(hours=21) - timedelta(hours=int(datetime.today().strftime('%H')), minutes=int(datetime.today().strftime('%M')))
+        print(bud.seconds // 60)
+
+
 elif date_1.weekday() in (5, 6):
-    vih = (datetime(year=2023, month=1, day=1, hour=18) - datetime.today())
-    #print(vih[2:4]) if int(vih[2:4]) > 0 else print('Магазин закрыт')
-    print(vih)
-else:
-    print('Магазин закрыт')
+    if timedelta(hours=18) < timedelta(hours=int(datetime.today().strftime('%H')), minutes=int(datetime.today().strftime('%M'))) < timedelta(hours=10):
+        print('Магазин закрыт')
+    elif timedelta(hours=18) > timedelta(hours=int(datetime.today().strftime('%H')), minutes=int(datetime.today().strftime('%M'))) >= timedelta(hours=10):
+        vih = timedelta(hours=18) - timedelta(hours=int(datetime.today().strftime('%H')), minutes=int(datetime.today().strftime('%M')))
+        print(vih.seconds // 60)"""
+
+
+"""from datetime import datetime, timedelta, date
+
+date_in = input()
+date_1 = datetime(day=int(date_in[0:2]), month=int(date_in[3:5]), year=int(date_in[6:10]), hour=int(date_in[11:13]), minute=int(date_in[14:16]))
+
+if date_1.weekday() in (0, 1, 2, 3, 4):
+    if timedelta(hours=21) <= timedelta(hours=int(date_1.strftime('%H')), minutes=int(date_1.strftime('%M'))) or timedelta(hours=9) > timedelta(hours=int(date_1.strftime('%H')), minutes=int(date_1.strftime('%M'))):
+        print('Магазин не работает')
+
+    elif timedelta(hours=21) > timedelta(hours=int(date_1.strftime('%H')), minutes=int(date_1.strftime('%M'))) or timedelta(hours=9) <= timedelta(hours=int(date_1.strftime('%H')), minutes=int(date_1.strftime('%M'))):
+        bud = timedelta(hours=21) - timedelta(hours=int(date_1.strftime('%H')), minutes=int(date_1.strftime('%M')))
+        print(bud.seconds // 60)
+
+
+elif date_1.weekday() in (5, 6):
+    if timedelta(hours=18) <= timedelta(hours=int(date_1.strftime('%H')), minutes=int(date_1.strftime('%M'))) or timedelta(hours=10) > timedelta(hours=int(date_1.strftime('%H')), minutes=int(date_1.strftime('%M'))):
+        print('Магазин не работает')
+
+    elif timedelta(hours=18) > timedelta(hours=int(date_1.strftime('%H')), minutes=int(date_1.strftime('%M'))) or timedelta(hours=10) <= timedelta(hours=int(date_1.strftime('%H')), minutes=int(date_1.strftime('%M'))):
+        vih = timedelta(hours=18) - timedelta(hours=int(date_1.strftime('%H')), minutes=int(date_1.strftime('%M')))
+        print(vih.seconds // 60)"""
+
+
+import time, timeit
+
+def calculate_it(func, *args):
+    return (func(), timeit.timeit(func))
 
 
 
-"""def check_time(today):
-    if today.weekday() in (0, 1, 2, 3, 4):
-        return timedelta(hours=21) - timedelta(today)
-    elif today.weekday() in (5, 6):
-        return timedelta(hours=18) - timedelta(today)
-    else:
-        return 'Магазин закрыт'
+print(calculate_it(add, 1, 2, 3))
 
 
-print(check_time(date_1))"""
+
+
+
 
 
 
