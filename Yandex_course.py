@@ -1965,17 +1965,35 @@ elif date_1.weekday() in (5, 6):
         print(vih.seconds // 60)"""
 
 
-import time, timeit
+"""import time, timeit
+
+def add(a, b, c):
+    time.sleep(3)
+    return a + b + c
 
 def calculate_it(func, *args):
-    return (func(), timeit.timeit(func))
+    start = time.perf_counter()
+    func(*args)
+    stop = time.perf_counter()
+    return (func(*args), stop - start)
 
 
 
-print(calculate_it(add, 1, 2, 3))
+print(calculate_it(add, 1, 2, 3))"""
 
 
-
+"""import time, timeit
+def get_the_fastest_func(funcs, arg):
+    z = []
+    x = []
+    for i in funcs:
+        start = time.perf_counter()
+        result = i(arg)
+        stop = time.perf_counter()
+        diff = stop - start
+        z.append(diff)
+    min_lst = z.index(min(z))
+    return funcs[min_lst]"""
 
 
 
