@@ -1965,14 +1965,76 @@ elif date_1.weekday() in (5, 6):
         print(vih.seconds // 60)"""
 
 
-import time, timeit
+"""import time, timeit
 
 def calculate_it(func, *args):
     return (func(), timeit.timeit(func))
 
 
 
-print(calculate_it(add, 1, 2, 3))
+print(calculate_it(add, 1, 2, 3))"""
+
+
+"""import calendar
+
+num = int(input())
+z = []
+
+for _ in range(num):
+    year = int(input())
+    z.append(calendar.isleap(year))
+for i in z:
+    print(i)"""
+
+
+"""import calendar
+
+date_1 = input().split(' ')
+month_name = date_1[1]
+if month_name in list(calendar.month_abbr):
+    gen = list(calendar.month_abbr).index(month_name)
+    print(calendar.month(int(date_1[0]), gen))"""
+
+
+"""import calendar
+
+year = input().split('-')
+weekday_num = calendar.weekday(int(year[0]), int(year[1]), int(year[2]))
+print(calendar.day_name[weekday_num])"""
+
+
+"""import calendar
+
+date_1 = input().split(' ')
+if date_1[1] in list(calendar.month_name):
+    gen = list(calendar.month_name).index(date_1[1])
+    month_days = calendar.monthrange(int(date_1[0]), gen)
+    print(month_days[1])"""
+
+
+
+def get_days_in_month(year, month):
+    import calendar
+    from datetime import date
+    gen = list(calendar.month_name).index(month)
+    month_matrics = calendar.monthcalendar(year, gen)
+
+    z = []
+
+    for i in month_matrics:
+        for j in i:
+            if j == 0:
+                pass
+            else:
+                z.append(date(year=year, month=gen, day=j))
+    return z
+
+
+print(get_days_in_month(2021, 'December'))
+
+
+
+
 
 
 
