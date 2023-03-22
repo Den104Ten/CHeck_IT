@@ -2013,7 +2013,7 @@ if date_1[1] in list(calendar.month_name):
 
 
 
-def get_days_in_month(year, month):
+"""def get_days_in_month(year, month):
     import calendar
     from datetime import date
     gen = list(calendar.month_name).index(month)
@@ -2030,13 +2030,82 @@ def get_days_in_month(year, month):
     return z
 
 
-print(get_days_in_month(2021, 'December'))
+print(get_days_in_month(2021, 'December'))"""
+
+
+"""def get_all_mondays(year):
+    import calendar
+    from datetime import date, timedelta
+    date_1 = date(year=year, month=1, day=1)
+    z = []
+    for _ in range(365):
+        if calendar.weekday(year=int(date_1.strftime('%Y')), month=int(date_1.strftime('%m')), day=int(date_1.strftime('%d'))) == 0:
+            z.append(date_1)
+            date_1 += timedelta(days=1)
+        else:
+            date_1 += timedelta(days=1)
+    return z
+
+
+print(get_all_mondays(2021))"""
 
 
 
+"""import calendar
+from datetime import datetime, date, timedelta
+
+year = int(input())
+date_start = date(year=year, month=1, day=1)
+
+z = []
+
+month_num = 1
+
+count = 0
+for _ in range(365):
+    date_start += timedelta(days=1)
+    if calendar.weekday(year=int(date_start.strftime('%Y')), month=int(date_start.strftime('%m')), day=int(date_start.strftime('%d'))) == 3:
+        count += 1
+        if count == 3:
+            z.append(date_start)
+            count = 0
+            month_num += 1
+            print(date_start.month)
+            print(month_num)
+            #while int(date_start.strftime('%m')) != month_num:
+                #print(month_num)
+                #print(date_start.month)
+                #date_start += timedelta(days=1) # как то добавить + 1 месяц
+        else:
+            continue
+            #date_start += timedelta(days=1)
 
 
+print(z)
+for i in z:
+    print(i.strftime('%d.%m.%Y'))"""
 
+
+year_1 = int(input())
+def get_all_mondays(year):
+    import calendar
+    from datetime import date, timedelta
+    date_1 = date(year=year, month=1, day=1)
+    z = []
+    for _ in range(365):
+        if calendar.weekday(year=int(date_1.strftime('%Y')), month=int(date_1.strftime('%m')), day=int(date_1.strftime('%d'))) == 3:
+            z.append(date_1)
+            date_1 += timedelta(days=1)
+        else:
+            date_1 += timedelta(days=1)
+    #return z
+    for i in z:
+        #print(i)
+        if z.index(i) == 2 or z.index(i) == 6 or z.index(i) == 10 or z.index(i) == 14 or z.index(i) == 19 or z.index(i) == 23 or z.index(i) == 27 or z.index(i) == 32 or z.index(i) == 36 or z.index(i) == 41 or z.index(i) == 45 or z.index(i) == 49:
+            print(i.strftime('%d.%m.%Y'))
+
+
+print(get_all_mondays(year_1))
 
 
 
