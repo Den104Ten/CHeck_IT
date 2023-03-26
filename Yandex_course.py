@@ -2086,7 +2086,7 @@ for i in z:
     print(i.strftime('%d.%m.%Y'))"""
 
 
-year_1 = int(input())
+"""year_1 = int(input())
 def get_all_mondays(year):
     import calendar
     from datetime import date, timedelta
@@ -2105,13 +2105,100 @@ def get_all_mondays(year):
             print(i.strftime('%d.%m.%Y'))
 
 
-print(get_all_mondays(year_1))
+print(get_all_mondays(year_1))"""
+
+
+"""import sys
+
+lst = [x[::-1].strip('\n') for x in sys.stdin]
+for i in lst:
+    print(i)"""
+
+
+"""import sys
+from datetime import datetime
+
+lst = sorted([datetime.strptime(i.strip(), '%Y-%m-%d') for i in sys.stdin.readlines()])
+res = max(lst) - min(lst)
+print(res.days)"""
+
+
+"""import sys
+
+lst = [int(x) for x in sys.stdin]
+
+if len(lst) % 2 == 0 and lst[-1] % 2 == 0:
+    print('Дима')
+elif len(lst) % 2 != 0 and lst[-1] % 2 != 0:
+    print('Дима')
+else:
+    print('Анри')"""
+
+
+"""import sys
+from statistics import mean
+
+try:
+    lst = [int(x) for x in sys.stdin]
+
+    print(f'Рост самого низкого ученика: {min(lst)}')
+    print(f'Рост самого высокого ученика: {max(lst)}')
+    print(f'Средний рост: {mean(lst)}')
+except:
+    print('нет учеников')"""
 
 
 
+"""import sys
+for line in sys.stdin:
+    if (line.lstrip(' ')[0] != '#'):
+        print(line.rstrip('\n'))"""
 
 
+import sys
 
+lst = [x.strip('\n') for x in sys.stdin]
+#print(lst)
+
+res = []
+
+if lst[-1] == 'Политика':
+    for line in lst:
+        #print(line.split('/'))
+        try:
+            if line.split('/')[1] == ' Политика ':
+                res.append(line.split('/'))
+        except:
+            break
+
+    #print(res)  # код работает
+
+elif lst[-1] == 'Общество':
+    for line in lst:
+        #print(line.split('/'))
+        try:
+            if line.split('/')[1] == ' Общество ':
+                res.append(line.split('/'))
+        except:
+            break
+
+    #print(res)  # код работает
+
+elif lst[-1] == 'Авиация':
+    for line in lst:
+        #print(line.split('/'))
+        try:
+            if line.split('/')[1] == ' Авиация ':
+                res.append(line.split('/'))
+        except:
+            break
+
+    #print(res)  # код работает
+
+#print(res[-1][-1])
+
+for i in sorted(res, key=lambda x: (float(x[-1]), )):
+    print(i)
 
 
 
