@@ -2155,7 +2155,7 @@ for line in sys.stdin:
         print(line.rstrip('\n'))"""
 
 
-import sys
+"""import sys
 
 lst = [x.strip('\n') for x in sys.stdin]
 #print(lst)
@@ -2197,8 +2197,8 @@ elif lst[-1] == 'Авиация':
 
 #print(res[-1][-1])
 
-for i in sorted(res, key=lambda x: (float(x[-1]), )):
-    print(i)
+for i in sorted(res, key=lambda x: (float(x[-1]), x)):
+    print(i[0].strip())"""
 
 
 
