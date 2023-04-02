@@ -2201,4 +2201,179 @@ for i in sorted(res, key=lambda x: (float(x[-1]), x)):
     print(i[0].strip())"""
 
 
+"""import csv
+
+with open('grades.csv', encoding='utf-8') as csv_file:
+    # создаем reader объект и указываем в качестве разделителя символ ;
+    rows = csv.reader(csv_file, delimiter=';')
+    # выводим каждую строку
+    for row in rows:
+        print(row)"""
+
+
+"""import csv
+
+with open('writing_test.csv', 'w', encoding='utf-8') as csv_file:
+    # создаем writer объект и указываем названия столбцов
+    writer = csv.DictWriter(csv_file, fieldnames=['first_col', 'second_col'])
+    # записываем первую строку с названиями столбцов
+    writer.writeheader()
+    # записываем строку с данными
+    writer.writerow({'first_col': 'value1', 'second_col': 'value2'})"""
+
+
+"""import csv
+
+with open('sales.csv', 'r', encoding='utf-8') as csv_file:
+    sales = csv.DictReader(csv_file, delimiter=';')
+    for row in sales:
+        if int(row['old_price']) > int(row['new_price']):
+            print(row['name'])
+        #print(row['name'] if int(row['old_price']) > int(row['new_price']) else '')"""
+
+
+"""import csv
+
+with open('salary_data.csv', 'r', encoding='utf-8') as csv_file:
+    lst_names = {}
+    dict_comp = csv.DictReader(csv_file, delimiter=';')
+    for row in dict_comp:
+        lst_names.setdefault(row['company_name'], int(row['salary']))
+    print(lst_names)  # компании не повторяются, но нужно как-то суммировать среднюю зарплату
+
+    #sorting = sorted(dict_comp, key=lambda x: (int(x['salary']), (x['company_name'])))
+    #for row in sorting:
+    #    print(row['company_name'])"""
+
+
+"""import csv
+
+num = int(input())
+
+with open('deniro.csv', 'r', encoding='utf-8') as csv_file:
+    text = csv.reader(csv_file, delimiter=',')
+    if num == 1:
+        result = sorted(text, key=lambda x: x[0])
+        for i in result:
+            print(','.join(i))
+
+    elif num == 2:
+        result_2 = sorted(text, key=lambda x: int(x[1]))
+        for i in result_2:
+            print(','.join(i))
+
+    elif num == 3:
+        result_3 = sorted(text, key=lambda x: int(x[2]))
+        for i in result_3:
+            print(','.join(i))"""
+
+
+"""def csv_columns(filename):
+    import csv
+    with open(filename, "r") as csv_file:
+        result = csv.DictReader(csv_file, delimiter=',')
+        field_res = result.fieldnames  # сделать проверку на количество столбцов
+        if len(field_res) == 2:
+            first_lst = []
+            second_lst = []
+            for row in result:
+                first_lst.append(row['name'])
+                second_lst.append(row['year'])
+                # еще два списка
+            print(first_lst)
+            
+            
+print(csv_columns('deniro.csv'))"""
+
+
+"""def csv_columns(filename):
+    import csv
+    with open(filename, "r") as csv_file:
+        result = csv.DictReader(csv_file, delimiter=',')
+        field_res = result.fieldnames  # сделать проверку на количество столбцов
+        if len(field_res) == 3:
+            first_lst = []
+            second_lst = []
+            third_lst = []
+            for row in result:
+                first_lst.append(row[field_res[0]])
+                second_lst.append(row[field_res[1]])
+                third_lst.append(row[field_res[2]])
+            res_dict = dict()
+            res_dict.setdefault(field_res[0], first_lst)
+            res_dict.setdefault(field_res[1], second_lst)
+            res_dict.setdefault(field_res[2], third_lst)
+            return res_dict
+        elif len(field_res) == 2:
+            first_lst = []
+            second_lst = []
+            for row in result:
+                first_lst.append(row[field_res[0]])
+                second_lst.append(row[field_res[1]])
+            res_dict = dict()
+            res_dict.setdefault(field_res[0], first_lst)
+            res_dict.setdefault(field_res[1], second_lst)
+            return res_dict
+
+print(csv_columns('deniro.csv'))"""
+
+
+"""#with open('data.csv', 'r', encoding='utf-8') as file_csv:
+    import csv
+    result = csv.DictReader(file_csv, delimiter=',')
+    dict_email = dict()
+    z = []
+    for row in result:
+        email_lst = row['email'].split('@')
+        dict_email.setdefault(email_lst[1], (email_lst.count(email_lst[1])))
+        z.append(email_lst[1])
+    for i in z:
+        if i in dict_email:
+            dict_email[i] += 1
+
+    res_dict = dict_email  # итерируемся по словарю, чтобы уменьшить значение каждого на -1
+    for j in res_dict:
+        res_dict[j] -= 1
+    print(res_dict)
+    #print(z)
+    # теперь нужно перезаписать все в файл
+
+    fieldnames = ['domain', 'count']
+
+    with open('domain_usage.csv', 'w', encoding='utf-8') as write_file:
+        res = csv.DictWriter(write_file, delimiter=',', fieldnames=fieldnames)
+        res.writeheader()
+        for row in res_dict:
+            res.writerow(row)"""
+
+
+with open('wifi.csv', 'r', encoding='utf-8') as csv_file:
+    import csv
+    result = csv.DictReader(csv_file, delimiter=';')
+    dict_info = dict()
+    z = []
+    for i in result:
+        #print(i['district'], i['number_of_access_points'])
+        z.append(i['district'])
+        dict_info.setdefault(i['district'], int(i['number_of_access_points']))
+    print(dict_info)
+    print(z)
+    for j in z:
+        # я посчитал количество упоминаний района, а не количество точек
+        print(j)
+        print(dict_info[j])
+        #dict_info[j] += int(i['number_of_access_points'])
+
+    """for j in result:
+        #print(j['district'])
+        if j['district'] in z:
+            dict_info[j] += 1"""
+    print(dict_info)
+
+
+
+
+
+
+
 
