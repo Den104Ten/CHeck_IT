@@ -2347,7 +2347,7 @@ print(csv_columns('deniro.csv'))"""
             res.writerow(row)"""
 
 
-with open('wifi.csv', 'r', encoding='utf-8') as csv_file:
+"""#with open('wifi.csv', 'r', encoding='utf-8') as csv_file:
     import csv
     result = csv.DictReader(csv_file, delimiter=';')
     dict_info = dict()
@@ -2364,14 +2364,38 @@ with open('wifi.csv', 'r', encoding='utf-8') as csv_file:
         print(dict_info[j])
         #dict_info[j] += int(i['number_of_access_points'])
 
-    """for j in result:
-        #print(j['district'])
-        if j['district'] in z:
-            dict_info[j] += 1"""
-    print(dict_info)
+    print(dict_info)"""
 
 
+"""import csv
 
+with open("wifi.csv", 'r', encoding='UTF-8') as f:
+    reader = csv.DictReader(f, delimiter=';')
+
+    with open('new_file.csv', 'w', encoding='UTF-8') as f:
+        header = ['adm_area', 'district', 'location', 'number_of_access_points']
+        writer = csv.DictWriter(f, fieldnames=header, delimiter=';')
+        writer.writeheader()
+        for line in reader:
+            writer.writerow(line)"""
+
+
+with open('wifi.csv', 'r', encoding='utf-8') as f:
+    import csv
+    reader = csv.DictReader(f, delimiter=';')
+
+    res = {}
+    for line in reader:
+        count_points = int(line['number_of_access_points'])
+        district_only = line['district']
+        try:
+            res[district_only] += count_points
+        except:
+            res[district_only] = count_points
+
+    final_res = sorted(res.items(), key=lambda x: (x[1], x[0].lower()))  # не получается сортировать в алфавитном порядке
+    for el in final_res[::-1]:
+        print(f'{el[0]}: {el[1]}')
 
 
 
