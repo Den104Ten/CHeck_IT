@@ -2380,7 +2380,59 @@ with open("wifi.csv", 'r', encoding='UTF-8') as f:
             writer.writerow(line)"""
 
 
-with open('wifi.csv', 'r', encoding='utf-8') as f:
+
+"""*********************************Приложение на ткинтер****************************************"""
+"""from tkinter import *
+from tkinter import filedialog
+
+import csv
+
+from tkinter import *
+from tkinter import filedialog
+
+root = Tk()
+root.geometry('400x300')2
+
+frame = Frame(
+   root,
+   padx=10,
+   pady=10
+)
+frame.pack(expand=True)
+
+def load_file():
+    file_path = filedialog.askopenfilename()
+    if file_path:
+        with open(file_path, "r", encoding="utf-8") as f:
+            content = f.read()
+            text.delete("1.0", END)
+            text.insert(END, content)
+
+def save_file():
+    file_path = filedialog.asksaveasfilename()
+    if file_path:
+        with open(file_path, "w", encoding="utf-8") as f:
+            content = text.get("1.0", END)
+            f.write(content)
+
+text = Text(root)
+text.pack()
+
+btn_load = Button(frame, text="Load", command=load_file)
+
+btn_load.pack()
+
+btn_save = Button(frame, text="Save", command=save_file)
+
+btn_save.pack()
+
+root.mainloop()"""
+"""*****************************Конец приложения на ткинтер******************************************"""
+
+
+
+
+"""#with open('wifi.csv', 'r', encoding='utf-8') as f:
     import csv
     reader = csv.DictReader(f, delimiter=';')
 
@@ -2393,11 +2445,141 @@ with open('wifi.csv', 'r', encoding='utf-8') as f:
         except:
             res[district_only] = count_points
 
-    final_res = sorted(res.items(), key=lambda x: (x[1], x[0].lower()))  # не получается сортировать в алфавитном порядке
-    for el in final_res[::-1]:
-        print(f'{el[0]}: {el[1]}')
+    final_res = res.items()
+    for i in sorted(final_res, key=lambda x: (-x[1], x[0])):
+        print(f'{i[0]}: {i[1]}')"""
 
 
+"""import csv
+with open('titanic.csv', 'r', encoding='utf-8') as file:
+    result = csv.DictReader(file, delimiter=';')
+
+    surv_man = []  # список выживших мужчин которым меньше 18
+    surv_woman = []  # список выживших женщин которым меньше 18
+
+    for i in result:
+        if int(i['survived']) == 1 and float(i['age']) < 18 and i['sex'] == 'male':
+            surv_man.append(i['name'])
+        elif int(i['survived']) == 1 and float(i['age']) < 18 and i['sex'] == 'female':
+            surv_woman.append(i['name'])
+
+    for man in surv_man:
+        print(man)
+    for woman in surv_woman:
+        print(woman)"""
+
+
+"""import json
+
+countries = {'Monaco': 'Monaco', 'Iceland': 'Reykjavik', 'Kenya': 'Nairobi', 'Kazakhstan': 'Nur-Sultan',
+             'Mali': 'Bamako', 'Colombia': 'Bogota', 'Finland': 'Helsinki', 'Costa Rica': 'San Jose',
+             'Cuba': 'Havana', 'France': 'Paris', 'Gabon': 'Libreville', 'Liberia': 'Monrovia',
+             'Angola': 'Luanda', 'India': 'New Delhi', 'Canada': 'Ottawa', 'Australia': 'Canberra'}
+
+result = json.dumps(countries, indent=3, separators=(',', ' - '), sort_keys=True)
+print(result)"""
+
+
+"""import json
+
+words = {
+         frozenset(["tap", "telephone"]): ("tæp", "telifəun"),
+         "travel": "trævl",
+         ("hello", "world"): ("həˈləʊ", "wɜːld"),
+         "moonlight": "muːn.laɪt",
+         "sunshine": "ˈsʌn.ʃaɪn",
+         ("why", "is", "so", "difficult"): ("waɪ", "ɪz", "səʊ", "ˈdɪfɪkəlt"),
+         "adventure": "ədˈventʃər",
+         "beautiful": "ˈbjuːtɪfl",
+         frozenset(["spoon", "block"]): ("spu:n", "blɔk"),
+         "bicycle": "baisikl",
+         ("pilot", "fly"): ("pailət", "flai")
+        }
+
+data_json = json.dumps(words, skipkeys=True)
+print(data_json)"""
+
+
+"""import json
+
+club1 = {"name": "FC Byern Munchen", "country": "Germany", "founded": 1900,
+         "trainer": "Julian Nagelsmann", "goalkeeper": "M. Neuer", "league_position": 1}
+
+club2 = {"name": "FC Barcelona", "country": "Spain", "founded": 1899,
+         "trainer": "Xavier Creus", "goalkeeper": "M. Ter Stegen", "league_position": 7}
+
+club3 = {"name": "FC Manchester United", "country": "England", "founded": 1878,
+         "trainer": "Michael Carrick", "goalkeeper": "D. De Gea", "league_position": 8}
+
+lst = [club1, club2, club3]
+
+with open('data.json', mode='w', encoding='utf-8') as file:
+    json.dump(lst, fp=file, indent=3)"""
+
+
+"""import json
+
+specs = {
+         'Модель': 'AMD Ryzen 5 5600G',
+         'Год релиза': 2021,
+         'Сокет': 'AM4',
+         'Техпроцесс': '7 нм',
+         'Ядро': 'Cezanne',
+         'Объем кэша L2': '3 МБ',
+         'Объем кэша L3': '16 МБ',
+         'Базовая частота': '3900 МГц'
+        }
+
+specs_json = json.dumps(specs, ensure_ascii=False, indent=3)
+
+print(specs_json)"""
+
+
+"""def is_correct_json(string):
+    import json
+    try:
+        json.loads(string)
+        return True
+    except:
+        return False
+
+data = '{"name": "Barsik", "age": 7, "meal": "Wiskas"}'
+
+print(is_correct_json(data))"""
+
+
+"""import json, sys
+
+data = json.load(sys.stdin)
+
+
+for i in data:
+    if type(data[i]) == list:
+        print(f'{i}:', ', '.join(map(str, data[i])))
+    else:
+        print(f'{i}: {data[i]}')"""
+
+
+"""import json
+with open('data.json', mode='r', encoding='utf-8') as r_file:
+    final_lst = []
+    result = json.load(r_file)
+    for i in result:
+        if type(i) == str:
+            final_lst.append(i + '!')
+        elif type(i) == int:
+            final_lst.append(i + 1)
+        elif type(i) == bool:
+            final_lst.append(not i)
+        elif type(i) == list:
+            final_lst.append(i + i)
+        elif type(i) == dict:
+            i.update({"newkey": None})
+            final_lst.append(i)
+        elif type(i) == None:
+            pass
+    with open('updated_data.json', mode='w') as w_file:
+        json.dump(final_lst, w_file, indent=2)"""
 
 
 
