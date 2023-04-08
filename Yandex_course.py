@@ -2583,3 +2583,90 @@ with open('data.json', mode='r', encoding='utf-8') as r_file:
 
 
 
+"""import json
+
+with open('data1.json', mode='r') as fread_1, open('data2.json', mode='r') as fread_2:
+    result_1 = json.load(fread_1)
+    result_2 = json.load(fread_2)
+    result_1.update(result_2)
+
+    with open('data_merge.json', mode='w') as result_json:
+        json.dump(result_1, result_json, indent=2)
+"""
+
+
+"""import json
+
+with open('people.json', mode='r', encoding='utf-8') as r_file:
+    result = json.load(r_file)
+    for j in result:
+
+            if "age" not in j:
+                j.update({"age": None})
+            if "name" not in j:
+                j.update({"name": None})
+            if "country" not in j:
+                j.update({"country": None})
+            if "phone" not in j:
+                j.update({"phone": None})
+            if "family_status" not in j:
+                j.update({"family_status": None})
+            if "email" not in j:
+                j.update({"email": None})
+            if "children" not in j:
+                j.update({"children": None})
+            if "university" not in j:
+                j.update({"university": None})
+
+
+    with open("updated_people.json", mode='w', encoding='utf-8') as w_file:
+        json.dump(result, w_file, indent=3)"""
+
+
+import json
+
+with open("countries.json", mode='r', encoding='utf-8') as r_file:
+    result = json.load(r_file)
+
+    islam_countries = []  # список стран в которых религия ислам
+
+    christianity_countries = []
+
+    hinduism_countries = []
+
+    buddhism_countries = []
+
+    Unaffiliated_Religions_countries = []
+
+    Judaism_countries = []
+
+    Folk_Religions_countries = []
+
+    for i in result:
+        if i['religion'] == 'Islam':
+            islam_countries.append(i['country'])
+        elif i['religion'] == 'Christianity':
+            christianity_countries.append(i['country'])
+        elif i['religion'] == 'Hinduism':
+            hinduism_countries.append(i['country'])
+        elif i['religion'] == 'Buddhism':
+            buddhism_countries.append(i['country'])
+        elif i['religion'] == 'Unaffiliated Religions':
+            Unaffiliated_Religions_countries.append(i['country'])
+        elif i['religion'] == 'Judaism':
+            Judaism_countries.append(i['country'])
+        elif i['religion'] == 'Folk Religions':
+            Folk_Religions_countries.append(i['country'])
+
+    final_dict = dict()
+    final_dict.update({"Islam": islam_countries})
+    final_dict.update({"Christianity": christianity_countries})
+    final_dict.update({"Hinduism": hinduism_countries})
+    final_dict.update({"Buddhism": buddhism_countries})
+    final_dict.update({"Unaffiliated Religions": Unaffiliated_Religions_countries})
+    final_dict.update({"Judaism": Judaism_countries})
+    final_dict.update({"Folk Religions": Folk_Religions_countries})
+
+    with open("religion.json", mode='w', encoding='utf-8') as w_file:
+        json.dump(final_dict, w_file, indent=3)
+
