@@ -2623,7 +2623,7 @@ with open('people.json', mode='r', encoding='utf-8') as r_file:
         json.dump(result, w_file, indent=3)"""
 
 
-import json
+"""import json
 
 with open("countries.json", mode='r', encoding='utf-8') as r_file:
     result = json.load(r_file)
@@ -2668,5 +2668,58 @@ with open("countries.json", mode='r', encoding='utf-8') as r_file:
     final_dict.update({"Folk Religions": Folk_Religions_countries})
 
     with open("religion.json", mode='w', encoding='utf-8') as w_file:
-        json.dump(final_dict, w_file, indent=3)
+        json.dump(final_dict, w_file, indent=3)"""
 
+
+import sys
+from PyQt5.QtWidgets import (QWidget, QToolTip, QPushButton, QApplication, QMessageBox)
+from PyQt5.QtGui import QFont
+from PyQt5.QtCore import QCoreApplication
+
+
+class Example(QWidget):
+
+    def __init__(self):
+        super().__init__()
+
+        self.initUI()
+
+
+    def initUI(self):
+
+        QToolTip.setFont(QFont('SansSerif', 10))
+
+        self.setToolTip('This is a <b>QWidget</b> widget')
+
+        btn = QPushButton('OK', self)
+        btn.setToolTip('This is a "OK" widget')
+        btn.resize(btn.sizeHint())
+        btn.move(170, 50)
+
+        qbtn = QPushButton('Quit', self)
+        qbtn.setToolTip('This is quit button')
+        qbtn.clicked.connect(QCoreApplication.instance().quit)
+        qbtn.resize(qbtn.sizeHint())
+        qbtn.move(50, 50)
+
+        self.setGeometry(700, 300, 450, 350)
+        self.setWindowTitle('Tooltips')
+        self.show()
+
+    def closeEvent(self, event):
+
+        reply = QMessageBox.question(self, 'Message',
+                                     "Are you sure to quit?", QMessageBox.Yes |
+                                     QMessageBox.No, QMessageBox.No)
+
+        if reply == QMessageBox.Yes:
+            event.accept()
+        else:
+            event.ignore()
+
+
+if __name__ == '__main__':
+
+    app = QApplication(sys.argv)
+    ex = Example()
+    sys.exit(app.exec_())
