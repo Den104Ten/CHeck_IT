@@ -2671,7 +2671,7 @@ with open("countries.json", mode='r', encoding='utf-8') as r_file:
         json.dump(final_dict, w_file, indent=3)"""
 
 
-import sys
+"""import sys
 from PyQt5.QtWidgets import (QWidget, QToolTip, QPushButton, QApplication, QMessageBox)
 from PyQt5.QtGui import QFont
 from PyQt5.QtCore import QCoreApplication
@@ -2722,4 +2722,30 @@ if __name__ == '__main__':
 
     app = QApplication(sys.argv)
     ex = Example()
-    sys.exit(app.exec_())
+    sys.exit(app.exec_())"""
+
+
+import csv, json
+
+with open('students.json', mode='r', encoding='utf-8') as r_file:
+    result = json.load(r_file)
+
+    students_lst = []
+
+    for i in result:
+        if i['age'] >= 18 and i['progress'] >= 75:
+            #students_lst.append((i['name'], i['phone']))
+            students_lst.append(({'name': i['name']}, {'phone': i['phone']}))
+
+    """for i in students_lst:
+        print(i)"""
+
+
+    fieldnames = ['phone', 'name']
+
+    with open('data.csv', mode='w') as w_file:
+        csv.DictWriter(students_lst, fieldnames=fieldnames)
+
+
+
+
