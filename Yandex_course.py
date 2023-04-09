@@ -2725,27 +2725,39 @@ if __name__ == '__main__':
     sys.exit(app.exec_())"""
 
 
-import csv, json
+"""import csv, json
 
 with open('students.json', mode='r', encoding='utf-8') as r_file:
     result = json.load(r_file)
 
-    students_lst = []
+    final_lst = []
 
     for i in result:
         if i['age'] >= 18 and i['progress'] >= 75:
-            #students_lst.append((i['name'], i['phone']))
-            students_lst.append(({'name': i['name']}, {'phone': i['phone']}))
+            final_lst.append(i)
 
-    """for i in students_lst:
-        print(i)"""
-
-
-    fieldnames = ['phone', 'name']
-
-    with open('data.csv', mode='w') as w_file:
-        csv.DictWriter(students_lst, fieldnames=fieldnames)
+    for j in final_lst:
+        del j['city']
+        del j['age']
+        del j['progress']
 
 
+    sort_lst = sorted(final_lst, key=lambda x: x['name'])
+
+    columns = ['name', 'phone']
+
+    with open('data.csv', mode='w', encoding='utf-8', newline='') as w_file:
+        writer = csv.DictWriter(w_file, fieldnames=columns)
+        writer.writeheader()
+        for row in sort_lst:
+            writer.writerow(row)"""
+
+
+
+import eel
+
+eel.init('Web')
+
+eel.start('C:\Every_forPyCharm\Python_GIT_1\Web\main.html', size=(700, 700))
 
 
