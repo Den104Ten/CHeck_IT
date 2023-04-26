@@ -1487,9 +1487,6 @@ def print_good_dates(dates):
 dates = [date(1992, 10, 19), date(1991, 12, 6), date(1992, 9, 20)]
 print_good_dates(dates)"""
 
-
-
-
 """from datetime import date
 def is_correct(day, month, year):
     try:
@@ -1516,7 +1513,6 @@ for i in z:
 
 print(sum(z))"""
 
-
 """from datetime import datetime
 
 def time_change(time_now=datetime.now()):
@@ -1527,8 +1523,6 @@ def time_change(time_now=datetime.now()):
         return date_1.strftime('%H:%M PM')
 
 print(time_change())"""
-
-
 
 # Написать программу, которая будет обновлять время, если оно изменилось
 
@@ -1543,7 +1537,6 @@ def time_change(time_now=datetime.now()):
 
 
 print(time_change())"""
-
 
 """from datetime import datetime
 
@@ -1564,7 +1557,6 @@ while True:
     print(date_now)
     time.sleep(60)"""
 
-
 """from datetime import datetime
 
 text = 'Уважаемый пациент, доктор готов принять Вас 15.07.2022 в 08:30'
@@ -1573,7 +1565,6 @@ dt = datetime.strptime(text, 'Уважаемый пациент, доктор г
 
 print(dt)"""
 
-
 """from datetime import datetime
 
 seconds = 2483228800
@@ -1581,7 +1572,6 @@ dt = datetime(2011, 11, 4)
 
 print(datetime.fromtimestamp(seconds))
 print(dt.timestamp())"""
-
 
 """
 from datetime import datetime
@@ -1611,7 +1601,6 @@ for i in times_of_purchases:
 
 print('До полудня') if len(lst_am) > len(lst_pm) else print('После полудня')"""
 
-
 """from datetime import date, time, datetime
 
 dates = [date(1793, 8, 23), date(1410, 3, 11), date(804, 11, 12), date(632, 6, 4),
@@ -1632,7 +1621,6 @@ lst_result = (sorted(z, key=lambda x: x.second))
 
 for j in lst_result:
     print(j)"""
-
 
 """from datetime import datetime
 
@@ -1661,13 +1649,11 @@ min_index = z_result.index(min_num)
 
 print(z[min_index])"""
 
-
 """from datetime import datetime, timedelta
 
 dt = datetime(2021, 11, 4, 13, 6) + timedelta(weeks=1, hours=12)
 
 print(dt.strftime('%d.%m.%Y %H:%M:%S'))"""
-
 
 """from datetime import date, timedelta
 
@@ -1677,7 +1663,6 @@ birthday = date(2022, 10, 6)
 days = abs(today - birthday).days
 
 print(days)"""
-
 
 """from datetime import date, timedelta
 
@@ -1690,7 +1675,6 @@ date_before = date_res + timedelta(days=1)
 print(date_after.strftime('%d.%m.%Y'))
 print(date_before.strftime('%d.%m.%Y'))"""
 
-
 """from datetime import date, timedelta, datetime, time
 
 time_1 = input().split(':')
@@ -1698,7 +1682,6 @@ time_1 = input().split(':')
 time_res = timedelta(hours=int(time_1[0]), minutes=int(time_1[1]), seconds=int(time_1[2]))
 
 print(time_res.seconds)"""
-
 
 """from datetime import date, timedelta, datetime, time
 
@@ -1708,14 +1691,12 @@ timer_time = int(input())
 timer_res = datetime(hour=int(timer[0]), minute=int(timer[1]), second=int(timer[2]), day=1, month=1, year=2001) + timedelta(seconds=timer_time)
 print(timer_res.strftime('%H:%M:%S'))"""
 
-
 """from datetime import datetime, timedelta
 
 pattern = '%H:%M:%S'
 dt = datetime.strptime(input(), pattern) + timedelta(seconds=int(input()))
 
 print(dt.strftime(pattern))"""
-
 
 """def num_of_sundays(year):
     from datetime import datetime, timedelta, date
@@ -1727,7 +1708,6 @@ print(dt.strftime(pattern))"""
 
 
 print(num_of_sundays(2021))"""
-
 
 """from datetime import datetime, timedelta, date
 
@@ -1741,7 +1721,6 @@ while i != 10:
     final = date_res + timedelta(days=num)
     print(final)
     i += 1"""
-
 
 """from datetime import datetime, date, timedelta
 
@@ -1776,7 +1755,6 @@ print(date_9.strftime('%d.%m.%Y'))
 date_10 = date_9 + timedelta(days=10)
 print(date_10.strftime('%d.%m.%Y'))"""
 
-
 """from datetime import date, time, datetime, timedelta
 
 data = [('07:14', '08:46'),
@@ -1796,8 +1774,6 @@ for i in data:
 
 print(sum(z) // 60)
 """
-
-
 
 # понедельник  сколько чисел 13 в понедельнике и т.д по дням недели
 # вторник
@@ -1863,10 +1839,6 @@ end = time.time() - start ## собственно время работы про
 print(end) ## вывод времени
 """
 
-
-
-
-
 """import time
 
 start = time.time() ## точка отсчета времени
@@ -1921,7 +1893,6 @@ end = time.time() - start ## собственно время работы про
 
 print(end) ## вывод времени"""
 
-
 """from datetime import datetime, timedelta, date
 
 date_1 = datetime(day=20, month=3, year=2023, hour=10) #datetime.today()
@@ -1940,7 +1911,6 @@ elif date_1.weekday() in (5, 6):
     elif timedelta(hours=18) > timedelta(hours=int(datetime.today().strftime('%H')), minutes=int(datetime.today().strftime('%M'))) >= timedelta(hours=10):
         vih = timedelta(hours=18) - timedelta(hours=int(datetime.today().strftime('%H')), minutes=int(datetime.today().strftime('%M')))
         print(vih.seconds // 60)"""
-
 
 """from datetime import datetime, timedelta, date
 
@@ -1964,7 +1934,6 @@ elif date_1.weekday() in (5, 6):
         vih = timedelta(hours=18) - timedelta(hours=int(date_1.strftime('%H')), minutes=int(date_1.strftime('%M')))
         print(vih.seconds // 60)"""
 
-
 """import time, timeit
 
 def calculate_it(func, *args):
@@ -1973,7 +1942,6 @@ def calculate_it(func, *args):
 
 
 print(calculate_it(add, 1, 2, 3))"""
-
 
 """import calendar
 
@@ -1986,7 +1954,6 @@ for _ in range(num):
 for i in z:
     print(i)"""
 
-
 """import calendar
 
 date_1 = input().split(' ')
@@ -1995,13 +1962,11 @@ if month_name in list(calendar.month_abbr):
     gen = list(calendar.month_abbr).index(month_name)
     print(calendar.month(int(date_1[0]), gen))"""
 
-
 """import calendar
 
 year = input().split('-')
 weekday_num = calendar.weekday(int(year[0]), int(year[1]), int(year[2]))
 print(calendar.day_name[weekday_num])"""
-
 
 """import calendar
 
@@ -2010,8 +1975,6 @@ if date_1[1] in list(calendar.month_name):
     gen = list(calendar.month_name).index(date_1[1])
     month_days = calendar.monthrange(int(date_1[0]), gen)
     print(month_days[1])"""
-
-
 
 """def get_days_in_month(year, month):
     import calendar
@@ -2032,7 +1995,6 @@ if date_1[1] in list(calendar.month_name):
 
 print(get_days_in_month(2021, 'December'))"""
 
-
 """def get_all_mondays(year):
     import calendar
     from datetime import date, timedelta
@@ -2048,8 +2010,6 @@ print(get_days_in_month(2021, 'December'))"""
 
 
 print(get_all_mondays(2021))"""
-
-
 
 """import calendar
 from datetime import datetime, date, timedelta
@@ -2085,7 +2045,6 @@ print(z)
 for i in z:
     print(i.strftime('%d.%m.%Y'))"""
 
-
 """year_1 = int(input())
 def get_all_mondays(year):
     import calendar
@@ -2107,13 +2066,11 @@ def get_all_mondays(year):
 
 print(get_all_mondays(year_1))"""
 
-
 """import sys
 
 lst = [x[::-1].strip('\n') for x in sys.stdin]
 for i in lst:
     print(i)"""
-
 
 """import sys
 from datetime import datetime
@@ -2121,7 +2078,6 @@ from datetime import datetime
 lst = sorted([datetime.strptime(i.strip(), '%Y-%m-%d') for i in sys.stdin.readlines()])
 res = max(lst) - min(lst)
 print(res.days)"""
-
 
 """import sys
 
@@ -2133,7 +2089,6 @@ elif len(lst) % 2 != 0 and lst[-1] % 2 != 0:
     print('Дима')
 else:
     print('Анри')"""
-
 
 """import sys
 from statistics import mean
@@ -2147,13 +2102,10 @@ try:
 except:
     print('нет учеников')"""
 
-
-
 """import sys
 for line in sys.stdin:
     if (line.lstrip(' ')[0] != '#'):
         print(line.rstrip('\n'))"""
-
 
 """import sys
 
@@ -2200,7 +2152,6 @@ elif lst[-1] == 'Авиация':
 for i in sorted(res, key=lambda x: (float(x[-1]), x)):
     print(i[0].strip())"""
 
-
 """import csv
 
 with open('grades.csv', encoding='utf-8') as csv_file:
@@ -2209,7 +2160,6 @@ with open('grades.csv', encoding='utf-8') as csv_file:
     # выводим каждую строку
     for row in rows:
         print(row)"""
-
 
 """import csv
 
@@ -2221,7 +2171,6 @@ with open('writing_test.csv', 'w', encoding='utf-8') as csv_file:
     # записываем строку с данными
     writer.writerow({'first_col': 'value1', 'second_col': 'value2'})"""
 
-
 """import csv
 
 with open('sales.csv', 'r', encoding='utf-8') as csv_file:
@@ -2230,7 +2179,6 @@ with open('sales.csv', 'r', encoding='utf-8') as csv_file:
         if int(row['old_price']) > int(row['new_price']):
             print(row['name'])
         #print(row['name'] if int(row['old_price']) > int(row['new_price']) else '')"""
-
 
 """import csv
 
@@ -2244,7 +2192,6 @@ with open('salary_data.csv', 'r', encoding='utf-8') as csv_file:
     #sorting = sorted(dict_comp, key=lambda x: (int(x['salary']), (x['company_name'])))
     #for row in sorting:
     #    print(row['company_name'])"""
-
 
 """import csv
 
@@ -2267,7 +2214,6 @@ with open('deniro.csv', 'r', encoding='utf-8') as csv_file:
         for i in result_3:
             print(','.join(i))"""
 
-
 """def csv_columns(filename):
     import csv
     with open(filename, "r") as csv_file:
@@ -2284,7 +2230,6 @@ with open('deniro.csv', 'r', encoding='utf-8') as csv_file:
             
             
 print(csv_columns('deniro.csv'))"""
-
 
 """def csv_columns(filename):
     import csv
@@ -2317,7 +2262,6 @@ print(csv_columns('deniro.csv'))"""
 
 print(csv_columns('deniro.csv'))"""
 
-
 """#with open('data.csv', 'r', encoding='utf-8') as file_csv:
     import csv
     result = csv.DictReader(file_csv, delimiter=',')
@@ -2346,7 +2290,6 @@ print(csv_columns('deniro.csv'))"""
         for row in res_dict:
             res.writerow(row)"""
 
-
 """#with open('wifi.csv', 'r', encoding='utf-8') as csv_file:
     import csv
     result = csv.DictReader(csv_file, delimiter=';')
@@ -2366,7 +2309,6 @@ print(csv_columns('deniro.csv'))"""
 
     print(dict_info)"""
 
-
 """import csv
 
 with open("wifi.csv", 'r', encoding='UTF-8') as f:
@@ -2378,8 +2320,6 @@ with open("wifi.csv", 'r', encoding='UTF-8') as f:
         writer.writeheader()
         for line in reader:
             writer.writerow(line)"""
-
-
 
 """*********************************Приложение на ткинтер****************************************"""
 """from tkinter import *
@@ -2429,9 +2369,6 @@ btn_save.pack()
 root.mainloop()"""
 """*****************************Конец приложения на ткинтер******************************************"""
 
-
-
-
 """#with open('wifi.csv', 'r', encoding='utf-8') as f:
     import csv
     reader = csv.DictReader(f, delimiter=';')
@@ -2448,7 +2385,6 @@ root.mainloop()"""
     final_res = res.items()
     for i in sorted(final_res, key=lambda x: (-x[1], x[0])):
         print(f'{i[0]}: {i[1]}')"""
-
 
 """import csv
 with open('titanic.csv', 'r', encoding='utf-8') as file:
@@ -2468,7 +2404,6 @@ with open('titanic.csv', 'r', encoding='utf-8') as file:
     for woman in surv_woman:
         print(woman)"""
 
-
 """import json
 
 countries = {'Monaco': 'Monaco', 'Iceland': 'Reykjavik', 'Kenya': 'Nairobi', 'Kazakhstan': 'Nur-Sultan',
@@ -2478,7 +2413,6 @@ countries = {'Monaco': 'Monaco', 'Iceland': 'Reykjavik', 'Kenya': 'Nairobi', 'Ka
 
 result = json.dumps(countries, indent=3, separators=(',', ' - '), sort_keys=True)
 print(result)"""
-
 
 """import json
 
@@ -2499,7 +2433,6 @@ words = {
 data_json = json.dumps(words, skipkeys=True)
 print(data_json)"""
 
-
 """import json
 
 club1 = {"name": "FC Byern Munchen", "country": "Germany", "founded": 1900,
@@ -2515,7 +2448,6 @@ lst = [club1, club2, club3]
 
 with open('data.json', mode='w', encoding='utf-8') as file:
     json.dump(lst, fp=file, indent=3)"""
-
 
 """import json
 
@@ -2534,7 +2466,6 @@ specs_json = json.dumps(specs, ensure_ascii=False, indent=3)
 
 print(specs_json)"""
 
-
 """def is_correct_json(string):
     import json
     try:
@@ -2547,7 +2478,6 @@ data = '{"name": "Barsik", "age": 7, "meal": "Wiskas"}'
 
 print(is_correct_json(data))"""
 
-
 """import json, sys
 
 data = json.load(sys.stdin)
@@ -2558,7 +2488,6 @@ for i in data:
         print(f'{i}:', ', '.join(map(str, data[i])))
     else:
         print(f'{i}: {data[i]}')"""
-
 
 """import json
 with open('data.json', mode='r', encoding='utf-8') as r_file:
@@ -2581,8 +2510,6 @@ with open('data.json', mode='r', encoding='utf-8') as r_file:
     with open('updated_data.json', mode='w') as w_file:
         json.dump(final_lst, w_file, indent=2)"""
 
-
-
 """import json
 
 with open('data1.json', mode='r') as fread_1, open('data2.json', mode='r') as fread_2:
@@ -2593,7 +2520,6 @@ with open('data1.json', mode='r') as fread_1, open('data2.json', mode='r') as fr
     with open('data_merge.json', mode='w') as result_json:
         json.dump(result_1, result_json, indent=2)
 """
-
 
 """import json
 
@@ -2621,7 +2547,6 @@ with open('people.json', mode='r', encoding='utf-8') as r_file:
 
     with open("updated_people.json", mode='w', encoding='utf-8') as w_file:
         json.dump(result, w_file, indent=3)"""
-
 
 """import json
 
@@ -2669,7 +2594,6 @@ with open("countries.json", mode='r', encoding='utf-8') as r_file:
 
     with open("religion.json", mode='w', encoding='utf-8') as w_file:
         json.dump(final_dict, w_file, indent=3)"""
-
 
 """import sys
 from PyQt5.QtWidgets import (QWidget, QToolTip, QPushButton, QApplication, QMessageBox)
@@ -2724,7 +2648,6 @@ if __name__ == '__main__':
     ex = Example()
     sys.exit(app.exec_())"""
 
-
 """import csv, json
 
 with open('students.json', mode='r', encoding='utf-8') as r_file:
@@ -2752,12 +2675,417 @@ with open('students.json', mode='r', encoding='utf-8') as r_file:
         for row in sort_lst:
             writer.writerow(row)"""
 
-
-
-import eel
+"""import eel
 
 eel.init('Web')
 
-eel.start('C:\Every_forPyCharm\Python_GIT_1\Web\main.html', size=(700, 700))
+eel.start('C:\Every_forPyCharm\Python_GIT_1\Web\main.html', size=(700, 700), mode='chrome')"""
+
+"""import json
+
+with open("pools.json", mode='r', encoding='utf-8') as r_file: # открываю файл в кодировке urf-8
+    polls_dict = json.load(r_file)  # из файла json преобразую в обычный питон словарь
+    time_result = []  # создаю список в который буду добавлять адреса и длину и ширину бассейна подходящие условиям
+    for line in polls_dict:
+        # Если время в понедельник начинается с 10 и время закрытия бассейна минус 10 больше либо равны 2
+        # тогда добавляю адрес этого места и его длину и ширину
+        if int(line['WorkingHoursSummer']['Понедельник'].split('-')[0][0:2]) == 10 and (int(line['WorkingHoursSummer']['Понедельник'].split('-')[1][0:2]) - int(line['WorkingHoursSummer']['Понедельник'].split('-')[0][0:2]) >= 2):
+            time_result.append((line['Address'], line['DimensionsSummer']['Length'], line['DimensionsSummer']['Width']))
+
+    final_result = max(time_result, key=lambda x: (int(x[1]), int(x[2])))  # с помощью лямбда сортировки нахожу самый длинный бассейн
+    print(f'{final_result[1]}x{final_result[2]}')  # Вывожу результат
+    print(final_result[0])"""
+
+"""from zipfile import ZipFile
+
+with ZipFile("just.zip", mode='w') as zip_file:
+    zip_file.write('sales.csv')
+    zip_file.write('pools.json')
+    zip_file.printdir()
+    print(zip_file.namelist())"""
+
+"""from zipfile import ZipFile
+
+with ZipFile('workbook.zip', mode='r') as zip_file:
+    res = zip_file.infolist()
+
+    info = sum([not line.is_dir() for line in res])
+    print(info)"""
+
+"""from zipfile import ZipFile
+
+with ZipFile('workbook.zip', mode='r') as zip_file:
+    res = zip_file.infolist()
+
+    num_original = 0
+
+    for file in res:
+        num_original += file.file_size
+
+    num_convert = 0
+
+    for file in res:
+        num_convert += file.compress_size
+
+    print(f'Объем исходных файлов: {num_original} байт(а)')
+    print(f'Объем сжатых файлов: {num_convert} байт(а)')"""
+
+"""from zipfile import ZipFile
+
+with ZipFile('workbook.zip', 'r') as zip_file:
+    info = zip_file.infolist()
+
+    result = []
+
+    for file in info:
+        try:
+            result.append([file.filename, (file.compress_size / file.file_size) * 100])
+        except:
+            continue
+
+    final = (min(result, key=lambda x: x[1]))
+
+    answer = final[0].split('/')
+    print(answer[-1])"""
+
+"""from zipfile import ZipFile
+from datetime import datetime
+
+with ZipFile('workbook.zip', mode='r') as zip_file:
+    res = zip_file.infolist()
+
+    date_original = datetime(year=2021, month=11, day=30, hour=14, minute=22)
+
+    final_files = []
+
+    for file in res:
+        date_file = datetime(year=file.date_time[0], month=file.date_time[1], day=file.date_time[2], hour=file.date_time[3], minute=file.date_time[4])
+        if date_original < date_file and not file.is_dir():
+            final_files.append(file.filename)
+
+    z = []
+
+    for line in final_files:
+        z.append(line.split('/')[-1])
+
+    result = sorted(z, key=lambda x: x)
+
+    print(*result, sep='\n')"""
+
+"""from zipfile import ZipFile
+from datetime import datetime
+
+with ZipFile('workbook.zip', 'r') as zip_file:
+    res = zip_file.infolist()
+    for file1 in sorted(res, key=lambda x: x.filename.split('/')[-1]):  # отсортировать по алфавиту
+        if not file1.is_dir():
+            print(file1.filename.split('/')[-1])
+            print(f'  Дата модификации файла: {datetime(year=file1.date_time[0], month=file1.date_time[1], day=file1.date_time[2], hour=file1.date_time[3], minute=file1.date_time[4], second=file1.date_time[5])}')
+            print(f'  Объем исходного файла: {file1.file_size} байт(а)')
+            print(f'  Объем сжатого файла: {file1.compress_size} байт(а)')
+            print()"""
+
+"""from zipfile import ZipFile
+
+file_names = ['how to prove.pdf', 'fipi_demo_2022.pdf', 'Hollow Knight Silksong.exe',
+              'code.jpeg', 'stepik.png', 'readme.txt', 'shopping_list.txt',
+              'Alexandra Savior – Crying All the Time.mp3', 'homework.py','test.py']
+
+with ZipFile('files.zip', mode='w') as zip_file:
+    for file1 in file_names:
+        zip_file.write(file1)"""
+
+"""from zipfile import ZipFile
+import os.path
+
+file_names = ['how to prove.pdf', 'fipi_demo_2022.pdf', 'Hollow Knight Silksong.exe',
+              'code.jpeg', 'stepik.png', 'readme.txt', 'shopping_list.txt',
+              'Alexandra Savior – Crying All the Time.mp3', 'homework.py', 'test.py']
+
+with ZipFile('files.zip', mode='w') as zip_file:
+    for file in file_names:
+        file_conv = os.path.getsize(file)
+        if file_conv <= 100:
+            zip_file.write(file)
+"""
+
+"""from zipfile import ZipFile
+
+def extract_this(zip_name, *args):
+    with ZipFile(zip_name, mode='r') as zip_file:
+        if args:
+            zip_file.extractall(members=args)
+        elif args == ():
+            zip_file.extractall()
+
+
+extract_this('just.zip', 'pools.json')"""
+
+"""import pickle, sys
+
+file1 = str(input())  # ввод pkl файла
+
+words = []
+
+for line in sys.stdin:
+    words.append(str(line.strip('\n')))
+
+with open(file1, mode='rb') as pkl_file:
+    elem_func = pickle.load(pkl_file)
+    #elem_func(*words)
+    print(elem_func(*words))"""
+
+# with open(filename, mode='rb') as read_file:
+#    result1 = pickle.load(read_file)
+
+"""import pickle
+
+def filter_dump(filename, objects, typename):
+    z = []
+    for elem in objects:
+        if type(elem) == typename:
+            z.append(elem)
+
+    with open('filename.pkl', mode='wb') as write_file:
+        result2 = pickle.dump(z, write_file)
+
+
+filter_dump('numbers.pkl', [1, '2', 3, 4, '5'], int)"""
+
+
+"""x = {
+    '🅐': 'a', '🅑': 'b', '🅒': 'c', '🅓': 'd', '🅔': 'e',
+    '🅕': 'f', '🅖': 'g', '🅗': 'h', '🅘': 'i', '🅙': 'j', '🅚': 'k',
+    '🅛': 'l', '🅜': 'm', '🅝': 'n', '🅞': 'o', '🅟': 'p', '🅠': 'q', '🅡': 'r', '🅢': 's',
+    '🅣': 't', '🅤': 'u', '🅥': 'v', '🅦': 'w', '🅧': 'x', '🅨': 'y', '🅩': 'z'
+}"""
+
+"""letters = 'abcdefghijklmnopqrstuvwxyz'
+
+new_alphabet = str(input())
+phrase = str(input().lower())
+
+slovar = dict()
+
+for i in range(len(letters)):
+    slovar[letters[i]] = new_alphabet[i]
+
+result = phrase.maketrans(slovar)
+
+print(phrase.translate(result))"""
+
+
+"""from collections import namedtuple
+
+Fruit = namedtuple('Fruit', ['name', 'color', 'vitamins'])"""
+
+
+"""from collections import namedtuple
+
+Game = namedtuple('Game', 'name developer publisher')
+
+res = Game._fields
+
+ExtendedGame = namedtuple('ExtendedGame', (*res, 'release_date', 'price'))
+
+print(ExtendedGame._fields)"""
+
+
+"""import pickle
+from collections import namedtuple
+
+Animal = namedtuple('Animal', ['name', 'family', 'sex', 'color'])
+
+
+with open("data.pkl", 'rb') as r_file:
+    obj = pickle.load(r_file)
+    for line in obj:
+        print(f'name: {line.name}')
+        print(f'family: {line.family}')
+        print(f'sex: {line.sex}')
+        print(f'color: {line.color}')
+        print()"""
+
+
+"""from collections import namedtuple
+
+User = namedtuple('User', ['name', 'surname', 'email', 'plan'])
+
+users = [User('Mary', 'Griffin', 'sonnen@yahoo.com', 'Basic'),
+         User('Brenda', 'Young', 'retoh@outlook.com', 'Silver'),
+         User('Kathleen', 'Lyons', 'balchen@att.net', 'Gold'),
+         User('Pamela', 'Hicks', 'corrada@sbcglobal.net', 'Silver'),
+         User('William', 'Townsend', 'kosact@verizon.net', 'Gold'),
+         User('Clayton', 'Morris', 'berserk@yahoo.com', 'Silver'),
+         User('Dorothy', 'Dennis', 'sequin@live.com', 'Gold'),
+         User('Tyler', 'Walker', 'noahb@comcast.net', 'Basic'),
+         User('Joseph', 'Moore', 'ylchang@sbcglobal.net', 'Silver'),
+         User('Kenneth', 'Richardson', 'tbusch@me.com', 'Bronze'),
+         User('Stephanie', 'Bush', 'neuffer@live.com', 'Gold'),
+         User('Gregory', 'Hughes', 'juliano@att.net', 'Basic'),
+         User('Tracy', 'Wallace', 'sblack@me.com', 'Silver'),
+         User('Russell', 'Smith', 'isaacson@comcast.net', 'Bronze'),
+         User('Megan', 'Patterson', 'hoangle@outlook.com', 'Basic')]
+
+result = []
+
+gold_plan = []
+silver_plan = []
+bronze_plan = []
+basic_plan = []
+
+for line in users:
+    if line.plan == 'Gold':
+        gold_plan.append([line.name, ' ', line.surname, '\n', f'  Email: {line.email}', '\n', f'  Plan: {line.plan}', '\n'])
+    elif line.plan == 'Silver':
+        silver_plan.append([line.name, ' ', line.surname, '\n', f'  Email: {line.email}', '\n', f'  Plan: {line.plan}', '\n'])
+    elif line.plan == 'Bronze':
+        bronze_plan.append([line.name, ' ', line.surname, '\n', f'  Email: {line.email}', '\n', f'  Plan: {line.plan}', '\n'])
+    elif line.plan == 'Basic':
+        basic_plan.append([line.name, ' ', line.surname, '\n', f'  Email: {line.email}', '\n', f'  Plan: {line.plan}', '\n'])
+
+result.append([sorted(gold_plan, key=lambda x: x[4][9:]), sorted(silver_plan, key=lambda x: x[4][9:]), sorted(bronze_plan, key=lambda x: x[4][9:]), sorted(basic_plan, key=lambda x: x[4][9:])])
+
+for line in result:
+    for i in line:
+        for j in i:
+            print(''.join(j))"""
+
+
+"""# gdfbdfgb
+from collections import namedtuple
+import csv
+from datetime import datetime, time
+
+with open('meetings.csv', mode='r', encoding='utf-8') as r_file:
+    obj = csv.DictReader(r_file, delimiter=',')
+
+    res_time = []
+
+    for line in obj:
+        res_time.append([line, line['meeting_date'].split('.')])
+        #print(line['meeting_date'].split('.'))
+
+    for i in res_time:
+        print(i[1])
+
+    print(sorted(res_time, key=lambda x: datetime(int(x[1][0]),  int(x[1][1]), int(x[1][2]))))
+    # доделать сортировку по дате и времени, все остальное уже сделано"""
+
+
+"""from collections import namedtuple
+import csv
+from datetime import datetime
+
+with open('meetings.csv', mode='r', encoding='utf-8') as r_file:
+    obj = csv.DictReader(r_file, delimiter=',')
+
+    res_time = []
+
+    for line in obj:
+        res_time.append(line)
+
+    final_lst = sorted(res_time, key=lambda x: (datetime.strptime(x['meeting_date'], '%d.%m.%Y'), datetime.strptime(x['meeting_time'], '%H:%M')))
+    for row in final_lst:
+        print(row['surname'], row['name'])"""
+
+
+"""from collections import defaultdict
+
+data = [('Books', 1343), ('Books', 1166), ('Merch', 616), ('Courses', 966), ('Merch', 1145), ('Courses', 1061),
+        ('Books', 848), ('Courses', 964), ('Tutorials', 832), ('Merch', 642), ('Books', 815), ('Tutorials', 1041),
+        ('Books', 1218), ('Tutorials', 880), ('Books', 1003), ('Merch', 951), ('Books', 920), ('Merch', 729),
+        ('Tutorials', 977), ('Books', 656)]
+
+info = defaultdict(int)
+
+for line in data:
+    if line[0] in info:
+        info[line[0]] += line[1]
+    else:
+        info[line[0]] = line[1]
+
+for res in sorted(info.items()):
+    print(f'{res[0]}: ${res[1]}')"""
+
+
+"""from collections import defaultdict
+
+staff = [('Sales', 'Robert Barnes'), ('Developing', 'Thomas Porter'), ('Accounting', 'James Wilkins'),
+         ('Sales', 'Connie Reid'), ('Accounting', 'Brenda Davis'), ('Developing', 'Miguel Norris'),
+         ('Accounting', 'Linda Hudson'), ('Developing', 'Deborah George'), ('Developing', 'Nicole Watts'),
+         ('Marketing', 'Billy Lloyd'), ('Sales', 'Charlotte Cox'), ('Marketing', 'Bernice Ramos'),
+         ('Sales', 'Jose Taylor'), ('Sales', 'Katie Warner'), ('Accounting', 'Steven Diaz'),
+         ('Accounting', 'Kimberly Reynolds'), ('Accounting', 'John Watts'), ('Accounting', 'Dale Houston'),
+         ('Developing', 'Arlene Gibson'), ('Marketing', 'Joyce Lawrence'), ('Accounting', 'Rosemary Garcia'),
+         ('Marketing', 'Ralph Morgan'), ('Marketing', 'Sam Davis'), ('Marketing', 'Gail Hill'),
+         ('Accounting', 'Michelle Wright'), ('Accounting', 'Casey Jenkins'), ('Sales', 'Evelyn Martin'),
+         ('Accounting', 'Aaron Ferguson'), ('Marketing', 'Andrew Clark'), ('Marketing', 'John Gonzalez'),
+         ('Developing', 'Wilma Woods'), ('Sales', 'Marie Cooper'), ('Accounting', 'Kay Scott'),
+         ('Sales', 'Gladys Taylor'), ('Accounting', 'Ann Bell'), ('Accounting', 'Craig Wood'),
+         ('Accounting', 'Gloria Higgins'), ('Marketing', 'Mario Reynolds'), ('Marketing', 'Helen Taylor'),
+         ('Marketing', 'Mary King'), ('Accounting', 'Jane Jackson'), ('Marketing', 'Carol Peters'),
+         ('Sales', 'Alicia Mendoza'), ('Accounting', 'Edna Cunningham'), ('Developing', 'Joyce Rivera'),
+         ('Sales', 'Joseph Lee'), ('Sales', 'John White'), ('Marketing', 'Charles Bailey'),
+         ('Sales', 'Chester Fernandez'), ('Sales', 'John Washington')]
+
+info = defaultdict(int)
+
+for line in staff:
+    if line[0] in info:
+        info[line[0]] += 1
+    else:
+        info[line[0]] = 1
+
+for res in sorted(info.items()):
+    print(f'{res[0]}: {res[1]}')"""
+
+
+from collections import defaultdict
+
+staff_broken = [('Developing', 'Miguel Norris'), ('Sales', 'Connie Reid'), ('Sales', 'Joseph Lee'),
+                ('Marketing', 'Carol Peters'), ('Accounting', 'Linda Hudson'), ('Accounting', 'Ann Bell'),
+                ('Marketing', 'Ralph Morgan'), ('Accounting', 'Gloria Higgins'), ('Developing', 'Wilma Woods'),
+                ('Developing', 'Wilma Woods'), ('Marketing', 'Bernice Ramos'), ('Marketing', 'Joyce Lawrence'),
+                ('Accounting', 'Craig Wood'), ('Developing', 'Nicole Watts'), ('Sales', 'Jose Taylor'),
+                ('Accounting', 'Linda Hudson'), ('Accounting', 'Edna Cunningham'), ('Sales', 'Jose Taylor'),
+                ('Marketing', 'Helen Taylor'), ('Accounting', 'Kimberly Reynolds'), ('Marketing', 'Mary King'),
+                ('Sales', 'Joseph Lee'), ('Accounting', 'Gloria Higgins'), ('Marketing', 'Andrew Clark'),
+                ('Accounting', 'John Watts'), ('Accounting', 'Rosemary Garcia'), ('Accounting', 'Steven Diaz'),
+                ('Marketing', 'Mary King'), ('Sales', 'Gladys Taylor'), ('Developing', 'Thomas Porter'),
+                ('Accounting', 'Brenda Davis'), ('Sales', 'Connie Reid'), ('Sales', 'Alicia Mendoza'),
+                ('Marketing', 'Mario Reynolds'), ('Sales', 'John White'), ('Developing', 'Joyce Rivera'),
+                ('Accounting', 'Steven Diaz'), ('Developing', 'Arlene Gibson'), ('Sales', 'Robert Barnes'),
+                ('Sales', 'Charlotte Cox'), ('Accounting', 'Craig Wood'), ('Marketing', 'Carol Peters'),
+                ('Marketing', 'Ralph Morgan'), ('Accounting', 'Kay Scott'), ('Sales', 'Evelyn Martin'),
+                ('Marketing', 'Billy Lloyd'), ('Sales', 'Gladys Taylor'), ('Developing', 'Deborah George'),
+                ('Sales', 'Charlotte Cox'), ('Marketing', 'Sam Davis'), ('Sales', 'John White'),
+                ('Sales', 'Marie Cooper'), ('Marketing', 'John Gonzalez'), ('Sales', 'John Washington'),
+                ('Sales', 'Chester Fernandez'), ('Sales', 'Alicia Mendoza'), ('Sales', 'Katie Warner'),
+                ('Accounting', 'Jane Jackson'), ('Sales', 'Chester Fernandez'), ('Marketing', 'Charles Bailey'),
+                ('Marketing', 'Gail Hill'), ('Accounting', 'Casey Jenkins'), ('Accounting', 'James Wilkins'),
+                ('Accounting', 'Casey Jenkins'), ('Marketing', 'Mario Reynolds'), ('Accounting', 'Aaron Ferguson'),
+                ('Accounting', 'Kimberly Reynolds'), ('Sales', 'Robert Barnes'), ('Accounting', 'Aaron Ferguson'),
+                ('Accounting', 'Jane Jackson'), ('Developing', 'Deborah George'), ('Accounting', 'Michelle Wright'),
+                ('Accounting', 'Dale Houston')]
+
+#  staff_broken
+
+info = defaultdict(str)
+
+for line in staff_broken:
+    print(info.values())
+    if line[0] in info and line[1] not in info.values():  # не выполняется так как он добавляет имена в одну строку
+        info[line[0]] += line[1]  # исправить, так как добавляется просто строка, а нужно чтобы был новый элемент!!!
+    else:
+        info[line[0]] = line[1]
+
+
+for res in info.items():
+    print(res[0],': ', res[1])
+
+
+
+
 
 
