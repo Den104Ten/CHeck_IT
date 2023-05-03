@@ -2852,7 +2852,6 @@ def filter_dump(filename, objects, typename):
 
 filter_dump('numbers.pkl', [1, '2', 3, 4, '5'], int)"""
 
-
 """x = {
     '🅐': 'a', '🅑': 'b', '🅒': 'c', '🅓': 'd', '🅔': 'e',
     '🅕': 'f', '🅖': 'g', '🅗': 'h', '🅘': 'i', '🅙': 'j', '🅚': 'k',
@@ -2874,11 +2873,9 @@ result = phrase.maketrans(slovar)
 
 print(phrase.translate(result))"""
 
-
 """from collections import namedtuple
 
 Fruit = namedtuple('Fruit', ['name', 'color', 'vitamins'])"""
-
 
 """from collections import namedtuple
 
@@ -2889,7 +2886,6 @@ res = Game._fields
 ExtendedGame = namedtuple('ExtendedGame', (*res, 'release_date', 'price'))
 
 print(ExtendedGame._fields)"""
-
 
 """import pickle
 from collections import namedtuple
@@ -2905,7 +2901,6 @@ with open("data.pkl", 'rb') as r_file:
         print(f'sex: {line.sex}')
         print(f'color: {line.color}')
         print()"""
-
 
 """from collections import namedtuple
 
@@ -2951,7 +2946,6 @@ for line in result:
         for j in i:
             print(''.join(j))"""
 
-
 """# gdfbdfgb
 from collections import namedtuple
 import csv
@@ -2972,7 +2966,6 @@ with open('meetings.csv', mode='r', encoding='utf-8') as r_file:
     print(sorted(res_time, key=lambda x: datetime(int(x[1][0]),  int(x[1][1]), int(x[1][2]))))
     # доделать сортировку по дате и времени, все остальное уже сделано"""
 
-
 """from collections import namedtuple
 import csv
 from datetime import datetime
@@ -2988,7 +2981,6 @@ with open('meetings.csv', mode='r', encoding='utf-8') as r_file:
     final_lst = sorted(res_time, key=lambda x: (datetime.strptime(x['meeting_date'], '%d.%m.%Y'), datetime.strptime(x['meeting_time'], '%H:%M')))
     for row in final_lst:
         print(row['surname'], row['name'])"""
-
 
 """from collections import defaultdict
 
@@ -3007,7 +2999,6 @@ for line in data:
 
 for res in sorted(info.items()):
     print(f'{res[0]}: ${res[1]}')"""
-
 
 """from collections import defaultdict
 
@@ -3041,7 +3032,7 @@ for res in sorted(info.items()):
     print(f'{res[0]}: {res[1]}')"""
 
 
-from collections import defaultdict
+"""from collections import defaultdict
 
 staff_broken = [('Developing', 'Miguel Norris'), ('Sales', 'Connie Reid'), ('Sales', 'Joseph Lee'),
                 ('Marketing', 'Carol Peters'), ('Accounting', 'Linda Hudson'), ('Accounting', 'Ann Bell'),
@@ -3080,12 +3071,47 @@ for line in staff_broken:
     else:
         info[line[0]] = line[1]
 
-
 for res in info.items():
-    print(res[0],': ', res[1])
+    print(res[0], ': ', res[1])"""
+
+
+"""from collections import defaultdict
+
+def wins(pairs):
+    info = defaultdict(str, pairs)
+    return info
 
 
 
 
+result = wins([('Тимур', 'Артур'), ('Тимур', 'Дима'), ('Дима', 'Артур')])
+
+for winner, losers in sorted(result.items()):
+    print(winner, '->', *sorted(losers))"""
+
+
+with open('aud_trans_1_1.txt', mode='r', encoding='utf-8') as file:
+    z = []
+    for line in file:
+        if line != '\n':
+            z.append(line)
+
+    result = []
+
+    for i, row in enumerate(z):
+        if i % 2 == 0:
+            result.append(f'Интервьюер: {row}')
+        elif i % 2 != 0:
+            result.append(f'Информант: {row}')
+
+    with open('result_aud_1_1.txt', mode='w', encoding='utf-8') as w_file:
+        w_file.writelines(result)
+
+
+# действую так:
+# 1 конвертирую аудио в текст на гугле
+# 2 копирую текст и исправляю сам
+# 3 пропускаю через прогу и проверяю
+# 4 сохраняю в блокнот и называю: Интервью номер ""
 
 
