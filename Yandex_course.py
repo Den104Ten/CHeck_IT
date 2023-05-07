@@ -3090,7 +3090,7 @@ for winner, losers in sorted(result.items()):
     print(winner, '->', *sorted(losers))"""
 
 
-with open('aud_trans_1_1.txt', mode='r', encoding='utf-8') as file:
+"""#with open('aud_trans_1_1.txt', mode='r', encoding='utf-8') as file:
     z = []
     for line in file:
         if line != '\n':
@@ -3105,7 +3105,7 @@ with open('aud_trans_1_1.txt', mode='r', encoding='utf-8') as file:
             result.append(f'Информант: {row}')
 
     with open('result_aud_1_1.txt', mode='w', encoding='utf-8') as w_file:
-        w_file.writelines(result)
+        w_file.writelines(result)"""
 
 
 # действую так:
@@ -3114,4 +3114,106 @@ with open('aud_trans_1_1.txt', mode='r', encoding='utf-8') as file:
 # 3 пропускаю через прогу и проверяю
 # 4 сохраняю в блокнот и называю: Интервью номер ""
 
+
+"""#with open('audio_transkrib.txt', mode='r', encoding='utf-8') as file:
+    z = []
+    for line in file:
+        z.append(line)
+
+
+    with open('result_aud_1_1.txt', mode='w', encoding='utf-8') as w_file:
+
+        word_orig = "inter"
+
+        for row in z:
+            if row == '\n':
+                w_file.write('\n')
+                if word_orig == "inter":
+                    w_file.write('Интервьюер:')
+                    word_orig = "infor"
+                elif word_orig == "infor":
+                    w_file.write('Информант:')
+                    word_orig = "inter"
+
+
+
+            w_file.write(row)
+
+# ---------------------------------------------------------------------
+
+        doc = docx.Document()
+
+        with open('result_aud_1_1.txt', 'r', encoding='utf-8') as file:
+            is_bold = False
+            for line in file:
+                if line.startswith('Интервьюер'):
+                    is_bold = True
+                    doc.add_paragraph(line.strip()).runs[0].bold = True
+                elif line.startswith('Информант'):
+                    is_bold = False
+                    doc.add_paragraph(line.strip())
+                elif is_bold:
+                    doc.add_paragraph(line.strip()).runs[0].bold = True
+                else:
+                    doc.add_paragraph(line.strip())
+
+        doc.save('result.docx')"""
+
+
+
+
+
+
+    # переделать на меняющуюся переменную, которая будет определять
+    # следующий информант или интервьюер
+
+
+import customtkinter
+import webbrowser
+import tkinter
+
+from tkinter import filedialog
+
+
+customtkinter.set_appearance_mode("dark")
+app = customtkinter.CTk()
+app.geometry("700x500")
+
+def button_click_event():
+    dialog = customtkinter.CTkInputDialog(text="Site URL:", title="Test")
+    response = dialog.get_input()
+    webbrowser.open(response)
+
+
+def registration_button():
+    dialog_name = customtkinter.CTkInputDialog(text='Enter your email: ', title='Registration')
+    responce_name = dialog_name.get_input()
+
+
+def load_file():
+    file_path = filedialog.askopenfilename()
+    print(file_path) # использовать как переменную для дальнейшей работы с файлом
+    with open(file_path, mode='r', encoding='utf-8') as r_file:
+        z = []
+        for line in r_file:
+            if line != '\n':
+                z.append(line)
+
+        with open(f"NEW_file.txt", mode='w', encoding='utf-8') as w_file:
+            w_file.writelines(z)  # можно добавить много разного функционала
+
+
+button = customtkinter.CTkButton(app, text="Open Dialog", command=button_click_event, fg_color="black", hover_color="gray")
+button.place(relx=0.5, rely=0.2, anchor=tkinter.CENTER)
+
+
+button = customtkinter.CTkButton(app, text='Log In', command=registration_button, fg_color="black", hover_color="gray")
+button.place(relx=0.2, rely=0.2, anchor=tkinter.CENTER)
+
+
+button = customtkinter.CTkButton(app, text='Download the .txt File', command=load_file, fg_color="black", hover_color="gray")
+button.place(relx=0.5, rely=0.6, anchor=tkinter.CENTER)
+
+
+app.mainloop()
 
