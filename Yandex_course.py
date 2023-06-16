@@ -3168,52 +3168,631 @@ for winner, losers in sorted(result.items()):
     # следующий информант или интервьюер
 
 
-import customtkinter
+"""import requests
+
+url = "https://google-translate1.p.rapidapi.com/language/translate/v2/languages"
+
+headers = {
+	"Accept-Encoding": "application/gzip",
+	"X-RapidAPI-Key": "0d920eb501msh22181cce92091a1p14cbefjsn779898d73a66",
+	"X-RapidAPI-Host": "google-translate1.p.rapidapi.com"
+}
+
+response = requests.get(url, headers=headers)
+
+print(response.json())"""
+
+
+"""import requests
+
+url = "https://google-translate1.p.rapidapi.com/language/translate/v2"
+headers = {
+    "X-RapidAPI-Host": "google-translate1.p.rapidapi.com",
+    "X-RapidAPI-Key": "0d920eb501msh22181cce92091a1p14cbefjsn779898d73a66",
+    "Content-Type": "application/x-www-form-urlencoded"
+}
+
+text = "Hello, world!"
+params = {
+    "source": "en",
+    "target": "ru",
+    "q": text
+}
+
+response = requests.post(url, headers=headers, params=params)
+print(response.json())
+result = response.json()["data"]["translations"][0]["translatedText"]
+
+print(result)  # Привет, мир!"""
+
+
+"""import customtkinter
 import webbrowser
 import tkinter
 
-from tkinter import filedialog
+from PIL import Image, ImageTk
+from translate import Translator
+
+current_language = ""  # переменная для сменя языка в комбобоксе 3244 строка
+language_to_translate = ""  # переменная для смены языка перевода
+
+translator = Translator(from_lang=current_language, to_lang=language_to_translate)
 
 
-customtkinter.set_appearance_mode("dark")
+customtkinter.set_appearance_mode("#1f1f1f")
 app = customtkinter.CTk()
-app.geometry("700x500")
-
-def button_click_event():
-    dialog = customtkinter.CTkInputDialog(text="Site URL:", title="Test")
-    response = dialog.get_input()
-    webbrowser.open(response)
+app.geometry("1000x500")
 
 
-def registration_button():
-    dialog_name = customtkinter.CTkInputDialog(text='Enter your email: ', title='Registration')
-    responce_name = dialog_name.get_input()
+label = customtkinter.CTkLabel(app, text="Переводчик", fg_color="#353333", width=1000, height=50, font=("Montserrat", 18))
+label.place(relx=0.5, rely=0.05, anchor=tkinter.CENTER)
+
+# Краткое описание
+
+url_lable = customtkinter.CTkLabel(app, text="Поддержите разработчиков данного проекта, подписавшись на их канал", fg_color='#393838', width=900, height=75, font=("Montserrat", 16))
+url_lable.place(relx=0.5, rely=0.25, anchor=tkinter.CENTER)
 
 
-def load_file():
-    file_path = filedialog.askopenfilename()
-    print(file_path) # использовать как переменную для дальнейшей работы с файлом
-    with open(file_path, mode='r', encoding='utf-8') as r_file:
-        z = []
-        for line in r_file:
-            if line != '\n':
-                z.append(line)
-
-        with open(f"NEW_file.txt", mode='w', encoding='utf-8') as w_file:
-            w_file.writelines(z)  # можно добавить много разного функционала
+# -----------------------------------------------------------------
 
 
-button = customtkinter.CTkButton(app, text="Open Dialog", command=button_click_event, fg_color="black", hover_color="gray")
-button.place(relx=0.5, rely=0.2, anchor=tkinter.CENTER)
+def combobox_callback(choice):
+    print("combobox dropdown clicked:", choice)
+    if choice == "Русский":
+        current_language = "ru"
+    elif choice == "Английский":
+        current_language = "en"
+    elif choice == "Немецкий":
+        current_language = "de"
+    elif choice == "Итальянский":
+        current_language = "it"
+
+combobox = customtkinter.CTkComboBox(app, values=["Русский", "Английский", "Немецкий", "Итальянский"],
+                                     command=combobox_callback, width=150, height=34, font=("Montserrat", 15))
+combobox.place(relx=0.5, rely=0.55)
+combobox.set("Русский")
+
+# -----------------------------------------------------------------
 
 
-button = customtkinter.CTkButton(app, text='Log In', command=registration_button, fg_color="black", hover_color="gray")
-button.place(relx=0.2, rely=0.2, anchor=tkinter.CENTER)
+app.mainloop()"""
 
 
-button = customtkinter.CTkButton(app, text='Download the .txt File', command=load_file, fg_color="black", hover_color="gray")
-button.place(relx=0.5, rely=0.6, anchor=tkinter.CENTER)
+"""def add_to_list_in_dict(data, key, element):
+    try:
+        data[key].append(element)
+    except:
+        data[key] = []
+        data[key].append(element)
 
 
-app.mainloop()
+
+
+data = {'a': [1, 2, 3], 'b': [4, 5, 6]}
+add_to_list_in_dict(data=data, key='c', element=7)
+
+print(data)"""
+
+
+"""try:
+    file_name = str(input())
+    file = open(file=file_name, encoding='utf-8', mode='r')
+    try:
+        print(file.read())
+    finally:
+        file.close()
+except FileNotFoundError:
+    print('Файл не найден')"""
+
+
+"""z = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+k = int(input())
+result = []
+for i in z[k:-1]:
+    result.append(i)
+for j in z[0:k]:
+    result.append(j)
+print(result)"""
+
+
+"""import matplotlib.pyplot as plt
+
+# Пример баллов за экзамен для 20 пробных вариантов
+
+exam_scores = []
+for i in range(20):
+    num = int(input())
+    exam_scores.append(num)
+
+result = 0
+for j in exam_scores:
+    result += j
+
+# Создаем график
+plt.plot(exam_scores, marker='o', linestyle='-', linewidth=1)
+
+# Настраиваем оси
+plt.xlabel('Пробный вариант')
+plt.ylabel('Баллы за экзамен')
+plt.title(f'Средний балл: {result / 20}')
+
+# Отображаем график
+plt.show()"""
+
+
+"""def get_weekday(number):
+    data = {1: "Понедельник", 2: "Вторник", 3: "Среда", 4: "Четверг",
+            5: "Пятница", 6: "Суббота", 7: "Воскресенье"}
+    if type(number) != int:
+        raise TypeError("Аргумент не является целым числом")
+    elif number not in range(1, 8):
+        raise ValueError("Аргумент не принадлежить целому диапозону")
+    return data[number]"""
+
+
+"""def get_id(names: list, name: str):
+    if type(name) != str:
+        raise TypeError("Имя не является строкой")
+    elif not name[0].isupper() or not name[1:].islower() or not name.isalpha():
+        raise ValueError("Имя не является корректным")
+    return len(names) + 1
+
+print(get_id(["Timur", "Oleg"], "Gahya"))"""
+
+
+
+"""import json
+name_file = str(input())
+
+try:
+    with open(name_file, "r") as f_js:
+        try:
+            data = json.load(f_js)
+            print(data)
+        except json.decoder.JSONDecodeError:
+            print("Ошибка при десериализации")
+
+except FileNotFoundError:
+    print("Файл не найден")"""
+
+
+
+"""def is_good_password(string: str) -> bool:
+    if len(string) >= 9 and any([x.isupper() for x in string]) and any([x.islower() for x in string]) and any([x.isdigit() for x in string]):
+        return True
+    else:
+        return False
+
+
+print(is_good_password('HELLO1234'))"""
+
+
+
+"""class PasswordError(Exception):
+    pass
+
+class LengthError(PasswordError):
+    pass
+
+class LetterError(PasswordError):
+    pass
+
+class DigitError(PasswordError):
+    pass
+
+def is_good_password(string: str):
+    try:
+        if len(string) >= 9:
+            try:
+                if any([x.isupper() for x in string]) and any([x.islower() for x in string]):
+                    try:
+                        if any([x.isdigit() for x in string]):
+                            return "Success!"
+                        else:
+                            raise DigitError("DigitError")
+                    except DigitError as err:
+                        return err
+                else:
+                    raise LetterError("LetterError")
+            except LetterError as err:
+                return err
+        else:
+            raise LengthError("LengthError")
+    except LengthError as err:
+        return err
+
+
+
+import sys
+
+z = []
+for j in sys.stdin:
+    z.append(j.strip())
+
+for i in z:
+    g = is_good_password(i)
+    print(g)
+    if g == 'Success!':
+        break"""
+
+
+
+
+# Рекурсия -------------------------------------------------------------------------------------------
+
+# Один из легких примеров того, как работает рекурсия!
+"""def draw_rect(width, height, step):
+    if step < height:
+        print('*' * width)
+        draw_rect(width, height, step + 1)
+
+draw_rect(4, 3, 0)"""
+
+# Пример с использованием вложенных функций
+"""def draw_rect(width, height):
+    def rec(step):
+        if step < height:
+            print('*' * width)
+            rec(step + 1)
+    rec(0)
+
+draw_rect(4, 3)"""
+
+
+"""def traffic(n):
+    def rec(step):
+        if step < n:
+            print("Не парковаться")
+            rec(step + 1)
+    rec(0)
+
+
+traffic(0)"""
+
+
+"""def numbers(start, stop):
+    if start <= stop:
+        print(start)
+        numbers(start + 1, stop)
+
+
+numbers(1, 100)"""
+
+
+"""numbers = [243, -279, 395, 130, 89, 269, 861, 669, 939, 367, -46, 710, 841, -280, -244, 274, -132, 273, 418, 432, -341,
+           437, 360, 960, 195, 792, 106, 461, -35, 980, -80, 540, -358, 69, -26, -416, 597, 96, 533, 232, 755, 894, 331,
+           323, -383, -386, 231, 436, 553, 967, 166, -151, 772, 434, 325, 301, 275, 431, 556, 728, 558, 702, 463, 127,
+           984, 212, 876, -287, -16, -177, 577, 604, 116, 500, 653, 669, 916, 802, 817, 762, -210, -353, 144, -351,
+           777, 805, 692, 22, -303, 249, 190, 411, 236, -274, 174, 380, 71, 124, -85, 430]
+
+def list_of_numbers(data: list, step=0):
+    if step < len(data):
+        print(f'Элемент {step}: {data[step]}')
+        list_of_numbers(data, step + 1)
+
+
+list_of_numbers(numbers)"""
+
+
+
+"""z = []
+while True:
+    a = int(input())
+    z.append(a)
+    if a == 0:
+        break
+
+def list_reverse(data: list, step = -1):
+    print(data[step])
+    if abs(step) < len(data):
+        list_reverse(data, step - 1)
+
+
+list_reverse(z)"""
+
+
+
+
+# Рисование елки сверху вниз (обычная)
+"""def triangle(h):
+    if h != 0:
+        triangle(h - 1)
+        print('*' * h)
+
+
+triangle(5)"""
+
+
+# Рисование елки снизу вверх (перевернутая)
+"""def triangle(h):
+    print("*" * h)
+    if h != 0:
+        triangle(h - 1)
+
+
+triangle(5)"""
+
+
+
+# 16 сумма каждого ряда
+"""def bee(num: int, n):
+    if n > 4:
+        string1 = str(num).center(n, str(num))
+        print("  " * num, string1, " " * num)
+        bee(num + 1, n - 4)
+    string2 = str(num).center(n, str(num))
+    print("  " * num, string2, " " * num)
+
+bee(1, 16)"""
+
+
+"""def print_digits(number: int, step: int = 0):
+    string_num = str(number)
+    if step < len(string_num):
+        print(string_num[step])
+        print_digits(number, step + 1)
+
+
+
+print_digits(12345)"""
+
+
+
+
+"""def sum_to(n):
+    if n == 0:
+        return 0                       # базовый случай
+    else:
+        return n + sum_to(n - 1)
+
+
+print(sum_to(5))"""
+
+
+"""def sum_of_digits(n):
+    if n < 10:
+        return n
+    else:
+        return n % 10 + sum_of_digits(n // 10)
+
+
+print(sum_of_digits(12))"""
+
+
+"""def sum_num(n):
+    if n < 10:
+        return 1
+    else:
+        return 1 + sum_num(n // 10)
+
+
+n = int(input())
+print(sum_num(n))"""
+
+
+"""def sum_of_digits(n):
+    if n < 10:
+        return n
+    else:
+        return n % 10 + sum_of_digits(n // 10)
+
+n = int(input())
+print(sum_of_digits(n))"""
+
+
+#print(128 % 10 + 128 // 10)
+
+
+"""def number_of_frogs(year, query=77):
+    if year == 1:
+        return query
+    else:
+        return number_of_frogs(year - 1, (query - 30) * 3)
+
+
+print(number_of_frogs(3))"""
+
+
+"""def range_sum(numbers: list, start, end):
+    if numbers[start] == numbers[end]:
+        return numbers[start]
+    else:
+        return numbers[start] + range_sum(numbers, start + 1, end)
+
+
+print(range_sum([1, 2, 3, 4, 5, 6, 7, 8, 9], 3, 7))
+"""
+
+
+"""def get_pow(a, n):
+    if n == 1:
+        return a
+    elif n == 0:
+        return 1
+    else:
+        return a * get_pow(a, n - 1)
+
+
+print(get_pow(2, 10))"""
+
+
+"""def get_fast_pow(a, n):
+    if n == 1:
+        return a
+    elif n == 0:
+        return 1
+    else:
+        return get_fast_pow(a * a, n / 2) if n % 10 == 0 else a * get_fast_pow(a, n - 1)
+
+
+print(get_fast_pow(2, 10))"""
+
+
+
+"""def recursive_sum(a, b):
+    if a == 0:
+        return b
+    elif b == 0:
+        return a
+    else:
+        return recursive_sum(a - 1, b + 1)
+
+
+print(recursive_sum(0, 0))"""
+
+
+"""def is_power(number):
+    if number / 2 == 2 or number == 1:
+        return True
+    elif number % 2 != 0:
+        return False
+    else:
+        return is_power(number / 2)
+
+
+print(is_power(45))"""
+
+
+"""import time
+start = time.time()
+def tribonacci(n):
+    if n <= 3:
+        return 1
+    else:
+        return tribonacci(n - 1) + tribonacci(n - 2) + tribonacci(n - 3)
+
+
+print(tribonacci(100))
+
+stop = time.time()
+print(stop - start)"""
+
+
+
+"""cache = {1: 1, 2: 1}                # ключ - номер числа, значение - число Фибоначчи
+
+def tribonacci(n):
+    result = cache.get(n)
+    if result is None:
+        result = tribonacci(n - 3) + tribonacci(n - 2) + tribonacci(n-1)
+        cache[n] = result
+    return result
+
+
+print(tribonacci(7))"""
+
+
+"""cache = {1: 1, 2: 1, 3: 1}                # ключ - номер числа, значение - число Фибоначчи
+
+def tribonacci(n):
+    result = cache.get(n)
+    if result is None:
+        result = tribonacci(n - 3) + tribonacci(n - 2) + tribonacci(n - 1)
+        cache[n] = result
+    return result
+
+
+print(tribonacci(7))"""
+
+
+"""def is_palindrome(string: str, start=0, stop=-1):
+    flag = 1
+    if string[start] == string[stop]:
+        flag += 1
+    elif string[start] != string[stop]:
+        return False
+    elif flag < 0:
+        return True
+    try:
+        return is_palindrome(string, start + 1, stop - 1)
+    except IndexError:
+        return True
+
+
+print(is_palindrome('abaa'))"""
+
+
+"""def is_palindrome(string: str, start=0, stop=-1):
+    if string == '':
+        return True
+    elif string[start] == string[stop]:
+        pass
+    elif string[start] != string[stop]:
+        return False
+    try:
+        return is_palindrome(string, start + 1, stop - 1)
+    except IndexError:
+        return True
+
+
+print(is_palindrome('abba')):"""
+
+
+"""def to_binary(number) -> str:
+    z = []
+    if number == 0:
+        z.append('1')
+    elif number == 1:
+        z.append('1')
+    else:
+        return to_binary(number // 2)
+    return str(z)
+
+
+print(to_binary(123))"""
+
+
+"""print(123 // 2, 123 % 2)"""
+
+
+"""def to_binary(number, z=""):
+    if number == 0:
+        z += "0"
+    elif number == 1:
+        z += "1"
+    else:
+        return to_binary(number // 2, z + str(number % 2))
+    return z[::-1]
+
+print(to_binary(1))"""
+
+
+"""def to_binary(number):
+    if number <= 1:
+        return str(number)
+    return to_binary(number // 2) + str(number % 2)
+
+
+print(to_binary(123))"""
+
+
+"""def reverse_num(n):
+    if n > 0:
+        print(n)
+        reverse_num(n - 5)
+    print(n)
+
+
+
+x = int(input())
+reverse_num(x)"""
+
+
+# реализовать с помощью вложенной функции
+def recursive_sum(nested_lists, sum_num=0):
+    if type(nested_lists) == int:
+        sum_num += nested_lists
+    if type(nested_lists) == list:
+        for i in nested_lists:
+            recursive_sum(i)
+    return sum_num
+
+
+
+my_list = [1, [4, 4], 2, [1, [2, 10]]]
+
+print(recursive_sum(my_list))
+
+
+
 
