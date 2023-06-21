@@ -3779,19 +3779,318 @@ reverse_num(x)"""
 
 
 # реализовать с помощью вложенной функции
-def recursive_sum(nested_lists, sum_num=0):
-    if type(nested_lists) == int:
-        sum_num += nested_lists
-    if type(nested_lists) == list:
-        for i in nested_lists:
-            recursive_sum(i)
-    return sum_num
+"""def recursive_sum(nested_lists):
+    total = 0
+    if nested_lists == [] or nested_lists == 0:
+        return 0
+    for i in nested_lists:
+        if type(i) == int:
+            total += i
+        elif type(i) == list:
+            total += recursive_sum(i)
+    return total"""
+
+
+"""def get_value(nested_dicts, key):
+    if key in nested_dicts:
+        return nested_dicts[key]
+    for i in nested_dicts.values():
+        if type(i) == dict:
+            value = get_value(i, key)
+            if value is not None:
+                return value
+
+
+data = {'firstName': 'Тимур', 'lastName': 'Гуев', 'birthDate': {'day': 10, 'month': 'October', 'year': 1993},
+        'address': {'streetAddress': 'Часовая 25, кв. 127',
+                    'city': {'region': 'Московская область', 'type': 'город', 'cityName': 'Москва'},
+                    'postalCode': '125315'}}
+print(get_value(data, 'cityName'))"""
+
+
+"""def get_all_values(nested_dicts, key):
+    if key in nested_dicts:
+        return nested_dicts[key]
+    for i in nested_dicts.values():
+        if type(i) == dict:
+            value = get_all_values(i, key)
+            if value is not None:
+                return value
+
+
+my_dict = {'users': {'Arthur': {'grades': [4, 4, 3], 'top_grade': 4}, 'Timur': {'grades': [5, 5, 5], 'top_grade': 5}}}
+result = get_all_values(my_dict, 'top_grade')
+
+print((result))"""
+
+
+"""# print([chr(i) for i in range(97, 123)])
+
+for i in range(97, 123):
+    print(chr(i))"""
+
+
+"""def convert(number):
+    return (bin(number).replace('0b', ''), oct(number).replace('0o', ''), hex(number).replace('0x', '').upper())
+
+print(convert(-132))
+"""
+
+
+"""films = {'Spider-Man: No Way Home': {'imdb': 8.8, 'kinopoisk': 8.3},
+         'Don"t Look Up': {'imdb': 7.3, 'kinopoisk': 7.6},
+         'Encanto': {'imdb': 7.3, 'kinopoisk': 7.4},
+         'The Witcher': {'imdb': 8.2, 'kinopoisk': 7.3},
+         'Ghostbusters: Afterlife': {'imdb': 7.3, 'kinopoisk': 8},
+         'Harry Potter 20th Anniversary: Return to Hogwarts': {'imdb': 8.1, 'kinopoisk': 8.2},
+         'Shingeki no Kyojin': {'imdb': 9.0, 'kinopoisk': 8.3},
+         'The Matrix': {'imdb': 8.7, 'kinopoisk': 8.5},
+         'The Dark Knight': {'imdb': 9.0, 'kinopoisk': 8.5},
+         'The Shawshank Redemption': {'imdb': 9.3, 'kinopoisk': 9.1},
+         'Avengers: Endgame': {'imdb': 8.4, 'kinopoisk': 7.7}}
+
+min_grade = 10
+film = ''
+for x in films:
+    if sum(films[x].values()) / 2 < min_grade:
+        min_grade = sum(films[x].values()) / 2
+        film = x
+print(film)"""
+
+"""result = min(films, key=lambda x: sum(films[x].values()))
+print(result)"""
+
+
+"""def non_negative_even(numbers: list):
+    return all(x % 2 == 0 and x >= 0 for x in numbers)
+
+print(non_negative_even([0, 2, 4, 8, 16]))"""
+
+
+"""def is_greater(lists, number):
+    return any(sum(x) > number for x in lists)
 
 
 
-my_list = [1, [4, 4], 2, [1, [2, 10]]]
+data = [[0, 0, 1], [0, 1, 0], [1, 0, 0]]
 
-print(recursive_sum(my_list))
+print(is_greater(data, 2))"""
+
+
+"""def custom_isinstance(objects, typeinfo):
+    result = [x for x in objects if isinstance(x, typeinfo)]
+    return len(result)
+
+
+
+numbers = [1, 'two', 3.0, 'четыре', 5, 6.0]
+print(custom_isinstance(numbers, list))"""
+
+
+"""numbers = [-7724, 5023, 3197, -102, -4129, -880, 5857, -2866, -8913, 1195, 9809, 5347, -8071, 903, 3030, -4347, -3354, 1024, 8670, 4210, -5228, 8900, 4823, -2002, 4900, 9520, -3658, 1104, -9554, 3064, 9632, -8701, 3384, 4370, 2034, 7822, -9694, 3347, 7440, -8459, 3238, -5193, -3381, 5281, 9022, 5559, 7593, -6540, -6204, -2483, 8729, 5810, -8254, -9846, -1801, 4882, 3838, -3140, 7609, -3325, 6026, 2994, -1677, 1266, -1893, -4408, -5722, -2841, 9812, 5837, -7474, 4624, -664, 6998, 7888, -971, 8810, 3812, -5396, 2593, 512, -4634, 9735, -3062, 9031, -9300, 3657, 6332, 7552, 8125, -725, 4392, 1727, 8194, -2828, -4314, -8967, -7912, -1363, -5957]
+
+result = [x[0] for x in enumerate(numbers, 0) if x[-1] == max(numbers)]
+print(*result)"""
+
+
+
+
+"""def my_pow(number):
+    result = sum([pow(int(x[-1]), int(x[0])) for x in enumerate(str(number), 1)])
+    return result
+
+
+print(my_pow(303))"""
+
+
+"""def my_pow(number):
+    char_num = str(number)
+    sum_nums = 0
+    for i in enumerate(char_num, 1):
+        sum_nums += pow(int(i[-1]), int(i[0]))
+    return sum_nums
+
+
+print(my_pow(303))"""
+
+
+"""names = ['Moana', 'Cars', 'Zootopia', 'Ratatouille', 'Coco', 'Inside Out', 'Finding Nemo', 'Frozen']
+budgets = [150000000, 120000000, 150000000, 150000000, 180000000, 175000000, 94000000, 150000000]
+box_offices = [643331111, 462216280, 1023784195, 620702951, 807082196, 857611174, 940335536, 1280802282]
+
+
+result = [f'{x[0]}: {x[-1] - x[1]}$' for x in zip(names, budgets, box_offices)]
+
+for i in sorted(result):
+    print(i)"""
+
+
+# Не решена
+"""def zip_longest(*args, fill=None):
+    z = []
+    for i in zip(*args):
+        z.append(i)
+    lst_primer = []
+    for l in z:
+        for k in l:
+            lst_primer.append(k)
+
+    for j in args:
+        for k in j:
+            if k not in lst_primer:
+                char_k = [k, fill]
+                z.append(tuple(char_k))
+                #z.append(tuple(f'{k}{fill}'))
+
+    print(z)
+
+
+data = [[1, 2, 3, 4, 5], ['one', 'two', 'three'], ['I', 'II']]
+print(zip_longest(*data))"""
+
+
+
+"""def hash_as_key(objects):
+    hash_objects = []
+    for i in objects:
+        hash_objects.append(hash(i))
+    res_dict = {}
+    for j in objects:
+        if hash(j) in hash_objects:
+            res_dict.setdefault(hash(j), [j, hash(j)] if j == -1 else j)
+
+    return res_dict
+
+data = [-1, -2, -3, -4, -5]
+
+print(hash_as_key(data))"""
+
+
+"""data = ['Timur', -16.648911695768902, 'six', -202, 883.0093275936454, -765, (3, 4), -105.10718000213546, 976, -308.96857946288094, 458, ['one', 'two'], 479.92207220345927, -87, -71, 'twelve', 112, -621, -715.0179551194733, 'seven', 229, 729, -358, [1, 2, 3], -974, 882, -894.4709033242768, '', 323.7720806756133, 'beegeek', -224, 431, 170.6353248658936, -343.0016746052049, 'number', 104.17133679352878, [], -353.5964777099863, 'zero', -113, 288, None, -708.3036176571618]
+
+result = filter(lambda x: x if type(x) == int or type(x) == float else False, data)
+res = map(lambda x: str(x).split('.')[0], result)
+for i in res:
+    print(i)"""
+
+
+"""numbers = [4754, -4895, -364, -4764, 4683, 1639, -43, 228, -2701, -1503, 1223, 4340, -1296, 3939, -345, 623, -3275, 1003, 4367, -1739, 550, -1217, -1334, 1526, -4359, -3028, -4663, 3356, 3887, 4297, -1982, 1013, 3299, 3556, -3324, 417, 3531, -3134, 1782, 4439, 1652, -985, 4327, 1517, 1225, -915, 2808, -3851, -1005, 3396, 2842, -3879, -3824, -3805, 1609, -4741, -3072, 3573, 4680, 588, -1430, 2378, -1095, -343, 4357, -2164, -3304, 4354, 4926, -352, -1187, -3313, 2741, 4786, -2689, 741, 4558, 1442, 62, -1099, -2201, -16, -3115, 1862, 2384, 4072, -90, 204, 1158, -3134, -2512, 756, 4148, 4370, 1756, 3609, -1148, -3909, 4123, -2906, 69, 96, 1111]
+
+result = filter(lambda x: x if len(str(abs(x))) == 2 and x % 9 == 0 else False, numbers)
+print(sum(map(lambda x: x**2, result)))"""
+
+
+"""names = ['ульяна', 'арина', 'Дмитрий', 'Сергей', 'Яна', 'мила', 'Ольга', 'софья', 'семён', 'Никита', 'маргарита', 'Василиса', 'Кирилл', 'александр', 'александра', 'Иван', 'андрей', 'Родион', 'максим', 'алиса', 'Артём', 'софия', 'владимир', 'дамир', 'Валерий', 'степан', 'Алексей', 'Марк', 'олег', 'ирина', 'Милана', 'мия', 'денис', 'Фёдор', 'Елизавета', 'айлин', 'Варвара', 'валерия', 'Алёна', 'Николь', 'юлия', 'Ксения', 'пётр', 'георгий', 'Мария', 'глеб', 'илья', 'Захар', 'Дарья', 'Евгения', 'матвей', 'Серафим', 'екатерина', 'Тимофей', 'виктор', 'Егор', 'Ника', 'анна', 'даниил', 'тихон', 'вера', 'кира', 'Эмилия', 'Виктория', 'Игорь', 'полина', 'алина', 'Давид', 'анастасия', 'Вероника', 'ярослав', 'Руслан', 'татьяна', 'Демид', 'амелия', 'Элина', 'Арсен', 'евгений', 'мадина', 'дарина', 'Савелий', 'Платон', 'Аделина', 'диана', 'Айша', 'павел', 'Стефания', 'Тимур', 'Ева', 'Елисей', 'Артемий', 'григорий', 'Мирон', 'Мирослава', 'Мира', 'Марат', 'Лилия', 'роман', 'владислав', 'Леонид']
+
+result = filter(lambda x: x if len(x) > 4 and x[0].lower() == 'а' or x[0].lower() == 'м' and len(x) > 4 else False, names)
+print(*sorted(map(lambda x: x.capitalize(), result)))"""
+
+
+"""fib = lambda n: 1 if n <= 2 else fib(n - 1) + fib(n - 2)
+
+print(fib(2))"""
+
+
+
+"""def print_operation_table(operation, rows, cols):
+    for i in range(1, rows + 1):
+        for j in range(1, cols + 1):
+            print(operation(i, j), end=' ')
+        print()
+
+
+print_operation_table(pow, 5, 4)"""
+
+
+
+
+"""# login - логин пользователя
+# password - пароль пользователя
+# success - некоторая функция
+# failure - некоторая функция
+def verification(login, password, success, failure):
+    text = {1: 'в пароле нет ни одной буквы', 2: 'в пароле нет ни одной заглавной буквы',
+            3: 'в пароле нет ни одной строчной буквы', 4: 'в пароле нет ни одной цифры'}
+
+    abc = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    abc_lower = "abcdefghijklmnopqrstuvwxyz"
+    abc_upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
+    if any([x in abc_upper for x in password]) and any([x in abc_lower for x in password]) and any([x.isdigit() for x in password]):
+        return success(login)
+    else:
+
+        if not any([x in abc for x in password]):
+            return failure(login, text[1])
+
+        elif not any([x in abc_upper for x in password]):
+            return failure(login, text[2])
+
+        elif not any([x in abc_lower for x in password]):
+            return failure(login, text[3])
+
+        elif not any([x.isdigit for x in password]):
+            return failure(login, text[4])
+
+def success(login):
+    print(f'Здравствуйте, {login}!')
+
+
+def failure(login, text):
+    print(f'{login}, попробуйте снова. Текст ошибки: {text}')
+
+
+verification('Arthur_Davletov', 'мойпарольBEE123', success, failure)"""
+
+
+"""def numbers_sum(elems):
+    #Принимает список и возвращает сумму его чисел (int, float),
+    #игнорируя нечисловые объекты. 0 - если в списке чисел нет.
+    return sum([x if type(x) == int or type(x) == float else 0 for x in elems])
+
+
+print(numbers_sum.__doc__)
+print(numbers_sum([1, '2', 3, 4, 'five']))"""
+
+"""
+old_print = print
+def up_print(*args, **kwargs):
+    result = map(lambda x: x.upper() if type(x) == str else x, args)
+    if kwargs == {}:
+        old_print(*result)
+    else:
+        old_print(*result, sep=kwargs['sep'].upper(), end=kwargs['end'].upper())
+
+print = up_print
+
+words = ('black', 'white', 'grey', 'black-1', 'white-1', 'python')
+print(*words, sep=' to ', end=' LOVE')"""
+
+
+"""def primer():
+    primer.name = 'Ruslan'
+
+
+print(primer.__dict__)
+
+primer.value = '178 sm'
+primer.age = '18 let'
+
+primer()
+
+print(primer.__dict__)"""
+
+
+def polynom(x: float):
+    polynom.__dict__['values'] = set()
+    return x**2 + 1
+
+
+
+print(polynom(5))
+print(polynom.values)
+
+
 
 
 
