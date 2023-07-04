@@ -7,6 +7,7 @@ def sqr(num):
     return num**2
 
 print(reduce(sqr, numbers, 0))"""
+import datetime
 
 """def map(function, items):
     result = []
@@ -4081,17 +4082,711 @@ primer()
 print(primer.__dict__)"""
 
 
-def polynom(x: float):
+"""def polynom(x: float):
     polynom.__dict__['values'] = set()
     return x**2 + 1
 
 
 
 print(polynom(5))
-print(polynom.values)
+print(polynom.values)"""
+
+
+"""def num(n):
+    def mult(x):
+        return n * x
+    return mult
+
+
+res = num(5)
+print(res(3))"""
+
+
+"""def outer_function(arg):
+    num = 5
+    name = 'Timur'
+    numbers = [1, 2, 3]
+
+    def inner_function():  # определяем вложенную функцию
+        print(arg)
+        print(num)
+        print(numbers)
+
+    return inner_function  # возвращаем вложенную функцию
+
+
+inner = outer_function('python')
+
+for var in inner.__closure__:
+    print(var.cell_contents)"""
+
+
+"""def trans(word):
+    alphabet = {"q": 'й', "w": 'ц', "e": 'у', "r": 'к', "t": 'е', "y": 'н', "u": 'г', "i": 'ш',
+                "o": 'щ', "p": 'з', "[": 'х', "]": 'ъ', "a": 'ф', "s": 'ы', "d": 'в', "f": 'а',
+                "g": 'п', "h": 'р', "j": 'о', "k": 'л', "l": 'д', ";": 'ж', "'": 'э',
+                "z": 'я', "x": 'ч', "c": 'с', "v": 'м', "b": 'и', "n": 'т', "m": 'ь', ",": 'б', ".": 'ю', ' ': ' '}
+
+    z = []
+    for i in word:
+        z.append(alphabet[i])
+
+    return ''.join(z)
+
+
+
+print(trans('cerf t,tyfz'))"""
+
+
+"""def power(degree):
+    def sqr(x):
+        return x**degree
+    return sqr
+
+
+result = power(4)(2)
+print(result)"""
+
+
+"""def generator_square_polynom(a, b, c):
+    def result(x):
+        return a*x**2 + b * x + c
+    return result
+
+
+f = generator_square_polynom(26, 83, 22)
+print(f(55))"""
+
+
+"""def sourcetemplate(url):
+    def address(**kwargs):
+        if not kwargs:  # проверка на наличие именнованых элементов
+            return url
+        z = []
+        for i in kwargs:  # преобразование именнованых элементов в строку и добавление в список z
+            text = [i, "=", kwargs[i]]
+            text_obr = [str(x) for x in text]
+            res = ''.join(text_obr)
+            z.append(res)
+        if len(z) >= 2:   # если в z есть больше чем один именнованый аргумент, то добавляем разделитель &
+            result = '&'.join(sorted(z))
+            return f'{url}?' + result
+        else:
+            result = ''.join(sorted(z))   # иначе просто возвращаем список преобразованный в строку с одни именнованым аргументом
+            return f'{url}?' + result
+    return address
+
+
+url = 'https://all_for_comfort_life.com'
+load = sourcetemplate(url)
+print(load(smartphone='iPhone', notebook='huawei', sale=True))"""
+
+
+"""
+from datetime import date
+
+def date_formatter(country_code):
+    def loc_time(date):
+        if country_code == 'ru':
+            return date.strftime('%d.%m.%Y')
+        elif country_code == 'us':
+            return date.strftime('%m-%d-%Y')
+        elif country_code == 'ca':
+            return date.strftime('%Y-%m-%d')
+        elif country_code == 'br':
+            return date.strftime('%d/%m/%Y')
+        elif country_code == 'fr':
+            return date.strftime('%d.%m.%Y')
+        elif country_code == 'pt':
+            return date.strftime('%d-%m-%Y')
+    return loc_time
+
+
+date_ru = date_formatter('ca')
+today = date(2015, 12, 7)
+print(date_ru(today))"""
+
+
+"""def get_digits(number: int | float) -> list[int]:
+    result = [int(x) for x in str(number) if x.isdigit()]
+    return result
+
+
+
+print(get_digits(-16733))"""
+
+
+"""def top_grade(grades: dict[str, str | list[int]]) -> dict[str, str | int]:
+    z = dict()
+    for i in grades:
+        if i == "name":
+            z.update({i: grades[i]})
+        elif i == "grades":
+            z.update({"top_grade": max(grades[i])})
+    return z
 
 
 
 
+print(*top_grade.__annotations__.values())
+"""
 
 
+"""def cyclic_shift(numbers: list[int | float], step: int) -> list[int]:
+    return numbers[step]
+
+# сделать по принципу от -2 до 2
+numbers = [1, 2, 3, 4, 5]
+cyclic_shift(numbers, 1)
+
+print(numbers)"""
+
+
+
+"""def decorator_line(func):
+    def wrapper(*args, **kwargs):
+        line_break = '-' * 15
+        result = func(*args, **kwargs)
+        return line_break + '\n' + result + '\n' + line_break
+    return wrapper
+
+
+@decorator_line
+def say(name):
+    return f'Hello {name}'
+
+
+print(say('Oleg'))"""
+
+
+"""def sandwich(func):
+    def wrapper(*args, **kwargs):
+        print('---- Верхний ломтик хлеба ----')
+        result = str(func(*args, **kwargs))
+        print('---- Нижний ломтик хлеба ----')
+        return result
+    return wrapper
+
+
+@sandwich
+def add_ingredients(ingredients):
+    print(' | '.join(ingredients))
+
+add_ingredients(['томат', 'салат', 'сыр', 'бекон'])"""
+
+
+"""def decorator_print(func):
+    def behavior(*args, **kwargs):
+        new_args = (str(x).upper() for x in args)
+        new_kwargs = {i: j.upper() for i, j in kwargs.items()}
+        result = func(*new_args, **new_kwargs)
+        return result
+    return behavior
+
+
+print = decorator_print(print)
+
+print(111, 222, 333, sep='xxx')"""
+
+
+"""def do_twice(func):
+    def behavior(*args, **kwargs):
+        func(*args, **kwargs)
+        return func(*args, **kwargs)
+    return behavior
+
+
+@do_twice
+def beegeek(a, b, sep):
+    print(a + b + sep)
+
+
+beegeek(1, 2, sep=10)"""
+
+
+"""def reverse_args(func):
+    def behavior(*args, **kwargs):
+        rever_args = reversed(args)
+        result = func(*rever_args, **kwargs)
+        return result
+    return behavior
+
+
+@reverse_args
+def concat(a, b, c):
+    return a + b + c
+
+
+print(concat('apple', 'cherry', 'melon'))"""
+
+
+"""def exception_decorator(func):
+    def behavior(*args, **kwargs):
+        try:
+            func(*args, **kwargs)
+            value = func(*args, **kwargs)
+            return (value, 'Функция выполнилась без ошибок')
+        except:
+            return (None, 'При вызове функции произошла ошибка')
+    return behavior
+
+
+@exception_decorator
+def f(x):
+    return x ** 2 + 2 * x + 1
+
+
+print(f(7))"""
+
+
+"""
+def takes_positive(func):
+    def behavior(*args, **kwargs):
+        for i in args:
+            if type(i) != int:
+                raise TypeError
+            elif i <= 0:
+                raise ValueError
+        for i, j in kwargs.items():
+            if type(j) != int:
+                raise TypeError
+            elif j <= 0:
+                raise ValueError
+        result = func(*args, **kwargs)
+        return result
+    return behavior
+
+
+@takes_positive
+def positive_sum(*args, **kwargs):
+    return sum(args) + sum(kwargs.values())
+
+
+try:
+    print(positive_sum(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, par1=1, sep=-40))
+except Exception as err:
+    print(type(err))"""
+
+"""import time
+
+def nice_print(text: str):
+    for i in text:
+        time.sleep(0.06)
+        print(i, end='')
+
+
+
+nice_print('Hello motherfucker. If u want to do some decorator, you are the best!')"""
+
+"""import functools
+
+def square(func):
+    @functools.wraps(func)
+    def behavior(*args, **kwargs):
+        func_number = func(*args, **kwargs)
+        return func_number**2
+    return behavior
+
+
+@square
+def add(a, b):
+    '''прекрасная функция'''
+    return a + b
+
+print(add(1, 1))
+print(add.__name__)
+print(add.__doc__)"""
+
+
+"""import functools
+
+def returns_string(func):
+    @functools.wraps(func)
+    def behavior(*args, **kwargs):
+        result = func(*args, **kwargs)
+        if type(result) == str:
+            return result
+        else:
+            raise TypeError
+    return behavior
+
+
+@returns_string
+def add(a, b):
+    return a + b
+
+try:
+    print(add(3, 7))
+except TypeError as e:
+    print(type(e))"""
+
+"""import functools
+
+def trace(func):
+    @functools.wraps(func)
+    def behavior(*args, **kwargs):
+        result = func(*args, **kwargs)
+        print(f'TRACE: вызов {func.__name__}() с аргументами: {args}, {kwargs}')
+        if type(func(*args, **kwargs)) == str:
+            print(f"TRACE: возвращаемое значение {func.__name__}(): '{result}'")
+        else:
+            print(f"TRACE: возвращаемое значение {func.__name__}(): {result}")
+        return result
+    return behavior
+
+
+@trace
+def sub(a, b, c):
+    '''прекрасная функция'''
+    return a - b + c
+
+
+print(sub.__name__)
+print(sub.__doc__)
+sub(20, 5, c=10)"""
+
+
+"""import functools
+
+def prefix(string, to_the_end=False):
+    def decorator_prefix(func):
+        @functools.wraps(func)
+        def wrapper(*args, **kwargs):
+            value = func(*args, **kwargs)
+            if to_the_end:
+                return value + string
+            else:
+                return string + value
+        return wrapper
+    return decorator_prefix
+
+
+@prefix('$$$', to_the_end=True)
+def get_bonus():
+    return '2000'
+
+
+print(get_bonus())"""
+
+"""import functools
+
+def make_html(tag):
+    def dec_make_html(func):
+        @functools.wraps(func)
+        def wrapper(*args, **kwargs):
+            value = func(*args, **kwargs)
+            return f'<{tag}>{value}</{tag}>'
+        return wrapper
+    return dec_make_html
+
+
+@make_html('i')
+@make_html('del')
+def get_text(text):
+    return text
+
+
+print(get_text(text='decorators are so cool!'))"""
+
+"""import functools
+
+def repeat(times):
+    def dec_repeat(func):
+        @functools.wraps(func)
+        def wrapper(*args, **kwargs):
+            for i in range(1, times + 1):
+                value = func(*args, **kwargs)
+            return value
+        return wrapper
+    return dec_repeat
+
+
+@repeat(4)
+def say_beegeek():
+    '''documentation'''
+    print('beegeek')
+
+
+print(say_beegeek.__name__)
+print(say_beegeek.__doc__)"""
+
+
+"""import functools
+
+def strip_range(start, end, char='.'):
+    def dec_strip_range(func):
+        @functools.wraps(func)
+        def wrapper(*args, **kwargs):
+            value = func(*args, **kwargs)
+            z = []
+            for i in value:
+                z.append(i)
+            for j in range(start, end):
+                try:
+                    z[j] = char
+                except IndexError:
+                    break
+            return ''.join(z)
+        return wrapper
+    return dec_strip_range
+
+
+@strip_range(20, 30)
+def beegeek():
+    return 'beegeek'
+
+
+print(beegeek())"""
+
+
+"""import functools
+
+def returns(datatype):
+    def dec_returns(func):
+        @functools.wraps(func)
+        def wrapper(*args, **kwargs):
+            value = func(*args, **kwargs)
+            if datatype == type(value):
+                return value
+            else:
+                raise TypeError
+        return wrapper
+    return dec_returns
+
+
+@returns(list)
+def append_this(li, elem):
+    '''append_this docs'''
+    return li + [elem]
+
+print(append_this.__name__)
+print(append_this.__doc__)
+print(append_this([1, 2, 3], elem=4))"""
+
+
+"""import functools
+
+def takes(*type_args):
+    def dec_takes(func):
+        @functools.wraps(func)
+        def wrapper(*args, **kwargs):
+            value = func(*args, **kwargs)
+            for i in args:
+                if type(i) not in type_args:
+                    raise TypeError
+            for j in kwargs.values():
+                if type(j) not in type_args:
+                    raise TypeError
+            return value
+        return wrapper
+    return dec_takes
+
+
+@takes(list, int, tuple, str)
+def add(a, b):
+    '''add docs'''
+    return a + b
+
+print(add.__name__)
+print(add.__doc__)
+
+try:
+    print(add(a='a', b='c'))
+except TypeError as e:
+    print(type(e))"""
+
+
+"""import functools
+
+def add_attrs(**atr_kwargs):
+    def dec_add_atrs(func):
+        for i in atr_kwargs:
+            func.__dict__[i] = atr_kwargs[i]
+        @functools.wraps(func)
+        def wrapper(*args, **kwargs):
+            value = func(*args, **kwargs)
+            return value
+        return wrapper
+    return dec_add_atrs
+
+
+@add_attrs(attr2='geek')
+@add_attrs(attr1='bee')
+def beegeek():
+    return 'beegeek'
+
+
+print(beegeek.attr1)
+print(beegeek.attr2)
+print(beegeek.__name__)"""
+
+
+"""import functools
+
+def ignore_exception(*type_args):
+    def dec_ignore_exception(func):
+        @functools.wraps(func)
+        def wrapper(*args, **kwargs):
+            list_exceptions = [x.__name__ for x in type_args]
+            try:
+                value = func(*args, **kwargs)
+                return value
+            except Exception as e:
+                error_name = type(e).__name__
+                if error_name in list_exceptions:
+                    print(f'Исключение {error_name} обработано')
+                else:
+                    raise type(e)
+        return wrapper
+    return dec_ignore_exception
+
+# Решить проблему с тем почему выводит class TypeError, хотя должен ValueError
+
+@ignore_exception()
+def func():
+    '''func docs'''
+    raise ValueError
+
+
+try:
+    func()
+except Exception as e:
+    print(type(e))"""
+
+
+"""import functools
+
+class MaxRetriesException(Exception):
+    pass
+
+def retry(times):
+    def dec_retry(func):
+        @functools.wraps(func)
+        def wrapper(*args, **kwargs):
+            for i in range(1, times + 1):
+                try:
+                    return func(*args, **kwargs)
+                except:
+                    pass
+            raise MaxRetriesException
+        return wrapper
+    return dec_retry
+
+
+@retry(8)
+def beegeek():
+    beegeek.calls = beegeek.__dict__.get('calls', 0) + 1
+    if beegeek.calls < 5:
+        raise ValueError
+    print('beegeek')
+
+
+beegeek()"""
+
+
+"""def simple_sequence():
+    num = 1
+    i = 0
+    while True:
+        if i != num:
+            i += 1
+            yield num
+        else:
+            i = 0
+            num += 1
+
+generator = simple_sequence()
+numbers = [next(generator) for _ in range(10)]
+
+print(*numbers)"""
+
+
+"""def alternating_sequence(count=None):
+    num = 1
+    while True:
+        if count is None:
+            yield -num if num % 2 == 0 else num
+            num += 1
+        else:
+            if num == count + 1:
+                break
+            else:
+                yield -num if num % 2 == 0 else num
+                num += 1
+
+
+
+generator = alternating_sequence(10)
+
+print(*generator)"""
+
+
+"""def primes(left, right):
+    for i in range(left, right + 1):
+        if i == 1:
+            continue
+        z = []
+        for x in range(2, i - 1):
+            z.append(i % x)
+        if all(z):
+            yield i
+
+
+
+generator = primes(6, 36)
+
+print(next(generator))
+print(next(generator))"""
+
+
+"""def reverse(sequence):
+    res = sequence[::-1]
+    for i in res:
+        yield i
+
+
+print(*reverse([1, 2, 3, 4, 5]))"""
+
+from datetime import date, timedelta
+
+def dates(start, count=None):
+    index = 0
+    """if start > datetime.date(9999, 12, 31):
+        raise StopIteration"""
+    while True:
+        try:
+            if count is None:
+                yield start
+                start += timedelta(days=1)
+
+            else:
+                if index == count:
+                    break
+                else:
+                    yield start
+                    start += timedelta(days=1)
+                    index += 1
+        except OverflowError:
+            break
+
+generator = dates(date(9999, 1, 7))
+
+for _ in range(348):
+    next(generator)
+
+print(next(generator))
+print(next(generator))
+print(next(generator))
+print(next(generator))
+print(next(generator))
+print(next(generator))
+print(next(generator))
+print(next(generator))
+print(next(generator))
+print(next(generator))
+print(next(generator))
+
+try:
+   print(next(generator))
+except StopIteration:
+    print('Error')
